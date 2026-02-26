@@ -3,20 +3,20 @@ import type { ContentNavigationItem } from '@nuxt/content'
 import { findPageHeadline } from '@nuxt/content/utils'
 
 definePageMeta({
-  layout: 'docs'
+  layout: 'chapters'
 })
 
 const route = useRoute()
 const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(route.path).first())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('chapters').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('docs', route.path, {
+  return queryCollectionItemSurroundings('chapters', route.path, {
     fields: ['description']
   })
 })
@@ -56,18 +56,7 @@ const links = computed(() => {
   <UPage v-if="page">
     <UPageHeader
       :title="page.title"
-      :description="page.description"
-      :headline="headline"
     >
-      <template #links>
-        <UButton
-          v-for="(link, index) in page.links"
-          :key="index"
-          v-bind="link"
-        />
-
-        <PageHeaderLinks />
-      </template>
     </UPageHeader>
 
     <UPageBody>
@@ -95,7 +84,6 @@ const links = computed(() => {
         >
           <div
             class="hidden lg:block space-y-6"
-            :class="{ '!mt-6': page.body?.toc?.links?.length }"
           >
             <USeparator
               v-if="page.body?.toc?.links?.length"

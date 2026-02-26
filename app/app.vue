@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { de } from '@nuxt/ui/locale'
+
 const { seo } = useAppConfig()
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('chapters'))
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('chapters'), {
   server: false
 })
 
@@ -14,7 +16,7 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'de'
   }
 })
 
@@ -28,7 +30,7 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <UApp>
+  <UApp :locale="de">
     <NuxtLoadingIndicator />
 
     <AppHeader />

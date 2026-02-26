@@ -1,8 +1,8 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
-      neutral: 'slate'
+      primary: 'blue',
+      neutral: 'neutral'
     },
     footer: {
       slots: {
@@ -12,10 +12,10 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt Docs Template'
+    siteName: 'Lexikon-Roman'
   },
   header: {
-    title: '',
+    title: 'Lexikon-Roman',
     to: '/',
     logo: {
       alt: '',
@@ -24,12 +24,7 @@ export default defineAppConfig({
     },
     search: true,
     colorMode: true,
-    links: [{
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt-ui-templates/docs',
-      'target': '_blank',
-      'aria-label': 'GitHub'
-    }]
+    links: []
   },
   footer: {
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
@@ -52,7 +47,6 @@ export default defineAppConfig({
     }]
   },
   toc: {
-    title: 'Table of Contents',
     bottom: {
       title: 'Community',
       edit: 'https://github.com/nuxt-ui-templates/docs/edit/main/content',
