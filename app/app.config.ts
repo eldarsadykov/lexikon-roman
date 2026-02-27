@@ -24,7 +24,7 @@ export default defineAppConfig({
     },
     search: true,
     colorMode: true,
-    links: []
+    links: [] as Array<Record<string, unknown>>
   },
   footer: {
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
@@ -47,6 +47,7 @@ export default defineAppConfig({
     }]
   },
   toc: {
+    title: '',
     bottom: {
       title: 'Community',
       edit: 'https://github.com/nuxt-ui-templates/docs/edit/main/content',
