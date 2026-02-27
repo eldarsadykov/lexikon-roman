@@ -35,13 +35,25 @@ const headline = computed(() => findPageHeadline(navigation?.value, page.value?.
 defineOgImageComponent('Docs', {
   headline: headline.value
 })
+
+const pageNumber = ref(1)
 </script>
 
 <template>
   <UPage v-if="page">
-    <UPageHeader
-      :title="page.title"
-    />
+    <UPageHeader :title="page.title">
+      <template
+        v-if="page.articlesCount > 1"
+        #links
+      >
+        <UPagination
+          v-model:page="pageNumber"
+          :items-per-page="1"
+          :total="page.articlesCount"
+          variant="ghost"
+        />
+      </template>
+    </UPageHeader>
 
     <UPageBody>
       <ContentRenderer
