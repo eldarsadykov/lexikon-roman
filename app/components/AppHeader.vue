@@ -8,7 +8,7 @@ const { header } = useAppConfig()
 
 <template>
   <UHeader
-    :ui="{ center: 'flex-1' }"
+    :ui="{ root: 'static lg:sticky', center: 'flex-1' }"
     :to="header?.to || '/'"
   >
     <UContentSearchButton
