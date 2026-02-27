@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    enabled: false
+    enabled: true
   },
 
   css: ['~/assets/css/main.css'],
