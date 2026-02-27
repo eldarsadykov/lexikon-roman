@@ -20,8 +20,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
       <template #right>
         <UPageAside>
-          <div> Presentation Controls </div>
-          <div> Audio Controls </div>
+          <ThemeSwitcher />
         </UPageAside>
       </template>
     </UPage>
