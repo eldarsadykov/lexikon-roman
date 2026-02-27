@@ -23,7 +23,7 @@ export default defineAppConfig({
       dark: ''
     },
     search: true,
-    colorMode: true,
+    colorMode: false,
     links: [] as Array<Record<string, unknown>>
   },
   footer: {

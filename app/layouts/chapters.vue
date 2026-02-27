@@ -20,7 +20,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
       <template #right>
         <UPageAside>
-          <ThemeSwitcher />
+          <UColorModeSelect />
         </UPageAside>
       </template>
     </UPage>

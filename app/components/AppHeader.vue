@@ -11,12 +11,6 @@ const { header } = useAppConfig()
     :ui="{ root: 'static lg:sticky', center: 'flex-1' }"
     :to="header?.to || '/'"
   >
-    <UContentSearchButton
-      v-if="header?.search"
-      :collapsed="false"
-      class="w-full"
-    />
-
     <template
       v-if="header?.logo?.dark || header?.logo?.light || header?.title"
       #title
@@ -48,7 +42,6 @@ const { header } = useAppConfig()
     <template #right>
       <UContentSearchButton
         v-if="header?.search"
-        class="lg:hidden"
       />
 
       <UColorModeButton v-if="header?.colorMode" />
@@ -63,9 +56,12 @@ const { header } = useAppConfig()
     </template>
 
     <template #body>
+      <UColorModeSelect />
+      <USeparator class="my-4" />
       <UContentNavigation
         highlight
         :navigation="navigation"
+        :ui="{ root: 'mb-[50lvh]' }"
       />
     </template>
   </UHeader>
