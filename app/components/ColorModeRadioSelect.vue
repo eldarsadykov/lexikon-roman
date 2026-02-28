@@ -11,27 +11,17 @@ const colorMode = useColorMode()
 const appConfig = useAppConfig()
 const { t } = useLocale()
 
-const items = ref<ColorModeTreeItem[]>([
-  {
-    id: 'system',
-    label: t('colorMode.system'),
-    icon: appConfig.ui.icons.system
-  },
-  {
-    id: 'light',
-    label: t('colorMode.light'),
-    icon: appConfig.ui.icons.light
-  },
-  {
-    id: 'dark',
-    label: t('colorMode.dark'),
-    icon: appConfig.ui.icons.dark
-  }
-])
+const options: ColorModePreference[] = ['system', 'light', 'dark']
+
+const items: ColorModeTreeItem[] = options.map(option => ({
+  id: option,
+  label: t(`colorMode.${option}`),
+  icon: appConfig.ui.icons[option]
+}))
 
 const colorModeSelection = computed({
   get: () => {
-    return items.value.find(option => option.id === colorMode.preference as ColorModePreference)
+    return items.find(option => option.id === colorMode.preference as ColorModePreference)
   },
   set: value => colorMode.preference = value!.id
 })
