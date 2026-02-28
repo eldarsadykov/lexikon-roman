@@ -51,6 +51,7 @@ const pageNumber = ref(1)
           :items-per-page="1"
           :total="page.articlesCount"
           variant="ghost"
+          active-variant="subtle"
         />
       </template>
     </UPageHeader>
