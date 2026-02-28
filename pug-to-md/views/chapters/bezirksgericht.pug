@@ -1,0 +1,124 @@
+extends ../../templates/layout
+mixin letterGroup(letters)
+  each letter in letters
+    .char= letter
+
+
+mixin curly(orientation, lines)
+  - const BASE_V1 = 50.919
+  - const BASE_V2 = 51.428
+  - const LINE_HEIGHT = 100
+  - const WIDTH_MODIFIER_PER_LINE = 0
+  - const BASE_LINE_COUNT = 2
+
+  - const widthModifier = WIDTH_MODIFIER_PER_LINE * lines
+  - const heightMultiplier = (LINE_HEIGHT + WIDTH_MODIFIER_PER_LINE * 2) / LINE_HEIGHT
+  - const heightModifeier = LINE_HEIGHT * (lines - BASE_LINE_COUNT) / 2
+  - const totalModifier = heightModifeier + widthModifier
+  - const v1 = - (BASE_V1 + totalModifier)
+  - const v2 = BASE_V2 + totalModifier
+  - const v1str = v1.toFixed(4)
+  - const v2str = v2.toFixed(4)
+  - const viewBoxY = -totalModifier
+  - const viewBoxHeight = heightMultiplier * lines * (LINE_HEIGHT)
+  - let attrs = { }
+  - attrs.xmlns = 'http://www.w3.org/2000/svg'
+  - attrs['xml:space'] = 'preserve'
+  - attrs.viewBox = `0 ${viewBoxY} 30.1 ${viewBoxHeight.toFixed(1)}`
+  - attrs.width = '2em'
+  - attrs.height = '100%'
+  svg&attributes(attrs)
+    path(class=`curly-path ${orientation}` d=`M 0 99.065 c 4.898 -0.596 8.98 -4.881 10.102 -10.392 c 0.408 -2.449 0.816 -7.653 0.816 -11.53 v ${v1str} c 0 -3.061 0.204 -6.836 0.613 -9.489 c 0.816 -5.511 1.938 -8.47 4.693 -11.021 c 3.062 -3.061 6.837 -4.694 13.572 -5.714 l 0.306 1.837 c -4.694 1.53 -6.735 2.857 -8.265 5.408 c -2.041 3.367 -2.959 8.673 -2.959 17.143 v ${v2str} c 0 15 -3.776 21.633 -13.776 24.184 c 10 2.551 13.776 9.184 13.776 24.184 v ${v2str} c 0 8.47 0.918 13.776 2.959 17.143 c 1.53 2.551 3.571 3.878 8.265 5.408 l -0.306 1.837 c -6.735 -1.02 -10.51 -2.653 -13.572 -5.714 c -2.755 -2.551 -3.877 -5.51 -4.693 -11.021 c -0.409 -2.653 -0.613 -6.428 -0.613 -9.489 v ${v1str} c 0 -3.877 -0.408 -9.081 -0.816 -11.53 c -1.122 -5.511 -5.204 -9.796 -10.102 -10.409 Z`)
+
+block page-vars
+  - const title = "Bezirksgericht"
+block main
+  article#bezirksgericht-1
+    h2.inline-title Bezirksgericht 1.
+    p
+      | (Blick aus der Zelle eines konkreten Lyrikers):
+    article.grid-scroller
+      article#grid-container
+        .grid.underlay
+          .und-so-schoene und so schöne
+          .bunte bunte
+          .eich eich 
+          .hoernchen hörnchen 
+          .rennen rennen 
+          .draussen draußen 
+          .vorbei vorbei
+        .grid
+          +letterGroup('jajajajajajajajajajajajajajajajajajajajajaja!')
+          +letterGroup('■          ■          ■          ■          ■')
+          +letterGroup('m          l          n          j          i')
+          +letterGroup('e          a          a          a          c')
+          +letterGroup('r          s          c          d          h')
+          +letterGroup('k          s          h          a          h')
+          +letterGroup('d          d          h          b          a')
+          +letterGroup('i          i          e          i          b')
+          +letterGroup('r          c          r          s          e')
+          +letterGroup('d          h          s          t          g')
+          +letterGroup('a          n          i          d          e')
+          +letterGroup('s          i          t          e          s')
+          +letterGroup('e          e          z          r          p')
+          +letterGroup('i          s          t          t          r')
+          +letterGroup('n          c          i          i          o')
+          +letterGroup('e          h          m          n          c')
+          +letterGroup('s          n          h          t          h')
+          +letterGroup('c          a          a          i          e')
+          +letterGroup('h          p          e          n          n')
+          +letterGroup('u          p          f          g          h')
+          +letterGroup('r          e          e          e          u')
+          +letterGroup('l          n          n          r          k')
+          +letterGroup('■          ■          ■          ■          ■')
+          +letterGroup('jajajajajajajajajajajajajajajajajajajajajaja!')
+  article#bezirksgericht-2
+    h2.inline-title Bezirksgericht 2.
+    p
+      | Der eingegitterte Atomforscher, der hier sicherer aufbewahrt ist als in den Verliesen des zuständigen Geheimdienstes, da ihn hier unter Streunern und Ehestörern niemand vermutet, hat es längst aufgegeben, sich ins Birken- und Weidengrün und unter die 
+      a.arrow(href="eichhoernchen.html") Eichhörnchen
+      |  hinauszusehnen. Heute macht er sich einen guten Tag durch die Errechnung der Häufigkeit von Datumstriaden mit gleichen Anfangsbuchstaben. Er kommt auf 23 unter 365 Tagen, und zwar:
+    article.grid-scroller
+      #grid 
+        .text.cell-1
+          +lineBreaks(['Dienstag', 'Donnerstag'])
+        .text.cell-2
+          | Freitag
+        .text.cell-3
+          +lineBreaks(['Samstag', 'Sonntag'])
+        .text.cell-4
+          +lineBreaks(['dritter', 'dreizehnter', 'dreiundzwanzigster', 'dreißigster'])
+        .text.cell-5
+          +lineBreaks(['fünfter', 'fünfzehnter', 'fünfundzwanzigster'])
+        .text.cell-6
+          +lineBreaks(['sechster', 'siebenter', 'sechzehnter', 'siebzehnter', 'sechsundzwanzigster', 'siebenundzwanzigster'])
+        .text.cell-7 Dezember
+        .text.cell-8 Febraur
+        .text.cell-9 September
+        .equal.cell-1 =
+        .equal.cell-2 =
+        .equal.cell-3 =
+        .number.cell-1 8
+        .number.cell-2 3
+        .number.cell-3 12
+        .number.cell-4 23
+        .curly.cell-1
+          +curly("right", 2)
+        .curly.cell-2
+          +curly("right", 2)
+        .curly.cell-3
+          +curly("left", 4)
+        .curly.cell-4
+          +curly("left", 3)
+        .curly.cell-5
+          +curly("left", 6)
+        .curly.cell-6
+          +curly("right", 4)
+        .curly.cell-7
+          +curly("right", 3)
+        .curly.cell-8
+          +curly("right", 6)
+    p
+      | Nun zieht er sein Logarithmenbuch, d. h. seines mußte er gegen ein unverdächtiges der nahegelegenen Mädchenschule eintauschen, und findet nach Subtraktion der Mantissen von 23 und 365 einen Häufigkeitssatz von 6.30%, also ungefähr den von Vorkommen »höherer Intelligenz« (IQ > 125) in den USA. Damit ist das Problem aber eigentlich erschöpft, und es hat von dem 
+      em guten Tag 
+      | nur einige Minuten verwirklicht.

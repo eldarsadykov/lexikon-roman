@@ -1,0 +1,18 @@
+include ../includes/variables
+
+block page-vars
+  - const title = "Title"
+
+doctype html
+html(lang="de")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="../styles/style.css")
+    title= `${title} | Lexikon-Roman`
+  body
+    main
+      block main
+        #title
+          p
+            | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium voluptas temporibus perferendis nisi, iure ad quibusdam facere modi facilis tempore? Facere animi nulla obcaecati, doloremque in voluptatum natus odio expedita?

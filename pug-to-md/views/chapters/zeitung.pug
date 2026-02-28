@@ -1,0 +1,387 @@
+extends ../../templates/layout
+
+mixin monospace(string)
+  each letter in string
+    .letter= letter 
+
+block page-vars
+  - const title = "Zeitung"
+block main
+  article#zeitung-1
+    h2.inline-title Zeitung 1.
+    p
+      | Da schau her, freut sich der Ingenieur, eine Charade:
+    div
+      .monospace
+        +monospace("1.....") 
+      |  Kurzform für das stille Örtchen
+    div
+      .monospace
+        +monospace("2.....") 
+      |  Was jeder Motorradfahrer einmal reißt
+    div
+      .monospace
+        +monospace("3.....") 
+      |  Autokennzeichen Integrationsliebender
+    div
+      .monospace
+        +monospace("4.....") 
+      |  Kurzform für Österreichs ehrwürdigstes Theater
+    div
+      .monospace.fifth-row
+        .letter 1—4
+        +monospace("...") 
+      |  Heimatstadt eines beliebten Fässersports
+    br
+    .dots-grid.--template-1
+      | Haben Sies? — Keine Kunst, sagt der Chemiekaufmann: 
+      .hidden-dots 
+        | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+    br
+    .dots-grid.--template-2
+      .hidden-dots 
+        | . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+      .small (Raum für die Eintragung durch den Leser.)
+    p
+      | Ist ja toll, sagt der Ingenieur.
+  article#zeitung-2
+    h2.inline-title Zeitung 2.
+    p
+      | Lesen Sie mit?, lädt der Ingenieur ein; ich lese vor.
+    .padding-left
+      | Meine Fesseln schnitten verdammt ins Fleisch. Aber ich biß die Zähne zusammen und streifte sie ab.
+    div
+      | Wen? Die Zähne? (Lachen.)
+    .padding-left
+      | Der dicke kleine Ire draußen war kein Problem. Er litt nicht lange.
+    div
+      | Wumm.
+    .padding-left
+      | Um die Sekretärin,
+    div
+      | Ah !
+    .padding-left
+      | die ahnungslos den Gang entlang kam,
+    div
+      | Die Arme !
+    .padding-left
+      | war es eigentlich schade.
+    div
+      | Finde ich auch.
+    .padding-left
+      | Ich erledigte sie mit einem gekanteten Milzschlag.
+    div
+      | Rohling; mache ich mit meiner Sekretärin nie. — Ich eigentlich auch nie.
+    .padding-left
+      | Den kleinen Browning, den sie an ihrer Brust trug, nahm ich zu mir —
+    div
+      | Ohne die Figur zu berühren, versteht sich.
+    .padding-left
+      | das Spielzeug war besser als gar nichts. Und da kam auch schon Joe.
+    div 
+      | Wumm. — Wumm sagten Sie schon einmal, Monsieur. — Pardon.
+    .padding-left
+      | Sein Vorfahre mußte Brüllaffe in den brasilianischen Wäldern gewesen sein, denn ...
+    div
+      | Warum »denn«? — Gebrüllt wird er halt haben. Jetzt fehlt ein ganzes Stück heraus, meine Frau hat den Lemmerers hinten eine Annonce herausgeschnitten. — Das ist ein Jammer. — Aber hier gehts schon weiter:
+    .padding-left
+      | Vor dem Chefzimmer lag ein Kopf.
+    div
+      | Aah !
+    .padding-left
+      | Fortsetzung folgt.
+    div
+      | Owehoweh.
+  article#zeitung-3
+    h2.inline-title Zeitung 3.
+    p
+      | Vielen Dank für den guten Bericht über die Papuas. Ich fand Text und Foto ausgezeichnet und vor allen Dingen informativ. Ich möchte Ihnen versichern, daß Sie damit mitten ins Herz Ihrer treuen Leserschar getroffen haben. Herrliche Bilder fremder Länder und spannende Reiseberichte, das erwartet man eben von einer Zeitung, die auf der Höhe ihrer Zeit schwebt. Natürlich kann ich verstehen, daß Sie auf anderen Seiten Berichte über aktuelle Ereignisse bringen, über Königinbesuche oder Medizin. Aber solche Reportagen sollten Sie öfter veröffentlichen, denn Sitten und Gebräuche in fernen Ländern, das versteht jeder. Durch Ihren Bericht habe ich wieder etwas dazugelernt. Ich habe ihn übrigens sofort meinen Kindern gezeigt, und meine älteste Tochter, die einmal Stewardess werden will, nahm ihn mit. Nur eine Bitte hätte ich: Sind die Papuas Menschenfresser?
+  article#zeitung-4
+    h2.inline-title Zeitung 4.
+    p
+      | Keine Milde für den Dieb. Freude durch Sparschwein. Kühne Weltraumfahrt. Zwei liebenswerte Sänger. Heintje als Clown. Wo wohnt Heintje? Rommels Selbstmord. Ihre Stärke liegt im Tanz. Sollten abgeschafft werden. Kam Käse vom Mars? Teenagerkurse. Klüger als Affen. Udo ist der Größte. Informative Unterhaltung. Zwei Tote erwürgt. Liebe zu zweit. Birne blieb im Hals stecken. Frau verwechselt. Babypreise steigen. Ein glücklicher Tag — die Gruft versoffen. Bein ab. Ich bin so froh.
+  article#zeitung-5
+    h2.inline-title Zeitung 5.
+    p
+      | Ich liebe den Anzeigenteil, sagt der Ingenieur. Man weiß nie, ob einem nicht ein Sechsspalter entgegenschreit: Monegassischer Weltkonzern sucht genialen Ingenieur für das oberste Management. Ich würde verdammt gern nach Monaco gehen, weniger wegen der Fürstin als wegen der paradiesischen Steuerzustände. Sie würden sagt J., Ihr ganzes Geld in den Casinos verputzen. Mein ganzes bestimmt nicht, sagt der Ingenieur; glauben Sie, die hübschen Starlets, die sich um mich anstellen, lassen mir was übrig? Aber schauen Sie, auch die 
+      em Kleinen
+      |  Anzeigen sind doch was wert:
+    .longest-line.small
+      | Köchin, Landwirtstochter, 32 Jahre, komplett,
+    p
+      | Oder hier, sagt der Chemiekaufmann:
+    .longest-line.small
+      | Ich bin noch heut ein Wunderknabe,
+      br
+      | dem manches glückt;
+      br
+      | wenn ich noch lang kein Schätzchen habe,
+      br
+      | werd ich verrückt.
+    p
+      | Oder wollen Sie vielleicht, fragt der Ingenieur,
+    .longest-line.small
+      | Ganz entzückende Hundebabies aus meinem letzten Wurf
+    p
+      | ? Nein, sagt J., dann schon lieber
+    .longest-line.small
+      | 400 Damen jeder Art diskret ins Haus
+    p
+      | oder
+    .longest-line.small
+      | Nur weibliche Verkäuferin für Damenwäsche.
+    p
+      | Schauen Sie, sagt der Ingenieur:
+    .longest-line.small
+      | Intelligentes Mädchen wird von Eisenhandlung
+      br
+      | für Glas und Porzellan eingeschult!
+    p
+      | Ein Kenner der komplizierten Intelligentenpsyche, sagt J.; aber wissen Sie, wo ich als stellensuchende Weibse nicht anklopfen würde? Lesen Sie!
+    .longest-line.small
+      | Wurstfabrik hat für junge, frische Mädchen Verwendung.
+    p
+      | Da geb ich Ihnen recht, sagt der Ingenieur. Beim Rechtgeben fällt ihm der Anzeigenteil aus der Hand, er bückt sich danach, der Chemiekaufmann auch, die Köpfe stoßen zusammen, nur leicht, aber das Interesse an Anzeigen wird hierbei hinausgeklopft.
+  article#zeitung-6
+    h2.inline-title Zeitung 6.
+    p
+      | Hübsch, sagt Chemiekaufmann J., diese Filmtitel alle auf einem Haufen zu sehen. Nein, winkt der Ingenieur ab, interessant wäre es zum Beispiel, alle Titel längere Zeit hindurch zu sammeln und alphabetisch geordnet zu veröffentlichen:
+    p
+      | Der Mörder heißt Joe
+    p
+      | Der Mörder hieß Eve
+    p
+      | Der Mörder kam nachts
+    p
+      | Der Mörder kam nur einmal
+    p
+      | Der Mörder kam zu spät
+    p
+      | Der Mörder trug Seide
+    p
+      | und so weiter und so weiter. Ich habe den Verdacht, sagt J., das 
+      em Tabellenwerk
+      |  wirkt in Ihnen nach, Herr Ingenieur. Das ist es, sagt der Ingenieur; dann vertiefen sich die beiden in ein flüchtigeres 
+      a.arrow(href="filmtitelspiel.html") Filmtitelspiel
+      | .
+  article#zeitung-7
+    h2.inline-title Zeitung 7.
+    p
+      | Ich habe eine sehr nette Freundin, die ich sehr liebe. Nur eins an ihr gefällt mir nicht: Sie trägt mit ihren 21 Jahren noch immer einen Schnuller. Das Schlimmste aber ist, ich muß ihr zuliebe auch einen tragen. Statt anderer Zärtlichkeiten gibt sie mir oft die Babyflasche, und ich muß mich wie ein Säugling in ihre Arme legen und am Sauger nuckeln. Was soll ich machen?
+  article#zeitung-8
+    h2.inline-title Zeitung 8.
+    p
+      | Der Ingenieur und der Chemiekaufmann vertiefen sich in lautloses Wettlesen des Reklameteiles:
+    .grid
+      .grid-header
+        | Der Ingenieur 
+      .grid-header.indent
+        | Der Chemiekaufmann
+      .left
+        | Haare — der Schmuck jeder Frau. Haarteile 
+        span.small-caps Cobra
+        | . Jetzt unsichtbar!
+      .right
+        | Frauen — garantiert 100% enthaart. Jetzt schmerzlos!
+      .left
+        span.small-caps Nupf
+        | , das nasenfreundliche Erfolgs-Taschentuch.
+      .right
+        | Sicherheit — Charme — Küsse — — 
+        span.small-caps Schlubbe
+        sup s
+        |  Prothesen-Haftschleim.
+      .left
+        | Seien Sie schwedengesund:
+        span.small-caps Zwei-Knüppel-Pille
+        |  eskaliert die Manneskraft.   
+      .right
+        | Sie wollen Ihre Frau doch sicherlich genießen? Machen Sie sie froh durch 
+        span.small-caps Almenduft
+        |  für's Clo.
+      .left
+        | Vergangenheiten sind aus tauschbar. Flitterwochen und Taucherfreuden anderer zaubert in Ihren Projektor Dia-Tauschdienst Niegethan.
+      .right
+        | In dieser schnellebigen Zeit kann man nicht weich genug sitzen. Schlemmerfauteuils 
+        span.small-caps Paps'chen
+        |  und 
+        span.small-caps Kollaps'chen
+        | .
+      .left
+        | Traubensalz 
+        span.small-caps Teen-'n'-Twen 
+        | für schlanken Stuhl und elanvolle Harmonie.
+      .right.row-6-span-2
+        |  DDDDDDDDDDDDDDDick wird das Ehepaar Essegern nie: Hammelkeule, Sautanz und die guten Wiener Mehlspeisen, alles darf in Herrn und Frau Essegern hinein. Aber nachher die Pille. (Die Entschlackungspille!) Ein Gesundheitsgang zum kleinsten Zimmer — schon sind Essegerns wieder leicht und fit.
+      .left.align-self-end
+        | Denkt schon heute an den Winter ! Schneemannformer, vollelektrisch, mit und ohne Nasenkarotteur. 
+      .left
+        | Klöckners 
+        span.small-caps Gartenhilfe
+        |  mit ideenreichen Pflanzenbeschreibungen und nützlichen Zeichnungen zur Freude und Entspannung.
+      .right 
+        | Zu wenig Insekten im Garten? 
+        span.small-caps Krabbolin
+        |  hilft käferrasch!
+      .left
+        | 
+        span.small-caps Spucks 
+        | — die denkende Fleischbrühe! Suppenaktiv!
+      .right
+        span.small-caps Heidi
+        | , die einschmeichelnde Fischsuppe. So zärtlich passiv...
+      .left
+        | Korn aus Meisterhand — mit der neuzeitlichen Kegelbahnformel.
+      .right
+        span.small-caps Chickie
+        |  — das gaumendynamische Dosenhühnchen.
+      .left
+        | 
+        span.small-caps Popeia
+        |  — die goldgesunde Baby-Cigarette.
+      .right 
+        span.small-caps Romanticus
+        |  — der tröstende Krückstock mit eingebautem Liebesgeflüster (nach Wahl Sandrock, Leuwerik, BB, Heesters, Lennon).
+      .left
+        | Frecher, blonder Fratz! Komm, lauf ein Stück mit mir. Wie jung Du heute bist! Nimm Dir auch so ein kleines, weißes Täfelchen:
+      .right.align-self-end
+        span.small-caps Strychno-Mutz
+        | , das appetit liche Rattengift.
+      .left
+        span.small-caps Corinna
+        |  wäscht moderne Gewebe so sauber, als wären Sie gekocht. 
+      .right 
+        | Sehen Sie? Nein, beide Augen blind.
+        br
+        | Sehen Sie! Und wir mußten es Ihnen sagen.
+        br
+        | Optiker-Rat — guter Rat.
+      .left
+        | Auch dumme Kinder wachsen
+        .padding-left gut 
+        | mit 
+        span.small-caps Pimpinella
+        |  Rübensud.
+      .right 
+        | Nierenkranke atmen wieder – durch 
+        span.small-caps Pokornys Zehenmieder.
+      .left
+        | Du bist mehr als Nachbars Liese durch Trolen®-verstärkte Biese. 
+      .right 
+        | Wirf den Mann zum alten Eisen. 
+        | Geh mit uns auf 
+        span.small-caps Witwen-
+          .padding-left Reisen.
+      .left 
+        | Verspricht sie wenig, hält sie 
+        .padding-left viel
+        | bei 
+        span.small-caps Minitrudas
+        |  Plattenspiel.
+      .right 
+        | Mit 
+        span.small-caps Sahneflocken
+        |  eingerieben wie alle jene, die wir lieben.
+      .left 
+        | Hast du schon eine Sekretärin?
+        br 
+        | Wenn ja: tu ihr nur Gutes.
+        br 
+        | Wenn nein: wähle 
+        span.small-caps Magnetocord.
+      .right 
+        img.claudia(src="../assets/claudia.png" alt="ein Herz mit der Name »Claudia«")
+        | Verlängere
+        br 
+        | Verlängere ihn
+        br 
+        | Verlängere ihn dir
+        br
+        | Verlängere ihn dir deinen
+        br
+        | Verlängere ihn dir deinen Urlaub
+        br 
+        | (durch kurzweilige 
+        span.small-caps Claudia-
+        .padding-left Romane)
+      .left 
+        | Damen! Herren! Wir heben Ihr Prestige um kostbare Zentimeter. Senden Sie heute noch Diskret-Porto an 
+        span.small-caps Zollstock-Tutt.
+      .right 
+        | Sorge mit KP*)? NPD**) macht dich frei! 
+        .indexed-grid
+          .grid-index.align-right *) 
+          .grid-text Kleinem Pudel
+          .grid-index.align-right **)
+          .grid-text
+            span.small-caps 
+            | Neue Pudel-Dressur Rathausplatz 2
+      .left 
+        span.small-caps Wassermann
+        |  positiv? Tröste dich — mit einem Buch von
+        img.okopenko(src="../assets/okopenko.png" alt="Okopenkos Unterschrift")
+      .right
+        span.small-caps Jungfrau
+        |  positiv? Tröste dich — mit einem Buch von
+        img.okopenko(src="../assets/okopenko.png" alt="Okopenkos Unterschrift")
+  article#zeitung-9
+    h2.inline-title Zeitung 9.
+    p
+      | Lesen wir, sagt der Ingenieur, was unser Spaßmacher heute wieder über die Frauen schreibt; ich sage Ihnen, es gibt nichts Köstlicheres, als sich ein Stündchen von der Gattin abzuseilen und ungestört Nadelstiche gegen das schöne Geschlecht zu studieren. Armer Tropf, denkt Chemiekaufmann J. sehr leise, wärst du mit Eiske oder Susi liiert... oder mit Ulrike... — Was wäre dann?, denkt der Ingenieur; würde ich dann wirklich dieses misogyne Klischeegekicher unter meiner Köstlichkeits-Ebene finden? Nein, Sie haben recht, denkt J., auch die Liebe der gescheitesten Frau heilt einen Muffel à la longue nicht von seinen Vorurteilen. Kommen Sie, sagt der Ingenieur, nehmen Sie Urlaub vom Denken; also was schreibt unser Spaßmacher?
+    .grid 
+      .grid-header Spaßmacher 
+      .grid-header.align-right Ingenieur
+      .left 
+        | Wenn eine Frau lächelt, dann hat in den meisten Fällen ihr Mann nichts zu lachen. 
+      .right
+        | Oahahahaha!
+      .left 
+        | Wenn eine Frau betont, sie gehöre zum schwachen Geschlecht, dann ist oft das Gegenteil der Fall. 
+      .right
+        | Hahaha!
+      .left 
+        | Was eine Frau im Frühling träumt, muß der Mann im Herbst noch abzahlen. 
+      .right
+        | Oahahahahaha, hahaha!
+      .left 
+        | Frauen sind beharrlicher als Männer. Das zeigt sich im Hutgeschäft.
+      .right
+        | Ahahahaha, haha!
+      .left 
+        | Frauen sind konsequenter als Männer. Wenn er noch an Flirt denkt, rechnen sie schon mit der Ehe.
+      .right
+        | Oahahahaha, hahaha,  das ist wahr!
+      .left 
+        | Wenn Männer sich mit dem Kopf beschäftigen, nennt man das »denken«, wenn Frauen, sich mit ihrem beschäftigen, heißt es »frisieren«.
+      .right
+        | Hhahhahhah, (Schenkelklatschen), die weibliche Intelligenz, haha!
+      .left 
+        | Eine Frau bleibt so lange schön, wie sie ihren Mann nicht ganz ernst nimmt.
+      .right
+        | Hah! Frechheit! Das möcht ich sehn!
+      .left 
+        | Der Führerschein gibt den Frauen das Recht, einen Wagen zu steuern, der Trauschein erlaubt ihnen, dasselbe mit einem Mann zu tun.
+      .right
+        | Oahahahaha, haha, der hat eine Schärfe! Der ist den Kanaillen auf der Spur, hahaha.
+      .left 
+        | Frauen sind alle gleich - sogar darin, diese Tatsache — zu leugnen.
+      .right
+        | (Schenkelklatschen.) Aussgezeichnet! Ha! Das ist ausgezeichnet ! (Weglegen der Zeitung.)
+    p
+      | Merkwürdig, denkt Mytilla Mitil mädchenblaubeschürzt in einem jener Städtchen, daß unsere Zeit sich einbildet, vom Baby bis zum Großpapa Sigmund Freud nötig zu haben, während sie in Wirklichkeit Alfred Adler nötig hätte. Wir haben eine AdlerZeit wie noch nie. Es wimmelt von Geltungsneurosen, 
+      span.auto-hyphens Minderwertigkeitskomplexen, irrealen Leitlinien, Entwertungs-Attituden, Geschlechter-lntrigen.
+      |  Eine merkwürdige Übereinkunft, denkt Mytilla, Adler totsein zu lassen und das Problem, im Gegensatz zu Kleeblättern, Inzesten und Ziegenbeischläfen, zu tabuisieren. Der 
+      em Kampf der Geschlechter
+      |  hat sich seit Strindbergs Zeiten vollautomatisiert und atomgerüstet, aber niemand stellt ihn fest. Sex gemacht wird angeblich wie nie zuvor — stört es niemand, ihn mit 
+      em Feinden
+      |  zu machen? Ich, denkt Mytilla, bin Deserteuse. Aber wird der, den ich suche, auch Deserteur aus dem idiotischen Kampf sein? Mytilla freut es, daß Rilke ein Mädchen sprechen ließ:
+    p.poetry
+      | Solang 
+      em das
+      |  Liebe heißt, daß einer siegt
+      br
+      | über den andern, geh ich. Teile Kühle
+      br
+      | im Gehen mit. Ich werde nicht zuteil.
+    p
+      | Mytilla geht. Ihre mädchenblaue Schürze teilt Kühle mit. Mytilla wird einstweilen nicht zuteil.

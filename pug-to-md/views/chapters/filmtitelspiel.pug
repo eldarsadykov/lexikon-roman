@@ -1,0 +1,309 @@
+extends ../../templates/layout
+
+mixin createList(title, items)
+  ul
+    li
+      | Tu #{title} in den Titel:
+      br
+      each item, index in items
+        | #{item}
+        if index < items.length - 1
+          br
+
+block page-vars
+  - const title = "Filmtitelspiel"
+block main
+  article#filmtitelspiel-1
+    h2.inline-title Filmtitelspiel 1.
+    p
+      |  Man kaufe ein Vokabelheft und treibe Titel, Untertitel etc der laufenden Kinoprogramme zu leidlich passenden Paaren; Beispiel aus Raum Wien / Zeit der Exporteurreise:
+    .grid
+      .grid-element
+        | Der verkaufte Großvater 
+      .grid-element
+        | Nackt jeden Abend
+      .grid-element
+        | Wenn du noch eine Mutter hast 
+      .grid-element
+        | Warte, bis es dunkel ist
+      .grid-element
+        | Hemmungslose Manon
+      .grid-element
+        | Pudelnackt in Oberbayern
+      .grid-element
+        | Tödliche Tiefen 
+      .grid-element
+        | Die Wirtin von der Lahn
+      .grid-element
+        | Sturm auf Höhe 404 
+      .grid-element
+        | Die Försterchristl
+      .grid-element
+        | Das Forsthaus in Tirol 
+      .grid-element
+        | Stundenhotel (hüllenlos und frivol)
+      .grid-element
+        | Das Mädchen vom Pfarrhof 
+      .grid-element
+        | Willst du ewig Jungfrau bleiben?
+      .grid-element
+        | Kohlhiesels Töchter 
+      .grid-element
+        | Geißeln der Erotik
+      .grid-element
+        | Mariandls Heimkehr 
+      .grid-element
+        | Hilfe, die Schwedinnen kommen (sexbesessen und busenfroh!)
+      .grid-element
+        | Wenn am Sonntagabend die Dorfmusik spielt 
+      .grid-element
+        | Versuchs doch mal mit meiner Frau!
+      .grid-element
+        | Wenn die Alpenrosen blühen 
+      .grid-element
+        | Erotik am Abgrund
+      .grid-element
+        | Wenn die Musik spielt am Wörther See
+      .grid-element
+        | So badet die Welt —  Komisches, Wissenswertes, Nacktes!
+      .grid-element
+        | Das blaue Meer und du 
+      .grid-element
+        | Gunther Sachs in Tahiti. Tierstudie in Farben. Klimaanlage vorhanden.
+      .grid-element
+        | Aeneas—der Held von Troja 
+      .grid-element
+        | Dido, Wien IV., wegen Umbaues geschlossen
+      .grid-element
+        | Dr. Schiwago, 88. Woche 
+      .grid-element
+        | Angelique, 88. Teil
+      .grid-element
+        | Liebe 1—1000 
+      .grid-element
+        | Der lange Tag der Rache
+      .grid-element
+        | Hochzeitsnacht vor Zeugen 
+      .grid-element
+        | Nur noch 72 Stunden
+      .grid-element
+        | 69 Liebesspiele 
+      .grid-element
+        | 2 Särge auf Bestellung
+      .grid-element
+        | Drei grüne Hunde 
+      .grid-element
+        | Leitfaden für Seitensprünge
+      .grid-element
+        | Schwarze Sporen 
+      .grid-element
+        | Ich bin neugierig
+      .grid-element
+        | Vom Haß getrieben 
+      .grid-element
+        | Brautzeit und Ehe (jeder 1000. Besucher erhält wertv. Buch!)
+      .grid-element
+        | Sex in der Ehe 
+      .grid-element
+        | Perversion
+      .grid-element
+        | Das Bett und die Kerzen (zwei Körper — füreinander geschaffen – geben sich alles!) 
+      .grid-element
+        | Dreck und Tod in 20 Stunden
+      .grid-element
+        | Ohne Dollars kein Sarg 
+      .grid-element
+        | Tagebuch einer Frauenärztin
+      .grid-element
+        | Der große Postraub 
+      .grid-element
+        | Sex aus Schweden
+      .grid-element
+        | Helga (aus der Intimsphäre einer jungen Frau) 
+      .grid-element
+        | Nackt unter Affen
+      .grid-element
+        | Das Insektenweib 
+      .grid-element
+        | DDT
+      .grid-element
+        | Das Folterhaus der Lady Morgan 
+      .grid-element
+        | Der nächste Herr – dieselbe Dame
+      .grid-element
+        | Erpressung durch Scorpio 
+      .grid-element
+        | Schönheit der körperlichen Liebe
+      .grid-element
+        | Brutale Lust 
+      .grid-element
+        | Frühjahrskonzert der niederösterr.Tonkünstler
+      .grid-element
+        | Cosa Nostra — Erzfeind des FBI
+      .grid-element
+        | Sie treffen sich, sie lieben sich
+      .grid-element
+        | Batman hält die Welt in Atem 
+      .grid-element
+        | Der Tölpel vom Dienst
+      .grid-element
+        | Panzerspähtrupp Totenkopf 
+      .grid-element
+        | Mein Körper für ein Pokerspiel
+      .grid-element
+        | Das Paradies der flotten Sünder 
+      .grid-element
+        | Schnellboote vor Bataan
+      .grid-element
+        | Katanga 
+      .grid-element
+        | Ich habe Lust (nur heute!)
+      .grid-element
+        | Krach mit der Kompanie 
+      .grid-element
+        | Sie möchte immer wieder
+      .grid-element
+        | Die letzte Kompanie 
+      .grid-element
+        | Das Geheimnis der jungen Witwen
+      .grid-element
+        | Hölle auf Okinawa 
+      .grid-element
+        | Das Wunder der Liebe
+      .grid-element
+        | Brennt Paris? 
+      .grid-element
+        | Knusprige Leichen mit Sex-Appeal
+      .grid-element
+        | Moskau brennt (wg. d. gr. Erfolges 3. Woche)
+      .grid-element
+        | Tagebuch der Lust — Mädchen in ungezähmter Erotik
+      .grid-element
+        | Pulver und Blei 
+      .grid-element
+        | Das heilige Erbe
+      .grid-element
+        | Ich spreng euch alle in die Luft 
+      .grid-element
+        | Das hab ich von Papa gelernt
+      .grid-element
+        | Kampfgeschwader Totenkopf 
+      .grid-element
+        | Mach mich kalt – ich friere!
+      .grid-element
+        | Stirb aufrecht, Schurke! 
+      .grid-element
+        | Dieser Film vermittelt ein unbekanntes Lustgefühl
+      .grid-element
+        | Fantomas bedroht die Welt 
+      .grid-element
+        | Heute letzter Tag Sex und nackte Frauen!
+  article#filmtitelspiel-2
+    h2.inline-title Filmtitelspiel 2.
+    p
+      | Man entdecke hinter den Titeln der laufenden Kinoprogramme die Rezepturen und führe so das Viele auf ein Weniges zurück. Beispiel aus Raum Wien / Zeit der Exporteurreise:
+    +createList('den Tiger', [
+    'Flagge des Tigers',
+    'Der Tiger von Sadres',
+    'Der Tiger parfumiert sich mit Dynamit'
+    ])
+
+    +createList('den Panther', [
+    'Drei blaue Panther',
+    'Gungala—die nackte Pantherin'
+    ])
+
+    +createList('den Tierfang', [
+    'Die Falle von Singapur',
+    '100 Bandidos in der Falle',
+    'Frauen als Köder für CD 7',
+    'Kommissar X: Jagd auf Unbekannt',
+    'Bob Fleming hetzt Professor G.'
+    ])
+
+    +createList('den Teufel', [
+    'Engel des Satans Engel der Hölle',
+    'Vorposten zur Hölle',
+    'Hölle auf Okinawa',
+    'In Montana ist die Hölle los',
+    'In Colorado ist der Teufel los',
+    'Der Anwalt des Teufels',
+    'Das Teufelsweib von Texas',
+    'Sumuru — die Tochter des Satans',
+    'Die Verfluchten'
+    ])
+
+    +createList('den Tod', [
+    'Dreck und Tod in 20 Stunden',
+    'Der Tod fliegt nach Jamaica',
+    'Der Tod eines Killers',
+    'Django tötet leise',
+    'U 23 — tödliche Tiefen',
+    'Kampfgeschwader Totenkopf',
+    'Panzerspähtrupp Totenkopf',
+    'Stirb aufrecht, Schurke!',
+    'Karate Killer',
+    'Mach mich kalt, ich friere'
+    ])
+
+    +createList('Todesarten', [
+    'Keinen Cent für Ringos Kopf',
+    'Ritt zum Galgenbaum',
+    'Hängen sollst du in Wyoming',
+    'Der Mann mit den goldenen Colts',
+    'Heiße Colts in harten Fäusten',
+    'Treffpunkt für zwei Pistolen',
+    'Serenade für zwei Pistolen',
+    'Duell der Gringos',
+    'Sechs Kugeln für Gringo',
+    'Für eine Handvoll Blei',
+    'Pulver und Blei',
+    'Pulverdampf ist kein Parfum',
+    'Gewehre zum Apachenpaß',
+    'Der Tiger parfumiert sich mit Dynamit',
+    'Ich spreng euch alle in die Luft'
+    ])
+
+    +createList('die Särge', [
+    'Lucky M. füllt alle Särge',
+    'Zwei Särge auf Bestellung',
+    'Ohne Dollars kein Sarg'
+    ])
+
+    +createList('Haß und Rache', [
+    'Vom Haß getrieben',
+    'Die Rache des Mexikaners',
+    'Der lange Tag der Rache'
+    ])
+
+    +createList('die Fäuste', [
+    'Heiße Colts in harten Fäusten',
+    'Der Titan mit der eisernen Faust',
+    'Das rote Phantom schlägt zu',
+    'Zwei schlagen zurück'
+    ])
+
+    +createList('das Blut', [
+    'An seinen Stiefeln klebte Blut',
+    '10.000 blutige Dollar',
+    'Das Geheimnis der blutigen Perlen',
+    'Im Schloß der blutigen Begierde'
+    ])
+
+    +createList('die Ziffern', [
+    'Zwei schlagen zurück',
+    'Drei grüne Hunde',
+    'Drei blaue Panther',
+    'Die vier vom Amazonas',
+    'Die gefürchteten Vier',
+    'Die fünf Vogelfreien',
+    'Fünf gegen Casablanca',
+    'Sieben gegen Chicago',
+    '100 Bandidos in der Falle',
+    '10.000 blutige Dollar'
+    ])
+    p Etcetc.
+  article#filmtitelspiel-3
+    h2.inline-title Filmtitelspiel 3.
+    p
+      | Man verfahre mit Titeln der laufenden Kinoprogramme nach Belieben. Wer Wert darauf legt, daß dieser Roman naturalistisch ausfalle, überdehne das Verfahren nicht maßlos. Wer keinen Wert auf getreue Proportionen legt, schließe hier ruhig eine ganze Dissertation ein.

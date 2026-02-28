@@ -1,0 +1,16 @@
+extends ../../templates/layout
+block page-vars
+  - const title = "Wasserbeschlagenes Glas"
+block main
+  article#wasserbeschlagenes-glas
+    h2.inline-title Wasserbeschlagenes Glas.
+    .trapezoid-overflow-container
+      .trapezoid-container
+        svg.trapezoid(viewBox='0 0 100 100')
+          polygon.shape(points='5 5, 95 5, 77 95, 23 95')
+        .text
+          | (Raum zum Einkleben
+          br 
+          | eines wasser-
+          br 
+          | beschlagenen Glases)
