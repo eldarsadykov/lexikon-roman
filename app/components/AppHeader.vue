@@ -34,7 +34,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
     :ui="{ root: 'static lg:sticky' }"
     :to="header?.to || '/'"
   >
-    <UNavigationMenu :items="items" />
+    <UNavigationMenu
+      :items="items"
+      variant="link"
+    />
     <template
       v-if="header?.logo?.dark || header?.logo?.light || header?.title"
       #title
