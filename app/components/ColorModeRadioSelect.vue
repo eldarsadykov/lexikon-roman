@@ -20,9 +20,7 @@ const items: ColorModeTreeItem[] = options.map(option => ({
 }))
 
 const colorModeSelection = computed({
-  get: () => {
-    return items.find(option => option.id === colorMode.preference as ColorModePreference)
-  },
+  get: () => items.find(option => option.id === colorMode.preference as ColorModePreference),
   set: value => colorMode.preference = value!.id
 })
 </script>
