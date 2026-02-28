@@ -23,6 +23,10 @@ const items = computed<NavigationMenuItem[]>(() => [{
   to: '/mitwirkung',
   active: route.path.startsWith('/mitwirkung')
 }, {
+  label: 'Notizen',
+  to: '/notizen',
+  active: route.path.startsWith('/notizen')
+}, {
   label: 'Über',
   to: '/ueber',
   active: route.path.startsWith('/ueber')
