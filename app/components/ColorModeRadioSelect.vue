@@ -1,30 +1,36 @@
 <script setup lang="ts">
 import type { TreeItem } from '@nuxt/ui'
-import { de } from '#ui/locale'
+
+type ColorModePreference = 'system' | 'light' | 'dark'
+interface ColorModeTreeItem extends TreeItem {
+  id: ColorModePreference
+}
 
 const colorMode = useColorMode()
 const appConfig = useAppConfig()
+const { t } = useLocale()
 
-const items = ref<TreeItem[]>([
+const items = ref<ColorModeTreeItem[]>([
   {
     id: 'system',
-    label: de.messages.colorMode.system,
+    label: t('colorMode.system'),
     icon: appConfig.ui.icons.system
   },
   {
     id: 'light',
-    label: de.messages.colorMode.light,
+    label: t('colorMode.light'),
     icon: appConfig.ui.icons.light
   },
   {
     id: 'dark',
-    label: de.messages.colorMode.dark,
+    label: t('colorMode.dark'),
     icon: appConfig.ui.icons.dark
   }
 ])
+
 const colorModeSelection = computed({
   get: () => {
-    switch (colorMode.preference) {
+    switch (colorMode.preference as ColorModePreference) {
       case 'light':
         return items.value[1]
       case 'dark':
@@ -33,7 +39,7 @@ const colorModeSelection = computed({
         return items.value[0]
     }
   },
-  set: value => colorMode.preference = value?.id
+  set: value => colorMode.preference = value!.id
 })
 </script>
 
@@ -41,7 +47,7 @@ const colorModeSelection = computed({
   <!-- Title classes from UPageLinks -->
   <div class="hidden lg:flex flex-col gap-3 mt-8">
     <div class="text-sm font-semibold flex items-center gap-1.5">
-      {{ de.messages.contentSearch.theme }}
+      {{ t('contentSearch.theme') }}
     </div>
     <UTree
       v-model="colorModeSelection"
