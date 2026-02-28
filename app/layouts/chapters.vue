@@ -2,6 +2,8 @@
 import type { ContentNavigationItem } from '@nuxt/content'
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+
+const { t } = useLocale()
 </script>
 
 <template>
@@ -19,7 +21,13 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
       <slot />
 
       <template #right>
-        <ColorModeRadioSelect />
+        <UPageAside>
+          <div class="flex flex-col gap-6">
+            <AsideSection :title="t('contentSearch.theme')">
+              <UColorModeSelect />
+            </AsideSection>
+          </div>
+        </UPageAside>
       </template>
     </UPage>
   </UContainer>
