@@ -21,7 +21,7 @@ const { t } = useLocale()
       <slot />
 
       <template #right>
-        <UPageAside>
+        <UPageAside :ui="{ root: 'lg:pe-0' }">
           <div class="flex flex-col gap-6">
             <AsideSection :title="t('contentSearch.theme')">
               <UColorModeSelect />
