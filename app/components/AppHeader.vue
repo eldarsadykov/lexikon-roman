@@ -79,9 +79,15 @@ const items = computed<NavigationMenuItem[]>(() => [{
         orientation="vertical"
         class="-mx-2.5"
       />
-      <USeparator class="my-4" />
+      <USeparator
+        class="my-4"
+        type="dashed"
+      />
       <UColorModeSelect />
-      <USeparator class="my-4" />
+      <USeparator
+        class="my-4"
+        type="dashed"
+      />
       <UContentNavigation
         highlight
         :navigation="navigation"
