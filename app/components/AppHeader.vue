@@ -1,16 +1,34 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
+import type { NavigationMenuItem } from '@nuxt/ui'
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
 const { header } = useAppConfig()
+
+const route = useRoute()
+
+const items = computed<NavigationMenuItem[]>(() => [{
+  label: 'Netzwerk',
+  to: '/netzwerk',
+  active: route.path.startsWith('/netzwerk')
+}, {
+  label: 'Mitwirkung',
+  to: '/mitwirkung',
+  active: route.path.startsWith('/mitwirkung')
+}, {
+  label: 'Über',
+  to: '/ueber',
+  active: route.path.startsWith('/ueber')
+}])
 </script>
 
 <template>
   <UHeader
-    :ui="{ root: 'static lg:sticky', center: 'flex-1' }"
+    :ui="{ root: 'static lg:sticky' }"
     :to="header?.to || '/'"
   >
+    <UNavigationMenu :items="items" />
     <template
       v-if="header?.logo?.dark || header?.logo?.light || header?.title"
       #title
@@ -56,6 +74,12 @@ const { header } = useAppConfig()
     </template>
 
     <template #body>
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
+      <USeparator class="my-4" />
       <UColorModeSelect />
       <USeparator class="my-4" />
       <UContentNavigation
