@@ -55,19 +55,17 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
       <slot />
 
       <template #right>
-        <UPageAside>
-          <!-- Title classes from UPageLinks -->
-          <div class="flex flex-col gap-3">
-            <div class="text-sm font-semibold flex items-center gap-1.5">
-              {{ de.messages.contentSearch.theme }}
-            </div>
-            <UTree
-              v-model="colorModeSelection"
-              :items="items"
-              color="neutral"
-            />
+        <!-- Title classes from UPageLinks -->
+        <div class="hidden lg:flex flex-col gap-3 mt-8">
+          <div class="text-sm font-semibold flex items-center gap-1.5">
+            {{ de.messages.contentSearch.theme }}
           </div>
-        </UPageAside>
+          <UTree
+            v-model="colorModeSelection"
+            :items="items"
+            color="neutral"
+          />
+        </div>
       </template>
     </UPage>
   </UContainer>
