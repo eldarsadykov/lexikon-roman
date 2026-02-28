@@ -1,0 +1,4601 @@
+[
+  {
+    "index": 0,
+    "title": "Gebrauchsanweisung",
+    "slug": "gebrauchsanweisung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 6,
+        "mainRoute": false
+      },
+      {
+        "to": 264,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 1,
+    "title": "A",
+    "slug": "a",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 0,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "title": "Aberdeen",
+    "slug": "aberdeen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 3,
+    "title": "Achselhöhle",
+    "slug": "achselhoehle",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 4,
+    "title": "Affirmative Dichtung",
+    "slug": "affirmative-dichtung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 5,
+    "title": "Allwissender Erzähler",
+    "slug": "allwissender-erzaehler",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 6,
+    "title": "Anfang der Reise",
+    "slug": "anfang-der-reise",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 40,
+        "mainRoute": true
+      },
+      {
+        "to": 239,
+        "mainRoute": false
+      },
+      {
+        "to": 247,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "title": "Annie",
+    "slug": "annie",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 8,
+    "title": "Anwendung der Rot-Überlegungen auf ein Kleid",
+    "slug": "anwendung-der-rot-ueberlegungen-auf-ein-kleid",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 77,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "title": "Arcimboldi",
+    "slug": "arcimboldi",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 10,
+    "title": "Arnica",
+    "slug": "arnica",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 11,
+    "title": "Auen",
+    "slug": "auen",
+    "articlesCount": 19,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 58,
+        "mainRoute": false
+      },
+      {
+        "to": 66,
+        "mainRoute": false
+      },
+      {
+        "to": 85,
+        "mainRoute": false
+      },
+      {
+        "to": 89,
+        "mainRoute": false
+      },
+      {
+        "to": 107,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 155,
+        "mainRoute": false
+      },
+      {
+        "to": 198,
+        "mainRoute": false
+      },
+      {
+        "to": 261,
+        "mainRoute": false
+      },
+      {
+        "to": 278,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "title": "Auen im allgemeinen",
+    "slug": "auen-im-allgemeinen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 180,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "title": "Auflockerungen",
+    "slug": "auflockerungen",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 79,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 277,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "title": "Auflockerung im allgemeinen",
+    "slug": "auflockerung-im-allgemeinen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 169,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "title": "Außenvögel",
+    "slug": "aussenvoegel",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 16,
+    "title": "Autostraße an den Terrassenhügeln",
+    "slug": "autostrasse-an-den-terrassenhuegeln",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 68,
+        "mainRoute": false
+      },
+      {
+        "to": 91,
+        "mainRoute": false
+      },
+      {
+        "to": 103,
+        "mainRoute": false
+      },
+      {
+        "to": 147,
+        "mainRoute": true
+      },
+      {
+        "to": 182,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "title": "Backstube",
+    "slug": "backstube",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 39,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "title": "Barbara",
+    "slug": "barbara",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 159,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "title": "Barock",
+    "slug": "barock",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 9,
+        "mainRoute": false
+      },
+      {
+        "to": 137,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "title": "Befreiung der Aussicht",
+    "slug": "befreiung-der-aussicht",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 56,
+        "mainRoute": false
+      },
+      {
+        "to": 141,
+        "mainRoute": false
+      },
+      {
+        "to": 193,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "title": "Befund",
+    "slug": "befund",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 22,
+    "title": "Begeisterung",
+    "slug": "begeisterung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 4,
+        "mainRoute": false
+      },
+      {
+        "to": 133,
+        "mainRoute": false
+      },
+      {
+        "to": 186,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "title": "Begründung für den Artikel Körper",
+    "slug": "begruendung-fuer-den-artikel-koerper",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 9,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "title": "Beißzange",
+    "slug": "beisszange",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 25,
+    "title": "Bergklebesiedlung",
+    "slug": "bergklebesiedlung",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 185,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "title": "Bestimmungsbuch",
+    "slug": "bestimmungsbuch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 27,
+    "title": "Betonlager",
+    "slug": "betonlager",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 272,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "title": "Bezirksgericht",
+    "slug": "bezirksgericht",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 58,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "title": "Bier",
+    "slug": "bier",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 30,
+    "title": "Biographische Übung",
+    "slug": "biographische-uebung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 31,
+    "title": "Blaue Trichter",
+    "slug": "blaue-trichter",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 132,
+        "mainRoute": false
+      },
+      {
+        "to": 231,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "title": "Blaugrüner Liegestuhl",
+    "slug": "blaugruener-liegestuhl",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 33,
+    "title": "Blechchristus",
+    "slug": "blechchristus",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 34,
+    "title": "B. Ø.",
+    "slug": "b-oe",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 35,
+    "title": "Bordabenteuer",
+    "slug": "bordabenteuer",
+    "articlesCount": 11,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 37,
+        "mainRoute": false
+      },
+      {
+        "to": 96,
+        "mainRoute": false
+      },
+      {
+        "to": 150,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "title": "Bordereignisse",
+    "slug": "bordereignisse",
+    "articlesCount": 14,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 120,
+        "mainRoute": false
+      },
+      {
+        "to": 194,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "title": "Braun",
+    "slug": "braun",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 38,
+    "title": "Brausepulver",
+    "slug": "brausepulver",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 39,
+    "title": "Brotlaib",
+    "slug": "brotlaib",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 17,
+        "mainRoute": false
+      },
+      {
+        "to": 197,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "title": "Brücke",
+    "slug": "bruecke",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 41,
+        "mainRoute": false
+      },
+      {
+        "to": 133,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "title": "Brücken der Erwachsenen",
+    "slug": "bruecken-der-erwachsenen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 42,
+    "title": "Bunte Stühle",
+    "slug": "bunte-stuehle",
+    "articlesCount": 10,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 142,
+        "mainRoute": false
+      },
+      {
+        "to": 152,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "title": "Burg",
+    "slug": "burg",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 206,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "title": "»Caffeehaus«",
+    "slug": "caffeehaus",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 70,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "title": "Chemiewerk",
+    "slug": "chemiewerk",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 46,
+    "title": "CP",
+    "slug": "cp",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 47,
+    "title": "Debitorenbuchhalterin",
+    "slug": "debitorenbuchhalterin",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 48,
+    "title": "Deck",
+    "slug": "deck",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 21,
+        "mainRoute": false
+      },
+      {
+        "to": 37,
+        "mainRoute": false
+      },
+      {
+        "to": 59,
+        "mainRoute": false
+      },
+      {
+        "to": 73,
+        "mainRoute": false
+      },
+      {
+        "to": 116,
+        "mainRoute": false
+      },
+      {
+        "to": 170,
+        "mainRoute": false
+      },
+      {
+        "to": 222,
+        "mainRoute": false
+      },
+      {
+        "to": 237,
+        "mainRoute": false
+      },
+      {
+        "to": 269,
+        "mainRoute": false
+      },
+      {
+        "to": 282,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "title": "Deformation",
+    "slug": "deformation",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 159,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 50,
+    "title": "Dicke Leute",
+    "slug": "dicke-leute",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 83,
+        "mainRoute": false
+      },
+      {
+        "to": 159,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 51,
+    "title": "Die Heterogene",
+    "slug": "die-heterogene",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 52,
+    "title": "Die mit den Schlafaugen",
+    "slug": "die-mit-den-schlafaugen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 53,
+    "title": "Die mit der Tulpe",
+    "slug": "die-mit-der-tulpe",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 54,
+    "title": "Diensthäuschen",
+    "slug": "diensthaeuschen",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 55,
+    "title": "Die Rote im roten Trikot mit rotem Popo",
+    "slug": "die-rote-im-roten-trikot-mit-rotem-popo",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 56,
+    "title": "Dynamit-Attentäter",
+    "slug": "dynamit-attentaeter",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 57,
+    "title": "Edelnaschwerk",
+    "slug": "edelnaschwerk",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 38,
+        "mainRoute": false
+      },
+      {
+        "to": 231,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 58,
+    "title": "Eichhörnchen",
+    "slug": "eichhoernchen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 173,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 59,
+    "title": "Einmarsch ins Schiff",
+    "slug": "einmarsch-ins-schiff",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 48,
+        "mainRoute": true
+      },
+      {
+        "to": 261,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 60,
+    "title": "Eiske",
+    "slug": "eiske",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 54,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 61,
+    "title": "Eissalon",
+    "slug": "eissalon",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 57,
+        "mainRoute": false
+      },
+      {
+        "to": 142,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 62,
+    "title": "Eklektizismus",
+    "slug": "eklektizismus",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 63,
+    "title": "Element X",
+    "slug": "element-x",
+    "articlesCount": 24,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 15,
+        "mainRoute": false
+      },
+      {
+        "to": 28,
+        "mainRoute": false
+      },
+      {
+        "to": 61,
+        "mainRoute": false
+      },
+      {
+        "to": 70,
+        "mainRoute": false
+      },
+      {
+        "to": 89,
+        "mainRoute": false
+      },
+      {
+        "to": 101,
+        "mainRoute": false
+      },
+      {
+        "to": 131,
+        "mainRoute": false
+      },
+      {
+        "to": 139,
+        "mainRoute": false
+      },
+      {
+        "to": 190,
+        "mainRoute": false
+      },
+      {
+        "to": 211,
+        "mainRoute": false
+      },
+      {
+        "to": 213,
+        "mainRoute": false
+      },
+      {
+        "to": 219,
+        "mainRoute": false
+      },
+      {
+        "to": 232,
+        "mainRoute": false
+      },
+      {
+        "to": 255,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 64,
+    "title": "Entbehren",
+    "slug": "entbehren",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 65,
+    "title": "Entsagungsvolles",
+    "slug": "entsagungsvolles",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 29,
+        "mainRoute": false
+      },
+      {
+        "to": 64,
+        "mainRoute": false
+      },
+      {
+        "to": 77,
+        "mainRoute": false
+      },
+      {
+        "to": 218,
+        "mainRoute": false
+      },
+      {
+        "to": 242,
+        "mainRoute": false
+      },
+      {
+        "to": 250,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 66,
+    "title": "Entwicklungen",
+    "slug": "entwicklungen",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 44,
+        "mainRoute": false
+      },
+      {
+        "to": 77,
+        "mainRoute": false
+      },
+      {
+        "to": 81,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 206,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 67,
+    "title": "Erfolg",
+    "slug": "erfolg",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 68,
+    "title": "Erproben",
+    "slug": "erproben",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 69,
+    "title": "Erwartungsmuster",
+    "slug": "erwartungsmuster",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 70,
+    "title": "Espresso",
+    "slug": "espresso",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 73,
+        "mainRoute": false
+      },
+      {
+        "to": 186,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 71,
+    "title": "Essen und Trinken",
+    "slug": "essen-und-trinken",
+    "articlesCount": 11,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 231,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 72,
+    "title": "Eutonignale",
+    "slug": "eutonignale",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 73,
+    "title": "Exporteur",
+    "slug": "exporteur",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 47,
+        "mainRoute": false
+      },
+      {
+        "to": 189,
+        "mainRoute": false
+      },
+      {
+        "to": 241,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 74,
+    "title": "Exporteurgedanken",
+    "slug": "exporteurgedanken",
+    "articlesCount": 10,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 75,
+    "title": "Fabrikschlote",
+    "slug": "fabrikschlote",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 29,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 76,
+    "title": "Fehlen von Brücken oder Fähren",
+    "slug": "fehlen-von-bruecken-oder-faehren",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 48,
+        "mainRoute": false
+      },
+      {
+        "to": 119,
+        "mainRoute": false
+      },
+      {
+        "to": 148,
+        "mainRoute": false
+      },
+      {
+        "to": 284,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 77,
+    "title": "Fehlen von Rot",
+    "slug": "fehlen-von-rot",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 8,
+        "mainRoute": false
+      },
+      {
+        "to": 149,
+        "mainRoute": false
+      },
+      {
+        "to": 283,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 78,
+    "title": "Fehlertoleranz",
+    "slug": "fehlertoleranz",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 79,
+    "title": "Felder",
+    "slug": "felder",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 80,
+    "title": "Feldstreifen von Senf",
+    "slug": "feldstreifen-von-senf",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 124,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 81,
+    "title": "Feminismus",
+    "slug": "feminismus",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 82,
+    "title": "F-Erlebnis",
+    "slug": "f-erlebnis",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 103,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 83,
+    "title": "Fetischist",
+    "slug": "fetischist",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 240,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 84,
+    "title": "Filmtitelspiel",
+    "slug": "filmtitelspiel",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 85,
+    "title": "Fischer",
+    "slug": "fischer",
+    "articlesCount": 11,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 65,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 86,
+    "title": "Flotte",
+    "slug": "flotte",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 93,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 87,
+    "title": "Frau und Freude, das Blatt mit Herzpfiff",
+    "slug": "frau-und-freude-das-blatt-mit-herzpfiff",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 88,
+    "title": "Freiheit, die ich meine",
+    "slug": "freiheit-die-ich-meine",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 0,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 89,
+    "title": "Gaatsch",
+    "slug": "gaatsch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 90,
+    "title": "Garage",
+    "slug": "garage",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 91,
+    "title": "Gasthäuser",
+    "slug": "gasthaeuser",
+    "articlesCount": 21,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 92,
+    "title": "Gegrilltes Hähnchen",
+    "slug": "gegrilltes-haehnchen",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 93,
+    "title": "Gelbe Schenken",
+    "slug": "gelbe-schenken",
+    "articlesCount": 12,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 107,
+        "mainRoute": false
+      },
+      {
+        "to": 111,
+        "mainRoute": false
+      },
+      {
+        "to": 146,
+        "mainRoute": false
+      },
+      {
+        "to": 156,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 94,
+    "title": "Gemeindebauten",
+    "slug": "gemeindebauten",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 25,
+        "mainRoute": false
+      },
+      {
+        "to": 33,
+        "mainRoute": false
+      },
+      {
+        "to": 37,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 95,
+    "title": "Geographie",
+    "slug": "geographie",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 145,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 96,
+    "title": "Gesäß",
+    "slug": "gesaess",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 133,
+        "mainRoute": false
+      },
+      {
+        "to": 155,
+        "mainRoute": false
+      },
+      {
+        "to": 159,
+        "mainRoute": false
+      },
+      {
+        "to": 245,
+        "mainRoute": false
+      },
+      {
+        "to": 246,
+        "mainRoute": false
+      },
+      {
+        "to": 275,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 97,
+    "title": "Geschäftsbeziehung",
+    "slug": "geschaeftsbeziehung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 74,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 98,
+    "title": "Grottenolm",
+    "slug": "grottenolm",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 43,
+        "mainRoute": false
+      },
+      {
+        "to": 60,
+        "mainRoute": false
+      },
+      {
+        "to": 114,
+        "mainRoute": false
+      },
+      {
+        "to": 170,
+        "mainRoute": false
+      },
+      {
+        "to": 201,
+        "mainRoute": false
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      },
+      {
+        "to": 259,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 99,
+    "title": "Hahnenzierden",
+    "slug": "hahnenzierden",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 77,
+        "mainRoute": false
+      },
+      {
+        "to": 107,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 100,
+    "title": "Haus am Knopfer Hügel",
+    "slug": "haus-am-knopfer-huegel",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 174,
+        "mainRoute": false
+      },
+      {
+        "to": 243,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 101,
+    "title": "Häuschen",
+    "slug": "haeuschen",
+    "articlesCount": 13,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 122,
+        "mainRoute": false
+      },
+      {
+        "to": 166,
+        "mainRoute": false
+      },
+      {
+        "to": 174,
+        "mainRoute": false
+      },
+      {
+        "to": 257,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 102,
+    "title": "Haus mit dem hochfrühlinghaften Zimmer",
+    "slug": "haus-mit-dem-hochfruehlinghaften-zimmer",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 101,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 103,
+    "title": "Haus mit dem Standard-Mariandl",
+    "slug": "haus-mit-dem-standard-mariandl",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 82,
+        "mainRoute": false
+      },
+      {
+        "to": 208,
+        "mainRoute": false
+      },
+      {
+        "to": 234,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 104,
+    "title": "Hawaiimädchen",
+    "slug": "hawaiimaedchen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 105,
+    "title": "Herrenjournal",
+    "slug": "herrenjournal",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 7,
+        "mainRoute": false
+      },
+      {
+        "to": 10,
+        "mainRoute": false
+      },
+      {
+        "to": 34,
+        "mainRoute": false
+      },
+      {
+        "to": 51,
+        "mainRoute": false
+      },
+      {
+        "to": 52,
+        "mainRoute": false
+      },
+      {
+        "to": 53,
+        "mainRoute": false
+      },
+      {
+        "to": 55,
+        "mainRoute": false
+      },
+      {
+        "to": 104,
+        "mainRoute": false
+      },
+      {
+        "to": 144,
+        "mainRoute": false
+      },
+      {
+        "to": 158,
+        "mainRoute": false
+      },
+      {
+        "to": 162,
+        "mainRoute": false
+      },
+      {
+        "to": 176,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 106,
+    "title": "Hügel",
+    "slug": "huegel",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 277,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 107,
+    "title": "Hühner",
+    "slug": "huehner",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 108,
+    "title": "Hunde",
+    "slug": "hunde",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 197,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 109,
+    "title": "100 kg attraktive Frau",
+    "slug": "100-kg-attraktive-frau",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 110,
+    "title": "Hundeschärfer",
+    "slug": "hundeschaerfer",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 111,
+    "title": "Hundstage",
+    "slug": "hundstage",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 206,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 112,
+    "title": "Ingenieur",
+    "slug": "ingenieur",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 46,
+        "mainRoute": false
+      },
+      {
+        "to": 56,
+        "mainRoute": false
+      },
+      {
+        "to": 94,
+        "mainRoute": false
+      },
+      {
+        "to": 113,
+        "mainRoute": false
+      },
+      {
+        "to": 146,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 113,
+    "title": "Ing. Pozzi",
+    "slug": "ing-pozzi",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 61,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 114,
+    "title": "Johannisbeerwein",
+    "slug": "johannisbeerwein",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 115,
+    "title": "Joyce",
+    "slug": "joyce",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 0,
+        "mainRoute": false
+      },
+      {
+        "to": 5,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 116,
+    "title": "Jung",
+    "slug": "jung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 117,
+    "title": "Kamille",
+    "slug": "kamille",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 118,
+    "title": "Katze",
+    "slug": "katze",
+    "articlesCount": 13,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 2,
+        "mainRoute": false
+      },
+      {
+        "to": 172,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 119,
+    "title": "Kaufhäuser",
+    "slug": "kaufhaeuser",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 120,
+    "title": "Kinderaufsicht",
+    "slug": "kinderaufsicht",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 121,
+    "title": "Kinder des Weidendorfes",
+    "slug": "kinder-des-weidendorfes",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 58,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 122,
+    "title": "Kleine Dinge",
+    "slug": "kleine-dinge",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 128,
+        "mainRoute": false
+      },
+      {
+        "to": 206,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 123,
+    "title": "Knopf",
+    "slug": "knopf",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 37,
+        "mainRoute": false
+      },
+      {
+        "to": 42,
+        "mainRoute": false
+      },
+      {
+        "to": 125,
+        "mainRoute": false
+      },
+      {
+        "to": 188,
+        "mainRoute": false
+      },
+      {
+        "to": 205,
+        "mainRoute": false
+      },
+      {
+        "to": 224,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 124,
+    "title": "Knopfbach",
+    "slug": "knopfbach",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 232,
+        "mainRoute": false
+      },
+      {
+        "to": 268,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 125,
+    "title": "Knopfer Tor",
+    "slug": "knopfer-tor",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 80,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 126,
+    "title": "Kollaboration",
+    "slug": "kollaboration",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 184,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 127,
+    "title": "Komposition",
+    "slug": "komposition",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 128,
+    "title": "Kopftuch",
+    "slug": "kopftuch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 129,
+    "title": "Körper",
+    "slug": "koerper",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 23,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 130,
+    "title": "Korrupte Bräute",
+    "slug": "korrupte-braeute",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 131,
+    "title": "Krämer",
+    "slug": "kraemer",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 132,
+    "title": "Kreissäge",
+    "slug": "kreissaege",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 133,
+    "title": "Kuhdreck",
+    "slug": "kuhdreck",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 44,
+        "mainRoute": false
+      },
+      {
+        "to": 57,
+        "mainRoute": false
+      },
+      {
+        "to": 274,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 134,
+    "title": "Kulinarisch",
+    "slug": "kulinarisch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 135,
+    "title": "Kunststoffliebe",
+    "slug": "kunststoffliebe",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 136,
+    "title": "Küssen",
+    "slug": "kuessen",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 137,
+    "title": "Labyrinth",
+    "slug": "labyrinth",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 138,
+    "title": "Lagerschuppen",
+    "slug": "lagerschuppen",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 24,
+        "mainRoute": false
+      },
+      {
+        "to": 117,
+        "mainRoute": false
+      },
+      {
+        "to": 167,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 139,
+    "title": "Landkonditorei",
+    "slug": "landkonditorei",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 233,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 140,
+    "title": "Landschaft",
+    "slug": "landschaft",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 141,
+    "title": "Leere",
+    "slug": "leere",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 77,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 142,
+    "title": "Leuchtendes Blau",
+    "slug": "leuchtendes-blau",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 143,
+    "title": "Lexikonromane",
+    "slug": "lexikonromane",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 144,
+    "title": "Liddy",
+    "slug": "liddy",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 267,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 145,
+    "title": "Lokalisation",
+    "slug": "lokalisation",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 146,
+    "title": "Lollo",
+    "slug": "lollo",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 46,
+        "mainRoute": false
+      },
+      {
+        "to": 256,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 147,
+    "title": "Löwenfaß",
+    "slug": "loewenfass",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 42,
+        "mainRoute": false
+      },
+      {
+        "to": 43,
+        "mainRoute": false
+      },
+      {
+        "to": 91,
+        "mainRoute": false
+      },
+      {
+        "to": 93,
+        "mainRoute": false
+      },
+      {
+        "to": 107,
+        "mainRoute": false
+      },
+      {
+        "to": 131,
+        "mainRoute": false
+      },
+      {
+        "to": 183,
+        "mainRoute": false
+      },
+      {
+        "to": 195,
+        "mainRoute": false
+      },
+      {
+        "to": 205,
+        "mainRoute": false
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 148,
+    "title": "Mädchen",
+    "slug": "maedchen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 149,
+    "title": "Mädchenblau-Paradoxon",
+    "slug": "maedchenblau-paradoxon",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 77,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 150,
+    "title": "Madigmachen",
+    "slug": "madigmachen",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 151,
+    "title": "Magazine",
+    "slug": "magazine",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 152,
+    "title": "Malkasten",
+    "slug": "malkasten",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 206,
+        "mainRoute": false
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 153,
+    "title": "Manipulation",
+    "slug": "manipulation",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 154,
+    "title": "Man nehme",
+    "slug": "man-nehme",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 155,
+    "title": "Männlich",
+    "slug": "maennlich",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 156,
+    "title": "Maria-Theresien-Gelb",
+    "slug": "maria-theresien-gelb",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 66,
+        "mainRoute": false
+      },
+      {
+        "to": 191,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 157,
+    "title": "Marktkundliches",
+    "slug": "marktkundliches",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 158,
+    "title": "Mary McPee",
+    "slug": "mary-mcpee",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 159,
+    "title": "Mastmädchen",
+    "slug": "mastmaedchen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 160,
+    "title": "Masut",
+    "slug": "masut",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 161,
+    "title": "Maturanten",
+    "slug": "maturanten",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 162,
+    "title": "M.d.D.",
+    "slug": "m-d-d",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 163,
+    "title": "Melina Mercouri",
+    "slug": "melina-mercouri",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 164,
+    "title": "Menschen",
+    "slug": "menschen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 165,
+    "title": "Menschennäheres Stadium",
+    "slug": "menschennaeheres-stadium",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 14,
+        "mainRoute": true
+      },
+      {
+        "to": 27,
+        "mainRoute": false
+      },
+      {
+        "to": 35,
+        "mainRoute": false
+      },
+      {
+        "to": 45,
+        "mainRoute": false
+      },
+      {
+        "to": 60,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 111,
+        "mainRoute": false
+      },
+      {
+        "to": 112,
+        "mainRoute": false
+      },
+      {
+        "to": 129,
+        "mainRoute": false
+      },
+      {
+        "to": 196,
+        "mainRoute": false
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      },
+      {
+        "to": 263,
+        "mainRoute": false
+      },
+      {
+        "to": 270,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 166,
+    "title": "Milchblau",
+    "slug": "milchblau",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 167,
+    "title": "Mindel",
+    "slug": "mindel",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 168,
+    "title": "Mineralwasser",
+    "slug": "mineralwasser",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 169,
+    "title": "Mittagserwartung",
+    "slug": "mittagserwartung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 13,
+        "mainRoute": false
+      },
+      {
+        "to": 71,
+        "mainRoute": false
+      },
+      {
+        "to": 97,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 209,
+        "mainRoute": true
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 170,
+    "title": "Mittelteil",
+    "slug": "mittelteil",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 48,
+        "mainRoute": false
+      },
+      {
+        "to": 281,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 171,
+    "title": "Molotow-Cocktail",
+    "slug": "molotow-cocktail",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 172,
+    "title": "Motive für das Quälen von Katzen",
+    "slug": "motive-fuer-das-quaelen-von-katzen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 173,
+    "title": "Motive für den Erwerb eines Eichhörnchens",
+    "slug": "motive-fuer-den-erwerb-eines-eichhoernchens",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 174,
+    "title": "Motive für die Freude an Verwinkelungen",
+    "slug": "motive-fuer-die-freude-an-verwinkelungen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 175,
+    "title": "Motivsammlung",
+    "slug": "motivsammlung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 157,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 176,
+    "title": "M.S.",
+    "slug": "m-s",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 177,
+    "title": "Mundart",
+    "slug": "mundart",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 178,
+    "title": "Muskeln",
+    "slug": "muskeln",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 49,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 179,
+    "title": "Nachbetrachtung",
+    "slug": "nachbetrachtung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 82,
+        "mainRoute": false
+      },
+      {
+        "to": 182,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 180,
+    "title": "Nach dem Auftauchen der Auen",
+    "slug": "nach-dem-auftauchen-der-auen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 193,
+        "mainRoute": false
+      },
+      {
+        "to": 196,
+        "mainRoute": false
+      },
+      {
+        "to": 228,
+        "mainRoute": true
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 181,
+    "title": "Nachgefrischt",
+    "slug": "nachgefrischt",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 245,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 182,
+    "title": "Nachmittagsgespräche",
+    "slug": "nachmittagsgespraeche",
+    "articlesCount": 22,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 30,
+        "mainRoute": false
+      },
+      {
+        "to": 73,
+        "mainRoute": false
+      },
+      {
+        "to": 100,
+        "mainRoute": false
+      },
+      {
+        "to": 161,
+        "mainRoute": false
+      },
+      {
+        "to": 179,
+        "mainRoute": false
+      },
+      {
+        "to": 202,
+        "mainRoute": false
+      },
+      {
+        "to": 216,
+        "mainRoute": false
+      },
+      {
+        "to": 220,
+        "mainRoute": false
+      },
+      {
+        "to": 280,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 183,
+    "title": "Nachworte",
+    "slug": "nachworte",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 4,
+        "mainRoute": false
+      },
+      {
+        "to": 5,
+        "mainRoute": false
+      },
+      {
+        "to": 9,
+        "mainRoute": false
+      },
+      {
+        "to": 19,
+        "mainRoute": false
+      },
+      {
+        "to": 22,
+        "mainRoute": false
+      },
+      {
+        "to": 23,
+        "mainRoute": false
+      },
+      {
+        "to": 49,
+        "mainRoute": false
+      },
+      {
+        "to": 50,
+        "mainRoute": false
+      },
+      {
+        "to": 62,
+        "mainRoute": false
+      },
+      {
+        "to": 69,
+        "mainRoute": false
+      },
+      {
+        "to": 78,
+        "mainRoute": false
+      },
+      {
+        "to": 81,
+        "mainRoute": false
+      },
+      {
+        "to": 82,
+        "mainRoute": false
+      },
+      {
+        "to": 83,
+        "mainRoute": false
+      },
+      {
+        "to": 88,
+        "mainRoute": false
+      },
+      {
+        "to": 95,
+        "mainRoute": false
+      },
+      {
+        "to": 115,
+        "mainRoute": false
+      },
+      {
+        "to": 126,
+        "mainRoute": false
+      },
+      {
+        "to": 127,
+        "mainRoute": false
+      },
+      {
+        "to": 129,
+        "mainRoute": false
+      },
+      {
+        "to": 134,
+        "mainRoute": false
+      },
+      {
+        "to": 135,
+        "mainRoute": false
+      },
+      {
+        "to": 137,
+        "mainRoute": false
+      },
+      {
+        "to": 140,
+        "mainRoute": false
+      },
+      {
+        "to": 143,
+        "mainRoute": false
+      },
+      {
+        "to": 145,
+        "mainRoute": false
+      },
+      {
+        "to": 153,
+        "mainRoute": false
+      },
+      {
+        "to": 154,
+        "mainRoute": false
+      },
+      {
+        "to": 157,
+        "mainRoute": false
+      },
+      {
+        "to": 175,
+        "mainRoute": false
+      },
+      {
+        "to": 177,
+        "mainRoute": false
+      },
+      {
+        "to": 184,
+        "mainRoute": false
+      },
+      {
+        "to": 187,
+        "mainRoute": false
+      },
+      {
+        "to": 192,
+        "mainRoute": false
+      },
+      {
+        "to": 203,
+        "mainRoute": false
+      },
+      {
+        "to": 204,
+        "mainRoute": false
+      },
+      {
+        "to": 207,
+        "mainRoute": false
+      },
+      {
+        "to": 212,
+        "mainRoute": false
+      },
+      {
+        "to": 223,
+        "mainRoute": false
+      },
+      {
+        "to": 226,
+        "mainRoute": false
+      },
+      {
+        "to": 229,
+        "mainRoute": false
+      },
+      {
+        "to": 230,
+        "mainRoute": false
+      },
+      {
+        "to": 244,
+        "mainRoute": false
+      },
+      {
+        "to": 254,
+        "mainRoute": false
+      },
+      {
+        "to": 282,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 184,
+    "title": "Nachziehverfahren?",
+    "slug": "nachziehverfahren",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 185,
+    "title": "NATUR-HOTEL",
+    "slug": "natur-hotel",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 186,
+    "title": "Nickel",
+    "slug": "nickel",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 187,
+    "title": "Nouveau roman",
+    "slug": "nouveau-roman",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 188,
+    "title": "Ödstätten",
+    "slug": "oedstaetten",
+    "articlesCount": 8,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 26,
+        "mainRoute": false
+      },
+      {
+        "to": 72,
+        "mainRoute": false
+      },
+      {
+        "to": 107,
+        "mainRoute": false
+      },
+      {
+        "to": 108,
+        "mainRoute": false
+      },
+      {
+        "to": 117,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 142,
+        "mainRoute": false
+      },
+      {
+        "to": 160,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 189,
+    "title": "On the rocks",
+    "slug": "on-the-rocks",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 190,
+    "title": "Orangeblonde",
+    "slug": "orangeblonde",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 191,
+    "title": "Orangehafter-Brand-Paradoxon",
+    "slug": "orangehafter-brand-paradoxon",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 192,
+    "title": "Ortsbestimmung",
+    "slug": "ortsbestimmung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 22,
+        "mainRoute": false
+      },
+      {
+        "to": 88,
+        "mainRoute": false
+      },
+      {
+        "to": 207,
+        "mainRoute": false
+      },
+      {
+        "to": 226,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 193,
+    "title": "Paddelclub-Haus",
+    "slug": "paddelclub-haus",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 141,
+        "mainRoute": false
+      },
+      {
+        "to": 152,
+        "mainRoute": false
+      },
+      {
+        "to": 217,
+        "mainRoute": true
+      },
+      {
+        "to": 269,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 194,
+    "title": "Parfum",
+    "slug": "parfum",
+    "articlesCount": 8,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 195,
+    "title": "Perspektiven",
+    "slug": "perspektiven",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 49,
+        "mainRoute": false
+      },
+      {
+        "to": 73,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 196,
+    "title": "Pfahlhäuser",
+    "slug": "pfahlhaeuser",
+    "articlesCount": 10,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 29,
+        "mainRoute": false
+      },
+      {
+        "to": 278,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 197,
+    "title": "Pferde",
+    "slug": "pferde",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 108,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 198,
+    "title": "Picknick",
+    "slug": "picknick",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 91,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 199,
+    "title": "Pläne",
+    "slug": "plaene",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 117,
+        "mainRoute": false
+      },
+      {
+        "to": 167,
+        "mainRoute": false
+      },
+      {
+        "to": 174,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 200,
+    "title": "Plankengeruch",
+    "slug": "plankengeruch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 201,
+    "title": "Plankton",
+    "slug": "plankton",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 202,
+    "title": "Platonische Hälften",
+    "slug": "platonische-haelften",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 203,
+    "title": "Politik",
+    "slug": "politik",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 204,
+    "title": "Pop-Roman?",
+    "slug": "pop-roman",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 205,
+    "title": "Promenade",
+    "slug": "promenade",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 206,
+    "title": "Quenta Quebec",
+    "slug": "quenta-quebec",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 207,
+    "title": "Realismus",
+    "slug": "realismus",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 208,
+    "title": "Rechen",
+    "slug": "rechen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 234,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 209,
+    "title": "Restaurant",
+    "slug": "restaurant",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 3,
+        "mainRoute": false
+      },
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 14,
+        "mainRoute": false
+      },
+      {
+        "to": 29,
+        "mainRoute": false
+      },
+      {
+        "to": 70,
+        "mainRoute": false
+      },
+      {
+        "to": 73,
+        "mainRoute": false
+      },
+      {
+        "to": 96,
+        "mainRoute": false
+      },
+      {
+        "to": 99,
+        "mainRoute": false
+      },
+      {
+        "to": 105,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 109,
+        "mainRoute": false
+      },
+      {
+        "to": 136,
+        "mainRoute": false
+      },
+      {
+        "to": 210,
+        "mainRoute": false
+      },
+      {
+        "to": 218,
+        "mainRoute": false
+      },
+      {
+        "to": 225,
+        "mainRoute": false
+      },
+      {
+        "to": 227,
+        "mainRoute": true
+      },
+      {
+        "to": 242,
+        "mainRoute": false
+      },
+      {
+        "to": 250,
+        "mainRoute": false
+      },
+      {
+        "to": 262,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 210,
+    "title": "Restaurant-Menschen",
+    "slug": "restaurant-menschen",
+    "articlesCount": 10,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 150,
+        "mainRoute": false
+      },
+      {
+        "to": 220,
+        "mainRoute": false
+      },
+      {
+        "to": 250,
+        "mainRoute": false
+      },
+      {
+        "to": 282,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 211,
+    "title": "Roststangenlager",
+    "slug": "roststangenlager",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 212,
+    "title": "Sättigung",
+    "slug": "saettigung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 213,
+    "title": "Scharfer Hund",
+    "slug": "scharfer-hund",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 110,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 214,
+    "title": "Schildermalen",
+    "slug": "schildermalen",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 215,
+    "title": "Schläflinge",
+    "slug": "schlaeflinge",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 216,
+    "title": "Schlager",
+    "slug": "schlager",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 217,
+    "title": "Schleuse",
+    "slug": "schleuse",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 48,
+        "mainRoute": false
+      },
+      {
+        "to": 166,
+        "mainRoute": false
+      },
+      {
+        "to": 253,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 218,
+    "title": "Schnitzel",
+    "slug": "schnitzel",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 219,
+    "title": "Schreibübung",
+    "slug": "schreibuebung",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 220,
+    "title": "Schwangere",
+    "slug": "schwangere",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 49,
+        "mainRoute": false
+      },
+      {
+        "to": 67,
+        "mainRoute": false
+      },
+      {
+        "to": 155,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 221,
+    "title": "Schwarzmeer-Perspektive",
+    "slug": "schwarzmeer-perspektive",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 222,
+    "title": "Schweinchenrosig",
+    "slug": "schweinchenrosig",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 159,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 223,
+    "title": "»Sehnsucht«",
+    "slug": "sehnsucht",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 224,
+    "title": "Senf",
+    "slug": "senf",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 16,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 225,
+    "title": "Serviererin",
+    "slug": "serviererin",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 226,
+    "title": "Sex",
+    "slug": "sex",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 129,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 227,
+    "title": "Siesta",
+    "slug": "siesta",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 3,
+        "mainRoute": false
+      },
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 14,
+        "mainRoute": false
+      },
+      {
+        "to": 18,
+        "mainRoute": false
+      },
+      {
+        "to": 96,
+        "mainRoute": false
+      },
+      {
+        "to": 97,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 181,
+        "mainRoute": false
+      },
+      {
+        "to": 195,
+        "mainRoute": false
+      },
+      {
+        "to": 215,
+        "mainRoute": false
+      },
+      {
+        "to": 233,
+        "mainRoute": false
+      },
+      {
+        "to": 266,
+        "mainRoute": true
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      },
+      {
+        "to": 273,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 228,
+    "title": "Silo",
+    "slug": "silo",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 76,
+        "mainRoute": true
+      },
+      {
+        "to": 196,
+        "mainRoute": false
+      },
+      {
+        "to": 241,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 229,
+    "title": "Spezifisches Gewicht",
+    "slug": "spezifisches-gewicht",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 230,
+    "title": "Spielregel",
+    "slug": "spielregel",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 4,
+        "mainRoute": false
+      },
+      {
+        "to": 133,
+        "mainRoute": false
+      },
+      {
+        "to": 152,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 231,
+    "title": "Spinat",
+    "slug": "spinat",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 133,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 232,
+    "title": "Stadtbibliothek",
+    "slug": "stadtbibliothek",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 233,
+    "title": "Städtchen",
+    "slug": "staedtchen",
+    "articlesCount": 15,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 17,
+        "mainRoute": false
+      },
+      {
+        "to": 32,
+        "mainRoute": false
+      },
+      {
+        "to": 61,
+        "mainRoute": false
+      },
+      {
+        "to": 63,
+        "mainRoute": false
+      },
+      {
+        "to": 67,
+        "mainRoute": false
+      },
+      {
+        "to": 82,
+        "mainRoute": false
+      },
+      {
+        "to": 85,
+        "mainRoute": false
+      },
+      {
+        "to": 94,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 119,
+        "mainRoute": false
+      },
+      {
+        "to": 121,
+        "mainRoute": false
+      },
+      {
+        "to": 122,
+        "mainRoute": false
+      },
+      {
+        "to": 130,
+        "mainRoute": false
+      },
+      {
+        "to": 131,
+        "mainRoute": false
+      },
+      {
+        "to": 151,
+        "mainRoute": false
+      },
+      {
+        "to": 156,
+        "mainRoute": false
+      },
+      {
+        "to": 174,
+        "mainRoute": false
+      },
+      {
+        "to": 178,
+        "mainRoute": false
+      },
+      {
+        "to": 188,
+        "mainRoute": false
+      },
+      {
+        "to": 194,
+        "mainRoute": false
+      },
+      {
+        "to": 197,
+        "mainRoute": false
+      },
+      {
+        "to": 199,
+        "mainRoute": false
+      },
+      {
+        "to": 200,
+        "mainRoute": false
+      },
+      {
+        "to": 201,
+        "mainRoute": false
+      },
+      {
+        "to": 220,
+        "mainRoute": false
+      },
+      {
+        "to": 225,
+        "mainRoute": false
+      },
+      {
+        "to": 232,
+        "mainRoute": false
+      },
+      {
+        "to": 242,
+        "mainRoute": false
+      },
+      {
+        "to": 248,
+        "mainRoute": false
+      },
+      {
+        "to": 249,
+        "mainRoute": false
+      },
+      {
+        "to": 258,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 234,
+    "title": "Standard-Mariandl",
+    "slug": "standard-mariandl",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 208,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 235,
+    "title": "Station Nixdorf",
+    "slug": "station-nixdorf",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 12,
+        "mainRoute": true
+      },
+      {
+        "to": 25,
+        "mainRoute": false
+      },
+      {
+        "to": 238,
+        "mainRoute": false
+      },
+      {
+        "to": 265,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 236,
+    "title": "Stationsgebäude",
+    "slug": "stationsgebaeude",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 167,
+        "mainRoute": false
+      },
+      {
+        "to": 189,
+        "mainRoute": false
+      },
+      {
+        "to": 221,
+        "mainRoute": false
+      },
+      {
+        "to": 269,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 237,
+    "title": "Stationsgebäude, wasserseitig",
+    "slug": "stationsgebaeude-wasserseitig",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 42,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 238,
+    "title": "Steinbruch",
+    "slug": "steinbruch",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 239,
+    "title": "Straßenbahn",
+    "slug": "strassenbahn",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 73,
+        "mainRoute": false
+      },
+      {
+        "to": 151,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 240,
+    "title": "Studien zum Fetischismus",
+    "slug": "studien-zum-fetischismus",
+    "articlesCount": 3,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 157,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 241,
+    "title": "Sulfatschluß",
+    "slug": "sulfatschluss",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 242,
+    "title": "Suppe",
+    "slug": "suppe",
+    "articlesCount": 5,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 243,
+    "title": "Susi",
+    "slug": "susi",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 57,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 244,
+    "title": "Susi- und Eiske-Epilog",
+    "slug": "susi-und-eiske-epilog",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 245,
+    "title": "Sympathisch",
+    "slug": "sympathisch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 246,
+    "title": "Tätowieren",
+    "slug": "taetowieren",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 247,
+    "title": "Taufstelle",
+    "slug": "taufstelle",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 40,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 248,
+    "title": "Teenager-Briefe",
+    "slug": "teenager-briefe",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 249,
+    "title": "Torschlußpanik",
+    "slug": "torschlusspanik",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 37,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 250,
+    "title": "Torte",
+    "slug": "torte",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 251,
+    "title": "Transvestiten",
+    "slug": "transvestiten",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 83,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 252,
+    "title": "Ufer",
+    "slug": "ufer",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 42,
+        "mainRoute": false
+      },
+      {
+        "to": 260,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 253,
+    "title": "Ufermauer",
+    "slug": "ufermauer",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 42,
+        "mainRoute": false
+      },
+      {
+        "to": 214,
+        "mainRoute": false
+      },
+      {
+        "to": 235,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 254,
+    "title": "Ulli Ergänzungen",
+    "slug": "ulli-ergaenzungen",
+    "articlesCount": 8,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 255,
+    "title": "Ultraviolett",
+    "slug": "ultraviolett",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 256,
+    "title": "Umschrieben",
+    "slug": "umschrieben",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 257,
+    "title": "Unbestimmt",
+    "slug": "unbestimmt",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 258,
+    "title": "V",
+    "slug": "v",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 259,
+    "title": "Verauung",
+    "slug": "verauung",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 165,
+        "mainRoute": true
+      },
+      {
+        "to": 201,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 260,
+    "title": "Verladelandschaft",
+    "slug": "verladelandschaft",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 20,
+        "mainRoute": true
+      },
+      {
+        "to": 31,
+        "mainRoute": false
+      },
+      {
+        "to": 40,
+        "mainRoute": false
+      },
+      {
+        "to": 54,
+        "mainRoute": false
+      },
+      {
+        "to": 56,
+        "mainRoute": false
+      },
+      {
+        "to": 75,
+        "mainRoute": false
+      },
+      {
+        "to": 85,
+        "mainRoute": false
+      },
+      {
+        "to": 94,
+        "mainRoute": false
+      },
+      {
+        "to": 132,
+        "mainRoute": false
+      },
+      {
+        "to": 138,
+        "mainRoute": false
+      },
+      {
+        "to": 164,
+        "mainRoute": false
+      },
+      {
+        "to": 211,
+        "mainRoute": false
+      },
+      {
+        "to": 230,
+        "mainRoute": false
+      },
+      {
+        "to": 269,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 261,
+    "title": "Verwahrloste Fischerin",
+    "slug": "verwahrloste-fischerin",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 262,
+    "title": "Verwandelt euch",
+    "slug": "verwandelt-euch",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 263,
+    "title": "Vorderdeckereignisse",
+    "slug": "vorderdeckereignisse",
+    "articlesCount": 7,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 36,
+        "mainRoute": false
+      },
+      {
+        "to": 48,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 264,
+    "title": "Vorworte",
+    "slug": "vorworte",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 183,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 265,
+    "title": "Vulkankegel",
+    "slug": "vulkankegel",
+    "articlesCount": 2,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 266,
+    "title": "Wachau",
+    "slug": "wachau",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 14,
+        "mainRoute": false
+      },
+      {
+        "to": 18,
+        "mainRoute": false
+      },
+      {
+        "to": 37,
+        "mainRoute": false
+      },
+      {
+        "to": 60,
+        "mainRoute": false
+      },
+      {
+        "to": 92,
+        "mainRoute": false
+      },
+      {
+        "to": 98,
+        "mainRoute": false
+      },
+      {
+        "to": 100,
+        "mainRoute": false
+      },
+      {
+        "to": 123,
+        "mainRoute": true
+      },
+      {
+        "to": 182,
+        "mainRoute": false
+      },
+      {
+        "to": 243,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      },
+      {
+        "to": 276,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 267,
+    "title": "Waffe",
+    "slug": "waffe",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": []
+  },
+  {
+    "index": 268,
+    "title": "Wallgraben",
+    "slug": "wallgraben",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 101,
+        "mainRoute": false
+      },
+      {
+        "to": 102,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 121,
+        "mainRoute": false
+      },
+      {
+        "to": 128,
+        "mainRoute": false
+      },
+      {
+        "to": 142,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 269,
+    "title": "Wasser",
+    "slug": "wasser",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 59,
+        "mainRoute": true
+      },
+      {
+        "to": 111,
+        "mainRoute": false
+      },
+      {
+        "to": 113,
+        "mainRoute": false
+      },
+      {
+        "to": 168,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 270,
+    "title": "Wasserbeschlagenes Glas",
+    "slug": "wasserbeschlagenes-glas",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 271,
+    "title": "Wasserereignisse",
+    "slug": "wasserereignisse",
+    "articlesCount": 16,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 116,
+        "mainRoute": false
+      },
+      {
+        "to": 186,
+        "mainRoute": false
+      },
+      {
+        "to": 200,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 272,
+    "title": "Wauß",
+    "slug": "wauss",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  },
+  {
+    "index": 273,
+    "title": "WC",
+    "slug": "wc",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 133,
+        "mainRoute": false
+      },
+      {
+        "to": 156,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 274,
+    "title": "Weg zur Schiffsstation",
+    "slug": "weg-zur-schiffsstation",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 39,
+        "mainRoute": false
+      },
+      {
+        "to": 111,
+        "mainRoute": false
+      },
+      {
+        "to": 117,
+        "mainRoute": false
+      },
+      {
+        "to": 130,
+        "mainRoute": false
+      },
+      {
+        "to": 163,
+        "mainRoute": false
+      },
+      {
+        "to": 197,
+        "mainRoute": false
+      },
+      {
+        "to": 236,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 275,
+    "title": "Weiblich",
+    "slug": "weiblich",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 155,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 276,
+    "title": "Wein",
+    "slug": "wein",
+    "articlesCount": 8,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 29,
+        "mainRoute": false
+      },
+      {
+        "to": 126,
+        "mainRoute": false
+      },
+      {
+        "to": 171,
+        "mainRoute": false
+      },
+      {
+        "to": 202,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 277,
+    "title": "Weingarten",
+    "slug": "weingarten",
+    "articlesCount": 6,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 276,
+        "mainRoute": false
+      },
+      {
+        "to": 278,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 278,
+    "title": "Wildenten",
+    "slug": "wildenten",
+    "articlesCount": 8,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 86,
+        "mainRoute": false
+      },
+      {
+        "to": 200,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 279,
+    "title": "Wolfi-Bauer",
+    "slug": "wolfi-bauer",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 91,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 280,
+    "title": "Zeitung",
+    "slug": "zeitung",
+    "articlesCount": 9,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 84,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 281,
+    "title": "Zero",
+    "slug": "zero",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 90,
+        "mainRoute": false
+      },
+      {
+        "to": 118,
+        "mainRoute": false
+      },
+      {
+        "to": 128,
+        "mainRoute": false
+      },
+      {
+        "to": 142,
+        "mainRoute": false
+      },
+      {
+        "to": 155,
+        "mainRoute": false
+      },
+      {
+        "to": 246,
+        "mainRoute": false
+      },
+      {
+        "to": 252,
+        "mainRoute": true
+      }
+    ]
+  },
+  {
+    "index": 282,
+    "title": "Zigarre",
+    "slug": "zigarre",
+    "articlesCount": 4,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 29,
+        "mainRoute": false
+      },
+      {
+        "to": 111,
+        "mainRoute": false
+      },
+      {
+        "to": 129,
+        "mainRoute": false
+      },
+      {
+        "to": 194,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 283,
+    "title": "Zukunft des Rotgebrauchs",
+    "slug": "zukunft-des-rotgebrauchs",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 77,
+        "mainRoute": false
+      },
+      {
+        "to": 251,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 284,
+    "title": "Zunächst aber",
+    "slug": "zunaechst-aber",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": false,
+    "links": [
+      {
+        "to": 11,
+        "mainRoute": false
+      },
+      {
+        "to": 36,
+        "mainRoute": false
+      },
+      {
+        "to": 98,
+        "mainRoute": true
+      },
+      {
+        "to": 106,
+        "mainRoute": false
+      },
+      {
+        "to": 196,
+        "mainRoute": false
+      },
+      {
+        "to": 271,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 285,
+    "title": "Zz",
+    "slug": "zz",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": [
+      {
+        "to": 0,
+        "mainRoute": false
+      }
+    ]
+  },
+  {
+    "index": 286,
+    "title": "Über den Lexikon-Roman",
+    "slug": "ueber-den-lexikon-roman",
+    "articlesCount": 1,
+    "titleEndsWithPeriod": true,
+    "links": []
+  }
+]
