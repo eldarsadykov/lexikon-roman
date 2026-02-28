@@ -3,22 +3,23 @@ import type { TreeItem } from '@nuxt/ui'
 import { de } from '#ui/locale'
 
 const colorMode = useColorMode()
+const appConfig = useAppConfig()
 
 const items = ref<TreeItem[]>([
   {
     id: 'system',
     label: de.messages.colorMode.system,
-    icon: 'i-lucide-monitor'
+    icon: appConfig.ui.icons.system
   },
   {
     id: 'light',
     label: de.messages.colorMode.light,
-    icon: 'i-lucide-sun'
+    icon: appConfig.ui.icons.light
   },
   {
     id: 'dark',
     label: de.messages.colorMode.dark,
-    icon: 'i-lucide-moon'
+    icon: appConfig.ui.icons.dark
   }
 ])
 const colorModeSelection = computed({
