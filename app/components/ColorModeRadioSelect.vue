@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import type { TreeItem } from '@nuxt/ui'
-
 type ColorModePreference = 'system' | 'light' | 'dark'
-interface ColorModeTreeItem extends TreeItem {
+
+type ColorModeTreeItem = {
   id: ColorModePreference
+  label: string
+  icon: string
 }
 
 const colorMode = useColorMode()
@@ -30,14 +31,7 @@ const items = ref<ColorModeTreeItem[]>([
 
 const colorModeSelection = computed({
   get: () => {
-    switch (colorMode.preference as ColorModePreference) {
-      case 'light':
-        return items.value[1]
-      case 'dark':
-        return items.value[2]
-      default:
-        return items.value[0]
-    }
+    return items.value.find(option => option.id === colorMode.preference as ColorModePreference)
   },
   set: value => colorMode.preference = value!.id
 })
