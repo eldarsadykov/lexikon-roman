@@ -13,6 +13,7 @@ const { t } = useLocale()
         <UPageAside>
           <UContentNavigation
             highlight
+            default-open
             :navigation="navigation"
           />
         </UPageAside>

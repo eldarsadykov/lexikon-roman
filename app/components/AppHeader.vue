@@ -103,6 +103,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
       />
       <UContentNavigation
         highlight
+        default-open
         :navigation="navigation"
         :ui="{ root: 'mb-[50lvh]' }"
       />
