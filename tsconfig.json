@@ -5,9 +5,6 @@
     "types": [
       "node",
       "bun"
-    ],
-  },
-  "include": [
-    "pug-to-md/index.ts"
-  ]
+    ]
+  }
 }
