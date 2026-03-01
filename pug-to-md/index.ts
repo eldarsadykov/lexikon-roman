@@ -222,7 +222,7 @@ ${inner}
     replacement: (content: string, node: HTMLElement) => {
       const href = node.getAttribute('href')?.replace('.html', '') || ''
       const text = content.trim() || href
-      return `[${text}](${href}){.arrow-link}`
+      return `[${text}](/${href}){.arrow-link}`
     }
   })
 
