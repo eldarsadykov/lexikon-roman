@@ -72,9 +72,81 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     process.exit(1)
   }
 
-  /**
-   * Set up Turndown (HTML → Markdown)
-   */
+  const isMultiPart = chapter.articlesCount > 1
+  const turndownService = createTurndownService(chapter, isMultiPart)
+
+  let markdownBody: string
+  try {
+    markdownBody = turndownService.turndown(html)
+  } catch (err) {
+    console.error('Error while converting HTML to Markdown:')
+    console.error(err)
+    process.exit(1)
+  }
+
+  if (!isMultiPart) {
+    const markdown = toChapterMarkdown(chapter, markdownBody)
+    writeOutput(markdown, outputPath)
+    return
+  }
+
+  const parts = splitMultipartMarkdown(markdownBody)
+  if (parts.length !== chapter.articlesCount) {
+    console.warn(
+      `Article count mismatch for "${chapter.slug}": expected ${chapter.articlesCount}, found ${parts.length}`
+    )
+  }
+
+  for (const part of parts) {
+    const paddedPart = part.partNumber.toString().padStart(2, '0')
+    const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
+    const partOutputPath = `content/${chapterDir}/${paddedPart}.md`
+    const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}` }
+    const markdown = toChapterMarkdown(partChapter, part.markdown)
+    writeOutput(markdown, partOutputPath)
+  }
+}
+
+function splitMultipartMarkdown(markdown: string) {
+  const marker = /<<<PART:(\d+)>>>/g
+  const matches = [...markdown.matchAll(marker)]
+  if (matches.length === 0) return []
+
+  return matches.map((match, index) => {
+    const partNumber = Number.parseInt(match[1], 10)
+    const start = (match.index ?? 0) + match[0].length
+    const end = matches[index + 1]?.index ?? markdown.length
+    const partMarkdown = markdown.slice(start, end).trim()
+    return { partNumber, markdown: partMarkdown }
+  })
+}
+
+function toChapterMarkdown(chapter: ChapterMeta, body: string) {
+  let markdown = '---\n'
+  markdown += yaml.stringify(chapter)
+  markdown += '---\n\n'
+  if (!chapter.titleEndsWithPeriod) markdown += chapter.title + ' '
+  markdown += body
+  return markdown
+}
+
+function writeOutput(markdown: string, outputPath?: string) {
+  if (outputPath) {
+    try {
+      fs.mkdirSync(path.dirname(outputPath), { recursive: true })
+      fs.writeFileSync(outputPath, markdown, 'utf8')
+      console.log(`File written: ${outputPath}`)
+    } catch (err) {
+      console.error(`Failed to write output file: ${outputPath}`)
+      console.error(err)
+      process.exit(1)
+    }
+  } else {
+    process.stdout.write(markdown + '\n')
+  }
+}
+
+function createTurndownService(chapter: ChapterMeta, isMultiPart: boolean) {
   const turndownService = new TurndownService({
     headingStyle: 'atx',
     codeBlockStyle: 'fenced',
@@ -86,25 +158,25 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     replacement: () => ''
   })
 
-  let h2Count = 0
   turndownService.addRule('h2AsH1', {
     filter: 'h2',
-    replacement: function (content) {
-      if (chapter.articlesCount === 1) return ''
-      let output = ''
-      if (h2Count !== 0) output += '\n\n---'
-      output += `\n\n ## ${content} \n\n`
-      h2Count++
-      return output
+    replacement: () => ''
+  })
+
+  turndownService.addRule('articlePartMarker', {
+    filter: (node: HTMLElement) => {
+      if (!isMultiPart || node.nodeName !== 'ARTICLE') return false
+      const id = node.getAttribute?.('id') || ''
+      return Boolean(getPartNumberFromArticleId(id, chapter.slug))
+    },
+    replacement: (content: string, node: HTMLElement) => {
+      const id = node.getAttribute?.('id') || ''
+      const partNumber = getPartNumberFromArticleId(id, chapter.slug)
+      if (!partNumber) return content
+      return `\n\n<<<PART:${partNumber}>>>\n\n${content}\n`
     }
   })
 
-  /**
-   * Custom rule for span.small-caps:
-   *
-   *    <span class="small-caps">Some text</span>
-   * →  :small-caps[Some text]
-   */
   turndownService.addRule('smallCapsSpan', {
     filter: (node: HTMLElement) => {
       if (!node || node.nodeName !== 'SPAN') return false
@@ -115,20 +187,11 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
       return classes.includes('small-caps')
     },
     replacement: (content: string) => {
-      // Trim to avoid weird spaces like ":small-caps[  Text  ]"
       const inner = content.trim()
       return `[${inner}]{.small-caps}`
     }
   })
 
-  /**
-   * Custom rule for p.poetry:
-   *
-   *    <p class="poetry">Some text</p>
-   * →  ::lexikon-poetry
-   *    [Some text]
-   *    ::
-   */
   turndownService.addRule('poetryParagraph', {
     filter: (node: HTMLElement) => {
       if (!node || node.nodeName !== 'P') return false
@@ -139,7 +202,6 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
       return classes.includes('poetry')
     },
     replacement: (content: string) => {
-      // Trim to avoid weird spaces like ":small-caps[  Text  ]"
       const inner = content.trim()
       return `::lexikon-poetry
 
@@ -148,15 +210,6 @@ ${inner}
 ::`
     }
   })
-
-  /*
-   * Optional: you *could* add a rule for a.arrow, but Turndown already
-   * converts <a> to Markdown links of the form [text](href), which is
-   * exactly what we want.
-   *
-   * So we just rely on the default behavior for links.
-   * If you ever want to special-case it, you could do:
-   */
 
   turndownService.addRule('arrowLinks', {
     filter: (node: HTMLElement) => {
@@ -188,37 +241,15 @@ ${inner}
     }
   })
 
-  /**
-   * Convert HTML → Markdown
-   */
-  let markdown: string
+  return turndownService
+}
 
-  try {
-    markdown = '---\n'
-    markdown += yaml.stringify(chapter)
-    markdown += '---\n\n'
-    if (!chapter.titleEndsWithPeriod) markdown += chapter.title + ' '
-    markdown += turndownService.turndown(html)
-  } catch (err) {
-    console.error('Error while converting HTML to Markdown:')
-    console.error(err)
-    process.exit(1)
-  }
+function getPartNumberFromArticleId(articleId: string, slug: string) {
+  const match = articleId.match(new RegExp(`^${escapeRegExp(slug)}-(\\d+)$`))
+  if (!match) return null
+  return Number.parseInt(match[1], 10)
+}
 
-  /**
-   * Output result
-   */
-  if (outputPath) {
-    try {
-      fs.writeFileSync(outputPath, markdown, 'utf8')
-      console.log(`File written: ${outputPath}`)
-    } catch (err) {
-      console.error(`Failed to write output file: ${outputPath}`)
-      console.error(err)
-      process.exit(1)
-    }
-  } else {
-    // Write to stdout
-    process.stdout.write(markdown + '\n')
-  }
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
