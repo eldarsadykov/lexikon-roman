@@ -105,7 +105,6 @@ const items = computed<NavigationMenuItem[]>(() => [{
         highlight
         default-open
         :navigation="navigation"
-        :ui="{ root: 'mb-[50lvh]' }"
       />
     </template>
   </UHeader>

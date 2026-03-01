@@ -38,7 +38,7 @@ function getChapterMeta(chapter: typeof chapters[0]) {
     return { ...link, to: getSlugFromIndex(link.to) }
   })
 
-  return { ...chapter, links: slugLinks }
+  return { ...chapter, articleIndex: 1, links: slugLinks }
 }
 
 function getSlugFromIndex(index: number) {
@@ -101,7 +101,7 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     const paddedPart = part.partNumber.toString().padStart(2, '0')
     const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
     const partOutputPath = `content/${chapterDir}/${paddedPart}.md`
-    const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}` }
+    const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}`, articleIndex: part.partNumber }
     const markdown = toChapterMarkdown(partChapter, part.markdown)
     writeOutput(markdown, partOutputPath)
   }

@@ -36,7 +36,12 @@ defineOgImageComponent('Docs', {
   headline: headline.value
 })
 
-const pageNumber = ref(1)
+const pageNumber = computed({
+  get: () => page.value?.articleIndex,
+  set: async (index: number) => {
+    await navigateTo(`${index.toString().padStart(2, '0')}`)
+  }
+})
 </script>
 
 <template>
