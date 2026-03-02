@@ -3,6 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate:route-rules": "bun run ./pug-to-md/redirects.ts",
+    "predev": "bun run generate:route-rules",
+    "prebuild": "bun run generate:route-rules",
+    "pretypecheck": "bun run generate:route-rules",
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "preview": "nuxt preview",

@@ -1,4 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+import routeRules from './pug-to-md/generated/route-rules'
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -33,6 +36,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
+    routeRules,
     prerender: {
       routes: [
         '/'
