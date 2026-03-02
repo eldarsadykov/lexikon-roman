@@ -211,33 +211,20 @@ ${inner}
     }
   })
 
-  turndownService.addRule('arrowLinks', {
+  turndownService.addRule('links', {
     filter: (node: HTMLElement) => {
-      if (!node || node.nodeName !== 'A') return false
-      const classAttr
-        = (node.getAttribute && node.getAttribute('class')) || ''
-      const classes = classAttr.split(/\s+/).filter(Boolean)
-      return classes.includes('arrow')
+      return node.nodeName === 'A'
     },
     replacement: (content: string, node: HTMLElement) => {
-      const href = node.getAttribute('href')?.replace('.html', '') || ''
-      const text = content.trim() || href
-      return `[${text}](/${href}){.arrow-link}`
-    }
-  })
+      const mdcClasses = (node.getAttribute('class') || '')
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(className => className === 'arrow' ? 'arrow-link' : className)
+        .reduce((a, b) => a + '.' + b, '')
 
-  turndownService.addRule('smallCapsLinks', {
-    filter: (node: HTMLElement) => {
-      if (!node || node.nodeName !== 'A') return false
-      const classAttr
-        = (node.getAttribute && node.getAttribute('class')) || ''
-      const classes = classAttr.split(/\s+/).filter(Boolean)
-      return classes.includes('small-caps')
-    },
-    replacement: (content: string, node: HTMLElement) => {
       const href = node.getAttribute('href')?.replace('.html', '') || ''
       const text = content.trim() || href
-      return `[${text}](${href}){.small-caps}`
+      return `[${text}](/${href}){${mdcClasses}}`
     }
   })
 

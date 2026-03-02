@@ -23,7 +23,7 @@
   /*--ui-container: var(--container-8xl);*/
 }
 
-@layer utility {
+@layer lexikon-roman {
   .small-caps {
     font-variant-caps: small-caps;
   }
@@ -31,4 +31,9 @@
   .arrow-link::before {
     content: '\2192\00A0';
   }
+
+  .main-route {
+    font-style: italic;
+  }
 }
+
