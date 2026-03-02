@@ -4,15 +4,16 @@
   "type": "module",
   "scripts": {
     "generate:route-rules": "bun run ./pug-to-md/redirects.ts",
-    "predev": "bun run generate:route-rules",
-    "prebuild": "bun run generate:route-rules",
-    "pretypecheck": "bun run generate:route-rules",
+    "predev": "bun run generate:content && bun run generate:route-rules",
+    "prebuild": "bun run generate:content && bun run generate:route-rules",
+    "pretypecheck": "bun run generate:content && bun run generate:route-rules",
     "build": "nuxt build",
     "dev": "nuxt dev --host",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "generate:content": "bun run ./pug-to-md/index.ts"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.94",
