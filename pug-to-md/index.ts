@@ -113,7 +113,7 @@ function splitMultipartMarkdown(markdown: string) {
   if (matches.length === 0) return []
 
   return matches.map((match, index) => {
-    const partNumber = Number.parseInt(match[1], 10)
+    const partNumber = Number.parseInt(match[1]!, 10)
     const start = (match.index ?? 0) + match[0].length
     const end = matches[index + 1]?.index ?? markdown.length
     const partMarkdown = markdown.slice(start, end).trim()
@@ -247,7 +247,7 @@ ${inner}
 function getPartNumberFromArticleId(articleId: string, slug: string) {
   const match = articleId.match(new RegExp(`^${escapeRegExp(slug)}-(\\d+)$`))
   if (!match) return null
-  return Number.parseInt(match[1], 10)
+  return Number.parseInt(match[1]!, 10)
 }
 
 function escapeRegExp(value: string) {
