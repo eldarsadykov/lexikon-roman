@@ -222,13 +222,21 @@ ${inner}
         .map(className => className === 'arrow' ? 'arrow-link' : className)
         .reduce((a, b) => a + '.' + b, '')
 
-      const href = node.getAttribute('href')?.replace('.html', '') || ''
-      const text = content.trim() || href
-      return `[${text}](/${href}){${mdcClasses}}`
+      const numberedHref = getNumberedHref(node)
+      const text = content.trim()
+      return `[${text}](/${numberedHref}){${mdcClasses}}`
     }
   })
 
   return turndownService
+}
+
+function getNumberedHref(node: HTMLElement) {
+  const href = node.getAttribute('href')?.replace('.html', '') || ''
+  const [slug, partString] = href.split('#')
+  const partNumber = partString?.replace(slug ?? '', '').replace('-', '')
+  const partNumberPadded = partNumber?.toString().padStart(2, '0')
+  return slug + (partNumberPadded ? `/${partNumberPadded}` : '')
 }
 
 function getPartNumberFromArticleId(articleId: string, slug: string) {
