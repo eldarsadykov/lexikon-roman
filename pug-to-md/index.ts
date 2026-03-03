@@ -228,6 +228,24 @@ ${inner}
     }
   })
 
+  turndownService.addRule('images', {
+    filter: 'img',
+    replacement: (_content: string, node: HTMLElement) => {
+      const src = node.getAttribute('src')?.trim() || ''
+      if (!src) return ''
+
+      const normalizedSrc = src.replace(/\\/g, '/')
+      const filename = path.posix.basename(normalizedSrc)
+      const rewrittenSrc = normalizedSrc.startsWith('../assets/')
+        ? `/img/${filename}`
+        : normalizedSrc
+
+      const alt = (node.getAttribute('alt') || '').replaceAll(']', '\\]')
+
+      return `![${alt}](${rewrittenSrc})`
+    }
+  })
+
   return turndownService
 }
 
