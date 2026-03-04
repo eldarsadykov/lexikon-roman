@@ -55,7 +55,9 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    provider: 'server'
+    clientBundle: {
+      scan: true
+    }
   },
 
   llms: {
