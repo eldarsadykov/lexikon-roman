@@ -18,6 +18,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  site: {
+    url: 'https://lexikon-roman.vercel.app',
+    name: 'Lexikon-Roman'
+  },
+
   content: {
     build: {
       markdown: {

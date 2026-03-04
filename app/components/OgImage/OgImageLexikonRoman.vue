@@ -1,7 +1,8 @@
 <script lang="ts" setup>
 const props = withDefaults(defineProps<{ title?: string, description?: string, headline?: string }>(), {
-  title: 'title',
-  description: 'description'
+  title: 'Lexikon-Roman',
+  description: 'Lexikon einer sentimentalen Reise zum Exporteurtreffen in Druden',
+  headline: 'Andreas Okopenko'
 })
 
 const title = computed(() => (props.title || '').slice(0, 60))

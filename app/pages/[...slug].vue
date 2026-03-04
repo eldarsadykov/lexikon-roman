@@ -44,8 +44,10 @@ useSeoMeta({
 
 const headline = computed(() => findPageHeadline(navigation?.value, page.value?.path))
 
-defineOgImageComponent('Docs', {
-  headline: headline.value
+defineOgImageComponent('LexikonRoman', {
+  title,
+  description,
+  headline: headline.value || 'Lexikon-Roman'
 })
 
 const pageNumber = computed({
