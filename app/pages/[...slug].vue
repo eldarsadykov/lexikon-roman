@@ -9,7 +9,19 @@ definePageMeta({
 const route = useRoute()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
-const { data: page } = await useAsyncData(route.path, () => queryCollection('chapters').path(route.path).first())
+const { data: page } = await useAsyncData(route.path, async () => {
+  const directPage = await queryCollection('chapters').path(route.path).first()
+  if (directPage) return directPage
+
+  const segments = route.path.split('/').filter(Boolean)
+  if (segments.length > 1) {
+    const fallbackPath = `/${segments.at(-1)}`
+    return queryCollection('chapters').path(fallbackPath).first()
+  }
+
+  return null
+})
+
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }

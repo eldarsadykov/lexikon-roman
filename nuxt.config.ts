@@ -56,36 +56,26 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    provider: 'iconify'
+    provider: 'server'
   },
 
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
-    title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
-    full: {
-      title: 'Nuxt Docs Template - Full Documentation',
-      description: 'This is the full documentation for the Nuxt Docs Template.'
-    },
+    domain: 'https://lexikon-roman.vercel.app/',
+    title: 'Lexikon Roman',
+    description: 'Lexikon Roman content.',
     sections: [
       {
-        title: 'Getting Started',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
-        ]
+        title: 'Chapters',
+        contentCollection: 'chapters'
       },
       {
-        title: 'Essentials',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
-        ]
+        title: 'Landing',
+        contentCollection: 'landing'
       }
     ]
   },
 
   mcp: {
-    name: 'Docs template'
+    name: 'Lexikon Roman'
   }
 })

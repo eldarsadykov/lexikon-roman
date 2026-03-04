@@ -1,7 +1,7 @@
 import { withLeadingSlash } from 'ufo'
 import { stringify } from 'minimark/stringify'
 import { queryCollection } from '@nuxt/content/server'
-import type { Collections } from '@nuxt/content'
+import type { PageCollectionItemBase } from '@nuxt/content'
 
 export default eventHandler(async (event) => {
   const slug = getRouterParams(event)['slug.md']
@@ -11,17 +11,20 @@ export default eventHandler(async (event) => {
 
   const path = withLeadingSlash(slug.replace('.md', ''))
 
-  const page = await queryCollection(event, 'docs' as keyof Collections).path(path).first()
+  const page = (await queryCollection(event, 'chapters').path(path).first())
+    ?? (await queryCollection(event, 'landing').path(path).first())
   if (!page) {
     throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
   }
 
+  const normalizedPage = page as PageCollectionItemBase
+
   // Add title and description to the top of the page if missing
-  if (page.body.value[0]?.[0] !== 'h1') {
-    page.body.value.unshift(['blockquote', {}, page.description])
-    page.body.value.unshift(['h1', {}, page.title])
+  if (normalizedPage.body.value[0]?.[0] !== 'h1') {
+    normalizedPage.body.value.unshift(['blockquote', {}, normalizedPage.description])
+    normalizedPage.body.value.unshift(['h1', {}, normalizedPage.title])
   }
 
   setHeader(event, 'Content-Type', 'text/markdown; charset=utf-8')
-  return stringify({ ...page.body, type: 'minimark' }, { format: 'markdown/html' })
+  return stringify({ ...normalizedPage.body, type: 'minimark' }, { format: 'markdown/html' })
 })

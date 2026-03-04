@@ -11,7 +11,7 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [{
   label: 'Lesen',
-  to: slugs[0],
+  to: `/${slugs[0]}`,
   active: slugs.some(slug => route.path.startsWith(`/${slug}`))
 },
 {
