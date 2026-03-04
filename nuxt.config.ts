@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   site: {
-    url: 'https://lexikon-roman.vercel.app',
+    url: 'https://lexikonroman.at',
     name: 'Lexikon-Roman'
   },
 
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://lexikon-roman.vercel.app/',
+    domain: 'https://lexikonroman.at/',
     title: 'Lexikon Roman',
     description: 'Lexikon Roman content.',
     sections: [
