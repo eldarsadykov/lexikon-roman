@@ -9,8 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     'nuxt-og-image',
-    'nuxt-llms',
-    '@nuxtjs/mcp-toolkit'
+    'nuxt-llms'
   ],
 
   devtools: {
@@ -73,9 +72,5 @@ export default defineNuxtConfig({
         contentCollection: 'landing'
       }
     ]
-  },
-
-  mcp: {
-    name: 'Lexikon Roman'
   }
 })
