@@ -79,5 +79,11 @@ export default defineNuxtConfig({
         contentCollection: 'landing'
       }
     ]
+  },
+
+  runtimeConfig: {
+    public: {
+      freesoundApiToken: process.env.NUXT_PUBLIC_FREESOUND_API_TOKEN
+    }
   }
 })

@@ -27,6 +27,10 @@ useSeoMeta({
 })
 
 provide('navigation', navigation)
+
+// if (import.meta.client) {
+//   useChapterAudio()
+// }
 </script>
 
 <template>
