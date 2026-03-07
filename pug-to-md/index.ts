@@ -21,7 +21,7 @@ function convertFromJson() {
     //   inputPath = `pug-to-md/views/${ slug }.pug`
     // }
 
-    const outputPath = `content/${index.toString().padStart(3, '0')}.${slug}.md`
+    const outputPath = `content/kapitel/${index.toString().padStart(3, '0')}.${slug}.md`
 
     // if (index >= 286) {
     //   outputPath = `content/${ slug }.md`
@@ -100,7 +100,7 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
   for (const part of parts) {
     const paddedPart = part.partNumber.toString().padStart(2, '0')
     const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
-    const partOutputPath = `content/${chapterDir}/${paddedPart}.md`
+    const partOutputPath = `content/kapitel/${chapterDir}/${paddedPart}.md`
     const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}`, articleIndex: part.partNumber }
     const markdown = toChapterMarkdown(partChapter, part.markdown)
     writeOutput(markdown, partOutputPath)
@@ -224,7 +224,7 @@ ${inner}
 
       const numberedHref = getNumberedHref(node)
       const text = content.trim()
-      return `[${text}](/${numberedHref}){${mdcClasses}}`
+      return `[${text}](/kapitel/${numberedHref}){${mdcClasses}}`
     }
   })
 

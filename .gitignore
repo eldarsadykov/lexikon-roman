@@ -27,5 +27,4 @@ logs
 .history
 
 pug-to-md/generated
-content/[0-9][0-9][0-9].*.md
-content/[0-9][0-9][0-9].*/
+content/kapitel/*

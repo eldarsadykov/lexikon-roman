@@ -7,12 +7,16 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.md'
     }),
-    chapters: defineCollection({
+    pages: defineCollection({
       type: 'page',
       source: {
-        include: '**',
+        include: '*',
         exclude: ['index.md']
-      },
+      }
+    }),
+    chapters: defineCollection({
+      type: 'page',
+      source: 'kapitel/**',
       schema: ChapterMetaSchema
     })
   }

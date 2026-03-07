@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 import type { NavigationMenuItem } from '@nuxt/ui'
-import { slugs } from '~~/schemas/slugs'
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
@@ -11,8 +10,8 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [{
   label: 'Lesen',
-  to: `/${slugs[0]}`,
-  active: slugs.some(slug => route.path.startsWith(`/${slug}`))
+  to: `/kapitel/gebrauchsanweisung`,
+  active: route.path.startsWith(`/kapitel`)
 },
 {
   label: 'Netzwerkgraph',
