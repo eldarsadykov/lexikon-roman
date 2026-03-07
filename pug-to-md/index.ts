@@ -2,12 +2,12 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import process from 'node:process'
 import pug from 'pug'
 import TurndownService from 'turndown'
 import chapters from './meta/chapters.json'
 import yaml from 'yaml'
 import type { ChapterMeta } from '../schemas'
+import { writeOutput } from './helpers'
 
 convertFromJson()
 
@@ -64,7 +64,8 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     html = pug.renderFile(inputPath, {
       // allow `extends ../../templates/layout` and similar to resolve
       basedir: path.dirname(inputPath),
-      filename: inputPath
+      filename: inputPath,
+      pretty: '  '
     })
   } catch (err) {
     console.error('Error while rendering Pug to HTML:')
@@ -72,6 +73,7 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     process.exit(1)
   }
 
+  const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
   const isMultiPart = chapter.articlesCount > 1
   const turndownService = createTurndownService(chapter, isMultiPart)
 
@@ -85,10 +87,21 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
   }
 
   if (!isMultiPart) {
+    const htmlOutputPath = `pug-to-md/generated/html/${chapterDir}.html`
+    writeOutput(html, htmlOutputPath)
+
     const markdown = toChapterMarkdown(chapter, markdownBody)
     writeOutput(markdown, outputPath)
     return
   }
+
+  const htmlParts = splitMultipartHtml(html, chapter.slug)
+  if (htmlParts.length !== chapter.articlesCount) {
+    console.warn(
+      `HTML article count mismatch for "${chapter.slug}": expected ${chapter.articlesCount}, found ${htmlParts.length}`
+    )
+  }
+  const htmlPartsByNumber = new Map(htmlParts.map(part => [part.partNumber, part.html]))
 
   const parts = splitMultipartMarkdown(markdownBody)
   if (parts.length !== chapter.articlesCount) {
@@ -99,8 +112,16 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
 
   for (const part of parts) {
     const paddedPart = part.partNumber.toString().padStart(2, '0')
-    const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
     const partOutputPath = `content/kapitel/${chapterDir}/${paddedPart}.md`
+    const partHtmlOutputPath = `pug-to-md/generated/html/${chapterDir}/${paddedPart}.html`
+    const partHtml = htmlPartsByNumber.get(part.partNumber)
+
+    if (partHtml) {
+      writeOutput(partHtml, partHtmlOutputPath)
+    } else {
+      console.warn(`HTML part not found for "${chapter.slug}" part ${part.partNumber}`)
+    }
+
     const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}`, articleIndex: part.partNumber }
     const markdown = toChapterMarkdown(partChapter, part.markdown)
     writeOutput(markdown, partOutputPath)
@@ -121,6 +142,20 @@ function splitMultipartMarkdown(markdown: string) {
   })
 }
 
+function splitMultipartHtml(html: string, slug: string) {
+  const articlePattern = new RegExp(
+    `<article\\b[^>]*\\bid=(["'])${escapeRegExp(slug)}-(\\d+)\\1[^>]*>[\\s\\S]*?<\\/article>`,
+    'g'
+  )
+
+  const parts = [...html.matchAll(articlePattern)]
+  return parts.map((match) => {
+    const partNumber = Number.parseInt(match[2]!, 10)
+    const partHtml = match[0].trim()
+    return { partNumber, html: partHtml }
+  })
+}
+
 function toChapterMarkdown(chapter: ChapterMeta, body: string) {
   let markdown = '---\n'
   markdown += yaml.stringify(chapter)
@@ -128,22 +163,6 @@ function toChapterMarkdown(chapter: ChapterMeta, body: string) {
   if (!chapter.titleEndsWithPeriod) markdown += chapter.title + ' '
   markdown += body
   return markdown
-}
-
-function writeOutput(markdown: string, outputPath?: string) {
-  if (outputPath) {
-    try {
-      fs.mkdirSync(path.dirname(outputPath), { recursive: true })
-      fs.writeFileSync(outputPath, markdown, 'utf8')
-      console.log(`File written: ${outputPath}`)
-    } catch (err) {
-      console.error(`Failed to write output file: ${outputPath}`)
-      console.error(err)
-      process.exit(1)
-    }
-  } else {
-    process.stdout.write(markdown + '\n')
-  }
 }
 
 function createTurndownService(chapter: ChapterMeta, isMultiPart: boolean) {

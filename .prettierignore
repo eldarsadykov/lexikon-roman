@@ -1,0 +1,5 @@
+# Keep this minimal so generated HTML can still be formatted via npm scripts.
+node_modules
+.nuxt
+.output
+dist

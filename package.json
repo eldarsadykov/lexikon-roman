@@ -15,7 +15,9 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "generate:content": "bun run ./pug-to-md/index.ts"
+    "generate:content": "bun run ./pug-to-md/index.ts && bun run format:html",
+    "format:html": "prettier --ignore-path .prettierignore --write \"pug-to-md/generated/html/**/*.html\"",
+    "format:html:check": "prettier --ignore-path .prettierignore --check \"pug-to-md/generated/html/**/*.html\""
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.94",
@@ -43,6 +45,7 @@
     "@types/pug": "^2.0.10",
     "@types/turndown": "^5.0.6",
     "eslint": "^10.0.2",
+    "prettier": "^3.8.1",
     "pug": "^3.0.3",
     "turndown": "^7.2.2",
     "typescript": "^5.9.3",
