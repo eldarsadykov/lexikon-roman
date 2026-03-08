@@ -152,7 +152,17 @@ function splitMultipartHtml(html: string, slug: string) {
   return parts.map((match) => {
     const partNumber = Number.parseInt(match[2]!, 10)
     const partHtml = match[0].trim()
-    return { partNumber, html: partHtml }
+    const styleSheetLink = '<head><link rel="stylesheet" href="../../../styles/style.css" /></head>'
+    const partHtmlWithStyles = [
+      '<!doctype html>',
+      '<html lang="de">',
+      styleSheetLink,
+      '<body><main>',
+      partHtml,
+      '</main></body>',
+      '</html>'
+    ].join('')
+    return { partNumber, html: partHtmlWithStyles }
   })
 }
 
