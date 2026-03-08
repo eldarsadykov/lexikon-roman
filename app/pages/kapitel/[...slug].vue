@@ -56,6 +56,13 @@ const pageNumber = computed({
     await navigateTo(`${index.toString().padStart(2, '0')}`)
   }
 })
+
+const articleId = computed(() => {
+  if (!page.value) return ''
+  const slug = page.value.slug ?? ''
+  const number = page.value.articlesCount > 1 ? '-' + page.value.articleIndex : ''
+  return slug + number
+})
 </script>
 
 <template>
@@ -78,6 +85,8 @@ const pageNumber = computed({
     <UPageBody>
       <ContentRenderer
         v-if="page"
+        :id="articleId"
+        tag="article"
         :value="page"
       />
 
