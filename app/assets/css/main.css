@@ -28,6 +28,11 @@
     font-variant-caps: small-caps;
   }
 
+  .poetry {
+    margin-inline: auto;
+    max-width: fit-content;
+  }
+
   .arrow-link::before {
     content: '\2192\00A0';
   }
@@ -36,4 +41,3 @@
     font-style: italic;
   }
 }
-

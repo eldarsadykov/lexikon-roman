@@ -3,7 +3,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import pug from 'pug'
-import TurndownService from 'turndown'
 import chapters from './meta/chapters.json'
 import yaml from 'yaml'
 import type { ChapterMeta } from '../schemas'
@@ -75,21 +74,13 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
 
   const chapterDir = `${chapter.index.toString().padStart(3, '0')}.${chapter.slug}`
   const isMultiPart = chapter.articlesCount > 1
-  const turndownService = createTurndownService(chapter, isMultiPart)
-
-  let markdownBody: string
-  try {
-    markdownBody = turndownService.turndown(html)
-  } catch (err) {
-    console.error('Error while converting HTML to Markdown:')
-    console.error(err)
-    process.exit(1)
-  }
 
   if (!isMultiPart) {
     const htmlOutputPath = `pug-to-md/generated/html/${chapterDir}.html`
     writeOutput(html, htmlOutputPath)
 
+    const articleHtml = extractSingleArticleHtml(html)
+    const markdownBody = normalizeContentHtml(articleHtml)
     const markdown = toChapterMarkdown(chapter, markdownBody)
     writeOutput(markdown, outputPath)
     return
@@ -101,45 +92,20 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
       `HTML article count mismatch for "${chapter.slug}": expected ${chapter.articlesCount}, found ${htmlParts.length}`
     )
   }
-  const htmlPartsByNumber = new Map(htmlParts.map(part => [part.partNumber, part.html]))
+  const partsByOrder = [...htmlParts].sort((a, b) => a.partNumber - b.partNumber)
 
-  const parts = splitMultipartMarkdown(markdownBody)
-  if (parts.length !== chapter.articlesCount) {
-    console.warn(
-      `Article count mismatch for "${chapter.slug}": expected ${chapter.articlesCount}, found ${parts.length}`
-    )
-  }
-
-  for (const part of parts) {
-    const paddedPart = part.partNumber.toString().padStart(2, '0')
+  for (const part of partsByOrder) {
+    const partNumber = part.partNumber
+    const paddedPart = partNumber.toString().padStart(2, '0')
     const partOutputPath = `content/kapitel/${chapterDir}/${paddedPart}.md`
     const partHtmlOutputPath = `pug-to-md/generated/html/${chapterDir}/${paddedPart}.html`
-    const partHtml = htmlPartsByNumber.get(part.partNumber)
+    writeOutput(part.htmlDocument, partHtmlOutputPath)
 
-    if (partHtml) {
-      writeOutput(partHtml, partHtmlOutputPath)
-    } else {
-      console.warn(`HTML part not found for "${chapter.slug}" part ${part.partNumber}`)
-    }
-
-    const partChapter = { ...chapter, title: `${chapter.title} ${part.partNumber}`, articleIndex: part.partNumber }
-    const markdown = toChapterMarkdown(partChapter, part.markdown)
+    const partChapter = { ...chapter, title: `${chapter.title} ${partNumber}`, articleIndex: partNumber }
+    const markdownBody = normalizeContentHtml(part.articleHtml)
+    const markdown = toChapterMarkdown(partChapter, markdownBody)
     writeOutput(markdown, partOutputPath)
   }
-}
-
-function splitMultipartMarkdown(markdown: string) {
-  const marker = /<<<PART:(\d+)>>>/g
-  const matches = [...markdown.matchAll(marker)]
-  if (matches.length === 0) return []
-
-  return matches.map((match, index) => {
-    const partNumber = Number.parseInt(match[1]!, 10)
-    const start = (match.index ?? 0) + match[0].length
-    const end = matches[index + 1]?.index ?? markdown.length
-    const partMarkdown = markdown.slice(start, end).trim()
-    return { partNumber, markdown: partMarkdown }
-  })
 }
 
 function splitMultipartHtml(html: string, slug: string) {
@@ -148,21 +114,129 @@ function splitMultipartHtml(html: string, slug: string) {
     'g'
   )
 
-  const parts = [...html.matchAll(articlePattern)]
-  return parts.map((match) => {
-    const partNumber = Number.parseInt(match[2]!, 10)
-    const partHtml = match[0].trim()
-    const styleSheetLink = '<head><link rel="stylesheet" href="../../../styles/style.css" /></head>'
-    const partHtmlWithStyles = [
-      '<!doctype html>',
-      '<html lang="de">',
-      styleSheetLink,
-      '<body><main>',
-      partHtml,
-      '</main></body>',
-      '</html>'
-    ].join('')
-    return { partNumber, html: partHtmlWithStyles }
+  const sluggedParts = [...html.matchAll(articlePattern)]
+  if (sluggedParts.length > 0) {
+    return sluggedParts.map((match) => {
+      const partNumber = Number.parseInt(match[2]!, 10)
+      const partHtml = match[0].trim()
+      return { partNumber, articleHtml: partHtml, htmlDocument: toPartHtmlDocument(partHtml) }
+    })
+  }
+
+  const genericPattern = /<article\b[^>]*>[\s\S]*?<\/article>/gi
+  const fallbackParts = [...html.matchAll(genericPattern)]
+  if (fallbackParts.length > 0) {
+    console.warn(
+      `Could not match multipart articles by slug for "${slug}". Falling back to article order.`
+    )
+
+    return fallbackParts.map((match, index) => {
+      const partNumber = index + 1
+      const partHtml = match[0].trim()
+      return { partNumber, articleHtml: partHtml, htmlDocument: toPartHtmlDocument(partHtml) }
+    })
+  }
+
+  return []
+}
+
+function toPartHtmlDocument(articleHtml: string) {
+  const styleSheetLink = '<head><link rel="stylesheet" href="../../../styles/style.css" /></head>'
+  return [
+    '<!doctype html>',
+    '<html lang="de">',
+    styleSheetLink,
+    '<body><main>',
+    articleHtml,
+    '</main></body>',
+    '</html>'
+  ].join('')
+}
+
+function extractSingleArticleHtml(html: string) {
+  const match = html.match(/<article\b[^>]*>[\s\S]*?<\/article>/i)
+  if (!match) {
+    console.warn('Could not find <article> in rendered HTML. Falling back to <main> contents.')
+    const mainMatch = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)
+    return (mainMatch?.[1] || html).trim()
+  }
+  return match[0].trim()
+}
+
+function normalizeContentHtml(html: string) {
+  let normalized = html.trim()
+  normalized = unwrapArticle(normalized)
+  normalized = removeInlineTitle(normalized)
+  normalized = rewriteClasses(normalized)
+  normalized = rewriteChapterHrefs(normalized)
+  normalized = rewriteImageSources(normalized)
+  return normalized.trim()
+}
+
+function unwrapArticle(html: string) {
+  const match = html.match(/^<article\b[^>]*>([\s\S]*?)<\/article>$/i)
+  if (!match) return html
+  return match[1]!.trim()
+}
+
+function removeInlineTitle(html: string) {
+  const withoutInlineTitle = html.replace(
+    /<h2\b[^>]*\bclass=(['"])[^'"]*\binline-title\b[^'"]*\1[^>]*>[\s\S]*?<\/h2>\s*/i,
+    ''
+  )
+
+  if (withoutInlineTitle !== html) return withoutInlineTitle
+
+  return html.replace(/<h2\b[^>]*>[\s\S]*?<\/h2>\s*/i, '')
+}
+
+function rewriteClasses(html: string) {
+  return html.replace(/\bclass=(['"])([^'"]*)\1/g, (_match, quote: string, classAttr: string) => {
+    const classNames = classAttr
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(className => className === 'arrow' ? 'arrow-link' : className)
+
+    if (classNames.length === 0) return ''
+    return `class=${quote}${classNames.join(' ')}${quote}`
+  })
+}
+
+function rewriteChapterHrefs(html: string) {
+  return html.replace(/\bhref=(['"])([^'"]+)\1/g, (_match, quote: string, href: string) => {
+    return `href=${quote}${rewriteChapterHref(href.trim())}${quote}`
+  })
+}
+
+function rewriteChapterHref(href: string) {
+  if (/^(?:[a-z]+:)?\/\//i.test(href)) return href
+  if (href.startsWith('#') || href.startsWith('/')) return href
+
+  const [pathWithExtension, fragment] = href.split('#')
+  if (!pathWithExtension!.endsWith('.html')) return href
+
+  const slug = pathWithExtension!.replace(/\.html$/i, '')
+  if (!slug) return href
+
+  if (!fragment) return `/kapitel/${slug}`
+
+  const partMatch = fragment.match(/-(\d+)$/)
+  if (!partMatch) return `/kapitel/${slug}#${fragment}`
+
+  const part = partMatch[1]!.padStart(2, '0')
+  return `/kapitel/${slug}/${part}`
+}
+
+function rewriteImageSources(html: string) {
+  return html.replace(/\bsrc=(['"])([^'"]+)\1/g, (_match, quote: string, src: string) => {
+    const normalizedSrc = src.trim().replaceAll('\\', '/')
+
+    if (!normalizedSrc.startsWith('../assets/')) {
+      return `src=${quote}${normalizedSrc}${quote}`
+    }
+
+    const filename = path.posix.basename(normalizedSrc)
+    return `src=${quote}/img/${filename}${quote}`
   })
 }
 
@@ -171,125 +245,8 @@ function toChapterMarkdown(chapter: ChapterMeta, body: string) {
   markdown += yaml.stringify(chapter)
   markdown += '---\n\n'
   if (!chapter.titleEndsWithPeriod) markdown += chapter.title + ' '
-  markdown += body
+  markdown += body + '\n'
   return markdown
-}
-
-function createTurndownService(chapter: ChapterMeta, isMultiPart: boolean) {
-  const turndownService = new TurndownService({
-    headingStyle: 'atx',
-    codeBlockStyle: 'fenced',
-    emDelimiter: '*'
-  })
-
-  turndownService.addRule('noTitle', {
-    filter: 'title',
-    replacement: () => ''
-  })
-
-  turndownService.addRule('h2AsH1', {
-    filter: 'h2',
-    replacement: () => ''
-  })
-
-  turndownService.addRule('articlePartMarker', {
-    filter: (node: HTMLElement) => {
-      if (!isMultiPart || node.nodeName !== 'ARTICLE') return false
-      const id = node.getAttribute?.('id') || ''
-      return Boolean(getPartNumberFromArticleId(id, chapter.slug))
-    },
-    replacement: (content: string, node: HTMLElement) => {
-      const id = node.getAttribute?.('id') || ''
-      const partNumber = getPartNumberFromArticleId(id, chapter.slug)
-      if (!partNumber) return content
-      return `\n\n<<<PART:${partNumber}>>>\n\n${content}\n`
-    }
-  })
-
-  turndownService.addRule('smallCapsSpan', {
-    filter: (node: HTMLElement) => {
-      if (!node || node.nodeName !== 'SPAN') return false
-
-      const classAttr
-        = (node.getAttribute && node.getAttribute('class')) || ''
-      const classes = classAttr.split(/\s+/).filter(Boolean)
-      return classes.includes('small-caps')
-    },
-    replacement: (content: string) => {
-      const inner = content.trim()
-      return `[${inner}]{.small-caps}`
-    }
-  })
-
-  turndownService.addRule('poetryParagraph', {
-    filter: (node: HTMLElement) => {
-      if (!node || node.nodeName !== 'P') return false
-
-      const classAttr
-        = (node.getAttribute && node.getAttribute('class')) || ''
-      const classes = classAttr.split(/\s+/).filter(Boolean)
-      return classes.includes('poetry')
-    },
-    replacement: (content: string) => {
-      const inner = content.trim()
-      return `::lexikon-poetry
-
-${inner}
-    
-::`
-    }
-  })
-
-  turndownService.addRule('links', {
-    filter: (node: HTMLElement) => {
-      return node.nodeName === 'A'
-    },
-    replacement: (content: string, node: HTMLElement) => {
-      const mdcClasses = (node.getAttribute('class') || '')
-        .split(/\s+/)
-        .filter(Boolean)
-        .map(className => className === 'arrow' ? 'arrow-link' : className)
-        .reduce((a, b) => a + '.' + b, '')
-
-      const numberedHref = getNumberedHref(node)
-      const text = content.trim()
-      return `[${text}](/kapitel/${numberedHref}){${mdcClasses}}`
-    }
-  })
-
-  turndownService.addRule('images', {
-    filter: 'img',
-    replacement: (_content: string, node: HTMLElement) => {
-      const src = node.getAttribute('src')?.trim() || ''
-      if (!src) return ''
-
-      const normalizedSrc = src.replace(/\\/g, '/')
-      const filename = path.posix.basename(normalizedSrc)
-      const rewrittenSrc = normalizedSrc.startsWith('../assets/')
-        ? `/img/${filename}`
-        : normalizedSrc
-
-      const alt = (node.getAttribute('alt') || '').replaceAll(']', '\\]')
-
-      return `![${alt}](${rewrittenSrc})`
-    }
-  })
-
-  return turndownService
-}
-
-function getNumberedHref(node: HTMLElement) {
-  const href = node.getAttribute('href')?.replace('.html', '') || ''
-  const [slug, partString] = href.split('#')
-  const partNumber = partString?.replace(slug ?? '', '').replace('-', '')
-  const partNumberPadded = partNumber?.toString().padStart(2, '0')
-  return slug + (partNumberPadded ? `/${partNumberPadded}` : '')
-}
-
-function getPartNumberFromArticleId(articleId: string, slug: string) {
-  const match = articleId.match(new RegExp(`^${escapeRegExp(slug)}-(\\d+)$`))
-  if (!match) return null
-  return Number.parseInt(match[1]!, 10)
 }
 
 function escapeRegExp(value: string) {
