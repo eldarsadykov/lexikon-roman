@@ -218,6 +218,10 @@ h2.inline-title {
   }
 }
 
+.block {
+  display: block;
+}
+
 /* Page-specific styles. */
 
 #navigation {
