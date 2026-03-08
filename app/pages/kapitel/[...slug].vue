@@ -88,6 +88,7 @@ const articleId = computed(() => {
         :id="articleId"
         tag="article"
         :value="page"
+        class="lexikon-roman-kapitel"
       />
 
       <USeparator v-if="surround?.length" />
