@@ -1014,8 +1014,9 @@
       }
 
       .claudia {
+        width: fit-content;
+        height: 5rem;
         float: right;
-        height: 3lh;
       }
     }
 
