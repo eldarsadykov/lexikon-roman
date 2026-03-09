@@ -759,14 +759,6 @@
         }
       }
     }
-    &#perspektiven-1 {
-      textarea {
-        margin: 1em 0;
-        width: 100%;
-        height: 20lh;
-        resize: vertical;
-      }
-    }
 
     &#schlager-1,
     &#schlager-2,

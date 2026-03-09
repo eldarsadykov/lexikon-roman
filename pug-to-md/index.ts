@@ -170,7 +170,19 @@ function normalizeContentHtml(html: string) {
   normalized = rewriteClasses(normalized)
   normalized = rewriteChapterHrefs(normalized)
   normalized = rewriteImageSources(normalized)
+  normalized = rewriteTextareas(normalized)
   return normalized.trim()
+}
+
+function rewriteTextareas(html: string) {
+  return html.replace(
+    /<textarea([^>]*)><\/textarea>/g,
+    (_match, attrs: string) => {
+      const placeholderMatch = attrs.match(/placeholder=(['"])([^'"]*)\1/)
+      const placeholder = placeholderMatch ? placeholderMatch[2] : ''
+      return `\n:u-textarea{placeholder="${placeholder}" class="w-full"}`
+    }
+  )
 }
 
 function unwrapArticle(html: string) {
