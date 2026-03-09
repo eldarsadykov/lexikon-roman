@@ -1,7 +1,7 @@
 const fontSizeMap = {
-  small: 'text-sm [&_p]:leading-6',
+  small: 'text-sm',
   normal: '',
-  large: 'text-lg [&_p]:leading-8'
+  large: 'text-lg'
 } as const
 
 export type FontSize = keyof typeof fontSizeMap
