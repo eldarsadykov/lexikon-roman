@@ -63,8 +63,7 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
     html = pug.renderFile(inputPath, {
       // allow `extends ../../templates/layout` and similar to resolve
       basedir: path.dirname(inputPath),
-      filename: inputPath,
-      pretty: '  '
+      filename: inputPath
     })
   } catch (err) {
     console.error('Error while rendering Pug to HTML:')
