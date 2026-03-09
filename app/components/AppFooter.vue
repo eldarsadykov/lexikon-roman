@@ -6,7 +6,7 @@ const { footer } = useAppConfig()
   <UFooter>
     <template #left>
       <NuxtLink
-        to="https://github.com/eldarsadykov/lexikon-roman"
+        to="https://github.com/eldarsadykov/lexikon-roman/blob/main/LICENSE"
         target="_blank"
         class="text-sm text-muted"
       >
