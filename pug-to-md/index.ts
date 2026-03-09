@@ -20,7 +20,7 @@ function convertFromJson() {
     //   inputPath = `pug-to-md/views/${ slug }.pug`
     // }
 
-    const outputPath = `content/kapitel/${index.toString().padStart(3, '0')}.${slug}.md`
+    const outputPath = `content/artikel/${index.toString().padStart(3, '0')}.${slug}.md`
 
     // if (index >= 286) {
     //   outputPath = `content/${ slug }.md`
@@ -97,7 +97,7 @@ function convertPugToMarkdown(chapter: ChapterMeta, inputPath: string, outputPat
   for (const part of partsByOrder) {
     const partNumber = part.partNumber
     const paddedPart = partNumber.toString().padStart(2, '0')
-    const partOutputPath = `content/kapitel/${chapterDir}/${paddedPart}.md`
+    const partOutputPath = `content/artikel/${chapterDir}/${paddedPart}.md`
     const partHtmlOutputPath = `pug-to-md/generated/html/${chapterDir}/${paddedPart}.html`
     writeOutput(part.htmlDocument, partHtmlOutputPath)
 
@@ -218,13 +218,13 @@ function rewriteChapterHref(href: string) {
   const slug = pathWithExtension!.replace(/\.html$/i, '')
   if (!slug) return href
 
-  if (!fragment) return `/kapitel/${slug}`
+  if (!fragment) return `/artikel/${slug}`
 
   const partMatch = fragment.match(/-(\d+)$/)
-  if (!partMatch) return `/kapitel/${slug}#${fragment}`
+  if (!partMatch) return `/artikel/${slug}#${fragment}`
 
   const part = partMatch[1]!.padStart(2, '0')
-  return `/kapitel/${slug}/${part}`
+  return `/artikel/${slug}/${part}`
 }
 
 function rewriteImageSources(html: string) {

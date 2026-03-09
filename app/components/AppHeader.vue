@@ -10,8 +10,8 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [{
   label: 'Lesen',
-  to: `/kapitel/gebrauchsanweisung`,
-  active: route.path.startsWith(`/kapitel`)
+  to: `/artikel/gebrauchsanweisung`,
+  active: route.path.startsWith(`/artikel`)
 },
 {
   label: 'Netzwerkgraph',

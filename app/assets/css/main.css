@@ -4,7 +4,7 @@
 @source "../../../content/**/*";
 
 @layer lexikon-roman {
-  .lexikon-roman-kapitel {
+  .lexikon-roman-artikel {
     .arrow-link::before {
       content: "\2192\00A0";
     }

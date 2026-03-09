@@ -16,9 +16,9 @@ for (const chapter of chapters) {
   const { slug, articlesCount } = chapter
 
   if (articlesCount > 1) {
-    configs[`/kapitel/${slug}`] = {
+    configs[`/artikel/${slug}`] = {
       redirect: {
-        to: `/kapitel/${slug}/01`,
+        to: `/artikel/${slug}/01`,
         statusCode: 301
       }
     }

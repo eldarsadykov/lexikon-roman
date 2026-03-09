@@ -15,7 +15,7 @@ description: Lexikon einer sentimentalen Reise zum Exporteurtreffen in Druden
 #links
 :::u-button
 ---
-to: /kapitel/gebrauchsanweisung 
+to: /artikel/gebrauchsanweisung 
 size: xl 
 trailing-icon: i-lucide-arrow-right
 variant: link

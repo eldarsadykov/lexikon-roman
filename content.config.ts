@@ -16,7 +16,7 @@ export default defineContentConfig({
     }),
     chapters: defineCollection({
       type: 'page',
-      source: 'kapitel/**',
+      source: 'artikel/**',
       schema: ChapterMetaSchema
     })
   }
