@@ -57,6 +57,8 @@ const pageNumber = computed({
   }
 })
 
+const { fontSizeClass } = useFontSize()
+
 const articleId = computed(() => {
   if (!page.value) return ''
   const slug = page.value.slug ?? ''
@@ -88,7 +90,7 @@ const articleId = computed(() => {
         :id="articleId"
         tag="article"
         :value="page"
-        class="lexikon-roman-artikel"
+        :class="['lexikon-roman-artikel', fontSizeClass]"
       />
 
       <USeparator v-if="surround?.length" />

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
+import { fontSizeItems } from '~/composables/useFontSize'
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
 const { t } = useLocale()
+const { fontSize } = useFontSize()
 </script>
 
 <template>
@@ -26,6 +28,9 @@ const { t } = useLocale()
           <div class="flex flex-col gap-6">
             <AsideSection :title="t('contentSearch.theme')">
               <UColorModeSelect />
+            </AsideSection>
+            <AsideSection title="Schriftgröße">
+              <USelect v-model="fontSize" :items="fontSizeItems" />
             </AsideSection>
           </div>
         </UPageAside>
