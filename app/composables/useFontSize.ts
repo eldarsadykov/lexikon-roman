@@ -6,14 +6,14 @@ const fontSizeMap = {
 
 export type FontSize = keyof typeof fontSizeMap
 
-export const fontSizeItems = [
-  { label: 'Klein', value: 'small' },
-  { label: 'Normal', value: 'normal' },
-  { label: 'Groß', value: 'large' }
-] satisfies { label: string, value: FontSize }[]
-
 export function useFontSize() {
+  const { t } = useLocale()
   const fontSize = useState<FontSize>('article-font-size', () => 'normal')
   const fontSizeClass = computed(() => fontSizeMap[fontSize.value])
-  return { fontSize, fontSizeClass }
+  const fontSizeItems = computed(() => [
+    { label: t('fontSize.small'), value: 'small' as FontSize },
+    { label: t('fontSize.normal'), value: 'normal' as FontSize },
+    { label: t('fontSize.large'), value: 'large' as FontSize }
+  ])
+  return { fontSize, fontSizeClass, fontSizeItems }
 }

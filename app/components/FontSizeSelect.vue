@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { fontSizeItems } from '~/composables/useFontSize'
-
-const { fontSize } = useFontSize()
+const { fontSize, fontSizeItems } = useFontSize()
 </script>
 
 <template>

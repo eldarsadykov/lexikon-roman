@@ -27,7 +27,7 @@ const { t } = useLocale()
             <AsideSection :title="t('contentSearch.theme')">
               <UColorModeSelect />
             </AsideSection>
-            <AsideSection title="Schriftgröße">
+            <AsideSection :title="t('fontSize.label')">
               <FontSizeSelect />
             </AsideSection>
           </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { de } from '@nuxt/ui/locale'
+import de from '~/locales/de'
 
 const { seo } = useAppConfig()
 
