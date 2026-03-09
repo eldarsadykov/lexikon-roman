@@ -3,6 +3,10 @@
 
 @source "../../../content/**/*";
 
+@theme {
+  --body-font-color: var(--ui-text);
+}
+
 @layer lexikon-roman {
   .lexikon-roman-artikel {
     .arrow-link::before {
