@@ -30,7 +30,11 @@ const { fontSize } = useFontSize()
               <UColorModeSelect />
             </AsideSection>
             <AsideSection title="Schriftgröße">
-              <USelect v-model="fontSize" :items="fontSizeItems" />
+              <USelect
+                v-model="fontSize"
+                icon="i-lucide-a-large-small"
+                :items="fontSizeItems"
+              />
             </AsideSection>
           </div>
         </UPageAside>
