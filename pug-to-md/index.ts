@@ -256,7 +256,9 @@ function toChapterMarkdown(chapter: ChapterMeta, body: string) {
   let markdown = '---\n'
   markdown += yaml.stringify(chapter)
   markdown += '---\n\n'
-  if (!chapter.titleEndsWithPeriod) markdown += chapter.title + ' '
+  if (!chapter.titleEndsWithPeriod) {
+    body = body.replace(/^<p>/, `<p>${chapter.title} `)
+  }
   markdown += body + '\n'
   return markdown
 }
