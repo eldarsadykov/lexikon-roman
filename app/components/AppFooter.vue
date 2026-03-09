@@ -5,9 +5,14 @@ const { footer } = useAppConfig()
 <template>
   <UFooter>
     <template #left>
-      {{ footer.credits }}
+      <NuxtLink
+        to="https://github.com/eldarsadykov/lexikon-roman"
+        target="_blank"
+        class="text-sm text-muted"
+      >
+        Published under <span class="text-highlighted">MIT License</span>
+      </NuxtLink>
     </template>
-
     <template #right>
       <UColorModeButton v-if="footer?.colorMode" />
 

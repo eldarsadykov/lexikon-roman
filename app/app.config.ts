@@ -27,23 +27,17 @@ export default defineAppConfig({
     links: [] as Array<Record<string, unknown>>
   },
   footer: {
-    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
+      'to': 'https://discord.gg/nsFNP4zZVM',
       'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
-    }, {
-      'icon': 'i-simple-icons-x',
-      'to': 'https://go.nuxt.com/x',
-      'target': '_blank',
-      'aria-label': 'Nuxt on X'
+      'aria-label': 'Lexikon-Roman on Discord'
     }, {
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt/ui',
+      'to': 'https://github.com/eldarsadykov/lexikon-roman',
       'target': '_blank',
-      'aria-label': 'Nuxt UI on GitHub'
+      'aria-label': 'Lexikon-Roman on GitHub'
     }]
   },
   toc: {
