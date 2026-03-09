@@ -22,6 +22,8 @@ const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSe
 })
 
 provide('navigation', navigation)
+
+useFaviconFromTheme()
 </script>
 
 <template>
