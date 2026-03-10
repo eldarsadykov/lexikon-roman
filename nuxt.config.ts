@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     'nuxt-og-image',
-    'nuxt-llms'
+    'nuxt-llms',
+    '@vite-pwa/nuxt'
   ],
 
   devtools: {
@@ -68,6 +69,26 @@ export default defineNuxtConfig({
   icon: {
     clientBundle: {
       scan: true
+    }
+  },
+
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'Lexikon-Roman',
+      short_name: 'Lexikon-Roman',
+      description: 'Lexikon einer sentimentalen Reise zum Exporteurtreffen in Druden – Roman',
+      lang: 'de',
+      theme_color: '#ffffff',
+      icons: [
+        { src: 'pwa-64x64.png', sizes: '64x64', type: 'image/png' },
+        { src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png' },
+        { src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png' },
+        { src: 'maskable-icon-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' }
+      ]
+    },
+    workbox: {
+      navigateFallback: null
     }
   },
 
