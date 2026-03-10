@@ -12,19 +12,6 @@ const items = computed<NavigationMenuItem[]>(() => [{
   label: 'Lesen',
   to: `/artikel/gebrauchsanweisung`,
   active: route.path.startsWith(`/artikel`)
-},
-{
-  label: 'Netzwerkgraph',
-  to: '/netzwerkgraph',
-  active: route.path.startsWith('/netzwerkgraph')
-}, {
-  label: 'Mitwirkung',
-  to: '/mitwirkung',
-  active: route.path.startsWith('/mitwirkung')
-}, {
-  label: 'Notizen',
-  to: '/notizen',
-  active: route.path.startsWith('/notizen')
 }, {
   label: 'Über',
   to: '/ueber',

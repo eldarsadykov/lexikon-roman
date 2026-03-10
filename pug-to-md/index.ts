@@ -9,6 +9,11 @@ import type { ChapterMeta } from '../schemas'
 import { writeOutput } from './helpers'
 
 convertFromJson()
+convertStandalonePage(
+  'pug-to-md/views/ueber-den-lexikon-roman.pug',
+  'Über den Lexikon-Roman',
+  'content/ueber.md'
+)
 
 function convertFromJson() {
   for (const chapter of chapters) {
@@ -260,6 +265,35 @@ function toChapterMarkdown(chapter: ChapterMeta, body: string) {
   }
   markdown += body + '\n'
   return markdown
+}
+
+function convertStandalonePage(inputPath: string, title: string, outputPath: string) {
+  if (!fs.existsSync(inputPath)) {
+    console.error(`Input file not found: ${inputPath}`)
+    process.exit(1)
+  }
+
+  let html: string
+  try {
+    html = pug.renderFile(inputPath, {
+      basedir: path.dirname(inputPath),
+      filename: inputPath
+    })
+  } catch (err) {
+    console.error('Error while rendering Pug to HTML:')
+    console.error(err)
+    process.exit(1)
+  }
+
+  const articleHtml = extractSingleArticleHtml(html)
+  const markdownBody = normalizeContentHtml(articleHtml)
+
+  let markdown = '---\n'
+  markdown += yaml.stringify({ title })
+  markdown += '---\n\n'
+  markdown += markdownBody + '\n'
+
+  writeOutput(markdown, outputPath)
 }
 
 function escapeRegExp(value: string) {
