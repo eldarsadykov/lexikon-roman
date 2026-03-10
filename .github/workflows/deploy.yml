@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: oven-sh/setup-bun@v2
-        
-      - name: Generate content
-        run: bun run generate:content
+
+      - name: Generate route rules
+        run: bun run generate:route-rules
 
       - name: Install dependencies
         run: bun install
