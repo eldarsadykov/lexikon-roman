@@ -4,13 +4,14 @@ import type { ContentNavigationItem } from '@nuxt/content'
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
 const { t } = useLocale()
+const { focusMode } = useFocusMode()
 </script>
 
 <template>
   <UContainer>
     <UPage>
       <template #left>
-        <UPageAside>
+        <UPageAside :class="{ invisible: focusMode }">
           <UContentNavigation
             highlight
             default-open
@@ -22,7 +23,7 @@ const { t } = useLocale()
       <slot />
 
       <template #right>
-        <UPageAside :ui="{ root: 'lg:pe-0' }">
+        <UPageAside :ui="{ root: 'lg:pe-0' }" :class="{ invisible: focusMode }">
           <div class="flex flex-col gap-6">
             <AsideSection :title="t('contentSearch.theme')">
               <UColorModeSelect />

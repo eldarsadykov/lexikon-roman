@@ -3,6 +3,8 @@ import de from '~/locales/de'
 
 const { seo } = useAppConfig()
 
+const { focusMode } = useFocusMode()
+
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('chapters'))
 const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('chapters'), {
   server: false
@@ -39,7 +41,7 @@ useFaviconFromTheme()
   <UApp :locale="de">
     <NuxtLoadingIndicator />
 
-    <AppHeader />
+    <AppHeader :class="{ invisible: focusMode }" />
 
     <UMain>
       <NuxtLayout>
@@ -47,7 +49,7 @@ useFaviconFromTheme()
       </NuxtLayout>
     </UMain>
 
-    <AppFooter />
+    <AppFooter :class="{ invisible: focusMode }" />
 
     <ClientOnly>
       <LazyUContentSearch
@@ -55,5 +57,14 @@ useFaviconFromTheme()
         :navigation="navigation"
       />
     </ClientOnly>
+
+    <UButton
+      class="fixed bottom-6 right-6 z-50 hidden lg:flex"
+      color="neutral"
+      variant="subtle"
+      :icon="focusMode ? 'i-lucide-minimize-2' : 'i-lucide-maximize-2'"
+      :aria-label="focusMode ? 'Vollbild beenden' : 'Vollbild'"
+      @click="focusMode = !focusMode"
+    />
   </UApp>
 </template>
