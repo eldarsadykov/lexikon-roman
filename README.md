@@ -1,39 +1,18 @@
-# Nuxt Docs Template
+# Lexikon-Roman
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+A website for *Lexikon einer sentimentalen Reise zum Exporteurtreffen in Druden – Roman* by Austrian writer Andreas Okopenko — an interactive hypertext novel structured as alphabetically-ordered encyclopedia entries linked to one another.
 
-Use this template to build your own documentation with [Nuxt UI](https://ui.nuxt.com) quickly.
+This is the second revision of [ELEX](https://www.essl.at/bibliogr/elex.html), a multimedia edition originally created in the 1990s, now rebuilt from scratch more than three decades later.
 
-- [Live demo](https://docs-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation)
+[Visit the website](https://lexikonroman.at)
 
-<a href="https://docs-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/docs-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/docs-light.png">
-    <img alt="Nuxt Docs Template" src="https://ui.nuxt.com/assets/templates/nuxt/docs-light.png">
-  </picture>
-</a>
+## Getting Started
 
-## Quick Start
-
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/docs
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=docs&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fdocs&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fdocs-dark.png&demo-url=https%3A%2F%2Fdocs-template.nuxt.dev%2F&demo-title=Nuxt%20Docs%20Template&demo-description=A%20documentation%20template%20powered%20by%20Nuxt%20Content.)
-
-## Setup
-
-Make sure to install the dependencies:
+Install dependencies:
 
 ```bash
 bun install
 ```
-
-## Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -41,22 +20,26 @@ Start the development server on `http://localhost:3000`:
 bun run dev
 ```
 
-## Production
+## Content
 
-Build the application for production:
+Chapter source files live in `pug-to-md/views/chapters/*.pug`. The pipeline converts them to Markdown for Nuxt Content. **Do not edit `content/artikel/` directly** — regenerate it from Pug sources instead:
+
+```bash
+bun run generate:content
+```
+
+## Build
 
 ```bash
 bun run build
 ```
 
-Locally preview production build:
+## People
 
-```bash
-bun run preview
-```
+- **Eldar Sadykov** — Programmer / media artist
+- **Franz Nahrada** — Social researcher, one of the original creators of ELEX
+- **Karlheinz Essl** — Composer / media artist, one of the original creators of ELEX
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Contact
 
-## Renovate integration
-
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+[info@eldarsadykov.com](mailto:info@eldarsadykov.com)
