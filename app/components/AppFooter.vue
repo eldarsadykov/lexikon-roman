@@ -10,7 +10,7 @@ const { footer } = useAppConfig()
         target="_blank"
         class="text-sm text-muted"
       >
-        Published under <span class="text-highlighted">MIT License</span>
+        Veröffentlicht unter <span class="text-highlighted">MIT-Lizenz</span>
       </NuxtLink>
     </template>
     <template #right>
