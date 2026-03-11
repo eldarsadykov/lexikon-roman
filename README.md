@@ -2,7 +2,7 @@
 
 A website for *Lexikon einer sentimentalen Reise zum Exporteurtreffen in Druden – Roman* by Austrian writer Andreas Okopenko — an interactive hypertext novel structured as alphabetically-ordered encyclopedia entries linked to one another.
 
-This is the second revision of [ELEX](https://www.essl.at/bibliogr/elex.html), a multimedia edition originally created in the 1990s, now rebuilt from scratch more than three decades later.
+This is the second revision of [ELEX](https://www.essl.at/bibliogr/elex.html), a multimedia edition originally created in the 1990s, now rebuilt from scratch three decades later.
 
 [Visit the website](https://lexikonroman.at)
 
