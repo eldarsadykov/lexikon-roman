@@ -34,12 +34,6 @@ bun run generate:content
 bun run build
 ```
 
-## People
-
-- **Eldar Sadykov** — Programmer / media artist
-- **Franz Nahrada** — Social researcher, one of the original creators of ELEX
-- **Karlheinz Essl** — Composer / media artist, one of the original creators of ELEX
-
 ## Contact
 
 [info@eldarsadykov.com](mailto:info@eldarsadykov.com)
