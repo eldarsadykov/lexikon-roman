@@ -12,7 +12,7 @@
         "@nuxt/image": "^2.0.0",
         "@nuxt/ui": "^4.5.0",
         "@nuxtjs/mdc": "^0.20.1",
-        "@puresignal/algo": "^1.0.1",
+        "@puresignal/algo": "0.3.0",
         "@vite-pwa/nuxt": "^1.1.1",
         "@vueuse/core": "^14.2.1",
         "better-sqlite3": "^12.6.2",
@@ -654,7 +654,7 @@
 
     "@poppinss/exception": ["@poppinss/exception@1.2.3", "", {}, "sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw=="],
 
-    "@puresignal/algo": ["@puresignal/algo@0.1.1", "", {}, "sha512-tBMR9WFLX2qeH9RRhtOnYxRRPwdvTTrzRGFMZY8EOMkm5Nr6QaglUUGEM+cxHApB9tH/ToGzYDJl8y+ReaBH7Q=="],
+    "@puresignal/algo": ["@puresignal/algo@0.3.0", "", {}, "sha512-746u7DOE+JdNfZ0XIQf4AGwjg/CeYQzQ6znKLutlqYpyHXh9Sr249OAAVdaIt4L9kd8MZAYp+bqfdnE5S8eY5Q=="],
 
     "@remirror/core-constants": ["@remirror/core-constants@3.0.0", "", {}, "sha512-42aWfPrimMfDKDi4YegyS7x+/0tlzaqwPQCULLanv3DMIlu96KTJR0fM5isWX2UViOqlGnX6YFgqWepcX+XMNg=="],
 
