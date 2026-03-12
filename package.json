@@ -18,7 +18,8 @@
     "typecheck": "nuxt typecheck",
     "generate:content": "bun run ./pug-to-md/index.ts && bun run format:html",
     "format:html": "prettier --ignore-path .prettierignore --write \"pug-to-md/generated/html/**/*.html\"",
-    "format:html:check": "prettier --ignore-path .prettierignore --check \"pug-to-md/generated/html/**/*.html\""
+    "format:html:check": "prettier --ignore-path .prettierignore --check \"pug-to-md/generated/html/**/*.html\"",
+    "test": "vitest"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.94",
@@ -38,6 +39,7 @@
     "tailwindcss": "^4.2.1",
     "ufo": "^1.6.3",
     "unist-util-visit": "^5.1.0",
+    "vitest": "^4.0.18",
     "zod": "^4.3.6"
   },
   "devDependencies": {
