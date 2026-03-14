@@ -29,7 +29,7 @@
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.5.0",
     "@nuxtjs/mdc": "^0.20.1",
-    "@puresignal/algo": "0.3.0",
+    "@puresignal/essl": "^0.1.1",
     "@vite-pwa/nuxt": "^1.1.1",
     "@vueuse/core": "^14.2.1",
     "better-sqlite3": "^12.6.2",
