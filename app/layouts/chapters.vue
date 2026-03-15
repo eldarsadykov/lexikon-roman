@@ -24,7 +24,6 @@ const { focusMode } = useFocusMode()
 
       <template #right>
         <UPageAside
-          :ui="{ root: 'lg:pe-0' }"
           :class="{ invisible: focusMode }"
         >
           <div class="flex flex-col gap-6">
