@@ -32,10 +32,6 @@ useSeoMeta({
 
 provide('navigation', navigation)
 
-// if (import.meta.client) {
-//   useChapterAudio()
-// }
-
 useFaviconFromTheme()
 </script>
 

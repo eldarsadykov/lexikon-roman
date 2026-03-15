@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    enabled: true
+    enabled: false
   },
 
   css: ['~/assets/css/main.css'],
@@ -72,6 +72,22 @@ export default defineNuxtConfig({
     }
   },
 
+  llms: {
+    domain: 'https://lexikonroman.at/',
+    title: 'Lexikon Roman',
+    description: 'Lexikon Roman content.',
+    sections: [
+      {
+        title: 'Chapters',
+        contentCollection: 'chapters'
+      },
+      {
+        title: 'Landing',
+        contentCollection: 'landing'
+      }
+    ]
+  },
+
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
@@ -90,21 +106,5 @@ export default defineNuxtConfig({
     workbox: {
       navigateFallback: null
     }
-  },
-
-  llms: {
-    domain: 'https://lexikonroman.at/',
-    title: 'Lexikon Roman',
-    description: 'Lexikon Roman content.',
-    sections: [
-      {
-        title: 'Chapters',
-        contentCollection: 'chapters'
-      },
-      {
-        title: 'Landing',
-        contentCollection: 'landing'
-      }
-    ]
   }
 })

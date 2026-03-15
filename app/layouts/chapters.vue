@@ -34,7 +34,7 @@ const { focusMode } = useFocusMode()
               <FontSizeSelect />
             </AsideSection>
             <AsideSection :title="t('audio.label')">
-              <AudioControls />
+              <ClientOnly><AudioControls /></ClientOnly>
             </AsideSection>
           </div>
         </UPageAside>

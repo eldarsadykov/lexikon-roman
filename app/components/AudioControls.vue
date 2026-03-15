@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { Urn } from '@puresignal/essl'
 
+const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
+
+onMounted(() => {
+  const osc = new OscillatorNode(audioContext)
+  osc.connect(masterGainNode)
+  osc.start()
+})
+
 const fileCount = 5
 let lastUrnRight = false
 
@@ -38,6 +46,12 @@ const next = () => {
   <UButton @click="next">
     Next
   </UButton>
+  <USlider
+    v-model="masterGainSliderValue"
+    :min="0"
+    :max="1"
+    :step="0.01"
+  />
 </template>
 
 <style scoped>
