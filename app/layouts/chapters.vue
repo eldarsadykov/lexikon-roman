@@ -23,7 +23,10 @@ const { focusMode } = useFocusMode()
       <slot />
 
       <template #right>
-        <UPageAside :ui="{ root: 'lg:pe-0' }" :class="{ invisible: focusMode }">
+        <UPageAside
+          :ui="{ root: 'lg:pe-0' }"
+          :class="{ invisible: focusMode }"
+        >
           <div class="flex flex-col gap-6">
             <AsideSection :title="t('contentSearch.theme')">
               <UColorModeSelect />
