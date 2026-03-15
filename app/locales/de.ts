@@ -8,6 +8,9 @@ export type AppMessages = Messages & {
     normal: string
     large: string
   }
+  audio: {
+    label: string
+  }
 }
 
 const locale: Locale<AppMessages> = {
@@ -19,6 +22,9 @@ const locale: Locale<AppMessages> = {
       small: 'Klein',
       normal: 'Normal',
       large: 'Groß'
+    },
+    audio: {
+      label: 'Audio'
     }
   }
 }
