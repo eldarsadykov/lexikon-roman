@@ -1,16 +1,39 @@
 <script setup lang="ts">
 import { Urn } from '@puresignal/essl'
+import { AudioStreamPlayer } from '@puresignal/fetch-stream-audio'
+import opusWorkerUrl from '@puresignal/fetch-stream-audio/worker-decoder-opus?url'
 import { Crossfade } from '~/utils/audio/Crossfade'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
 const targetBalance = ref(0.5)
+
+let player: AudioStreamPlayer | null
 let crossfade: Crossfade | null = null
 let osc: OscillatorNode | null = null
 let osc2: OscillatorNode | null = null
 
 onMounted(() => {
   crossfade = new Crossfade(audioContext)
+
+  player = new AudioStreamPlayer(
+    // 'https://fetch-stream-audio.anthum.com/5mbps/opus/demo/96kbit.opus',
+    audioContext,
+    '/audio/7x7_1.opus',
+    1024 * 2,
+    'OPUS',
+    {
+      opusWorkerUrl
+    }
+  )
+  console.log('-----> [AudioControls] opusWorkerUrl', opusWorkerUrl)
+
+  player.onUpdateState = (state) => {
+    console.log(state)
+  }
+
+  player.connect(audioContext.destination)
+  player.start()
 
   osc = new OscillatorNode(audioContext, { frequency: 128 })
   osc2 = new OscillatorNode(audioContext, { frequency: 192 })
@@ -26,10 +49,12 @@ onMounted(() => {
 
 onUnmounted(() => {
   crossfade?.disconnect()
+  player?.disconnect()
   osc?.disconnect()
   osc2?.disconnect()
 
   crossfade = null
+  player = null
   osc = null
   osc2 = null
 })
