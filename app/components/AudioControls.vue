@@ -1,12 +1,37 @@
 <script setup lang="ts">
 import { Urn } from '@puresignal/essl'
+import { Crossfade } from '~/utils/audio/Crossfade'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
+const targetBalance = ref(0.5)
+let crossfade: Crossfade | null = null
+let osc: OscillatorNode | null = null
+let osc2: OscillatorNode | null = null
+
 onMounted(() => {
-  const osc = new OscillatorNode(audioContext)
-  osc.connect(masterGainNode)
+  crossfade = new Crossfade(audioContext)
+
+  osc = new OscillatorNode(audioContext, { frequency: 128 })
+  osc2 = new OscillatorNode(audioContext, { frequency: 192 })
+
+  crossfade.connect(masterGainNode)
+
+  crossfade.connectToLeftInput(osc)
+  crossfade.connectToRightInput(osc2)
+
   osc.start()
+  osc2.start()
+})
+
+onUnmounted(() => {
+  crossfade?.disconnect()
+  osc?.disconnect()
+  osc2?.disconnect()
+
+  crossfade = null
+  osc = null
+  osc2 = null
 })
 
 const fileCount = 5
@@ -35,6 +60,7 @@ const next = () => {
     rightUrnValue.value = rightUrn.next()
   }
   lastUrnRight = !lastUrnRight
+  crossfade?.setBalanceOverTime(targetBalance.value, 1)
 }
 </script>
 
@@ -48,6 +74,12 @@ const next = () => {
   </UButton>
   <USlider
     v-model="masterGainSliderValue"
+    :min="0"
+    :max="1"
+    :step="0.01"
+  />
+  <USlider
+    v-model="targetBalance"
     :min="0"
     :max="1"
     :step="0.01"
