@@ -22,7 +22,7 @@ function sineRampToValueAtTime(
   const length = duration * resolution
   const values = new Float32Array(length)
   for (let i = 0; i < length; i++) {
-    const rampPhase = (i + 1) / length
+    const rampPhase = i / length
     const currentWeight = oldValue + (newValue - oldValue) * rampPhase
     values[i] = sineInterpolation(currentWeight)
   }
