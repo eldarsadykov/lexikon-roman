@@ -8,16 +8,14 @@ const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
 const targetBalance = ref(0.5)
 
-let player: AudioStreamPlayer | null
 let crossfade: Crossfade | null = null
-let osc: OscillatorNode | null = null
-let osc2: OscillatorNode | null = null
+let leftPlayer: AudioStreamPlayer | null = null
+let rightPlayer: AudioStreamPlayer | null = null
 
 onMounted(() => {
   crossfade = new Crossfade(audioContext)
 
-  player = new AudioStreamPlayer(
-    // 'https://fetch-stream-audio.anthum.com/5mbps/opus/demo/96kbit.opus',
+  leftPlayer = new AudioStreamPlayer(
     audioContext,
     '/audio/7x7_1.opus',
     1024 * 2,
@@ -26,37 +24,34 @@ onMounted(() => {
       opusWorkerUrl
     }
   )
-  console.log('-----> [AudioControls] opusWorkerUrl', opusWorkerUrl)
 
-  player.onUpdateState = (state) => {
-    console.log(state)
-  }
-
-  player.connect(audioContext.destination)
-  player.start()
-
-  osc = new OscillatorNode(audioContext, { frequency: 128 })
-  osc2 = new OscillatorNode(audioContext, { frequency: 192 })
+  rightPlayer = new AudioStreamPlayer(
+    audioContext,
+    '/audio/Cafe.opus',
+    1024 * 2,
+    'OPUS',
+    {
+      opusWorkerUrl
+    }
+  )
 
   crossfade.connect(masterGainNode)
 
-  crossfade.connectToLeftInput(osc)
-  crossfade.connectToRightInput(osc2)
+  crossfade.connectToLeftInput(leftPlayer)
+  crossfade.connectToRightInput(rightPlayer)
 
-  osc.start()
-  osc2.start()
+  leftPlayer.start()
+  rightPlayer.start()
 })
 
 onUnmounted(() => {
   crossfade?.disconnect()
-  player?.disconnect()
-  osc?.disconnect()
-  osc2?.disconnect()
+  leftPlayer?.disconnect()
+  rightPlayer?.disconnect()
 
   crossfade = null
-  player = null
-  osc = null
-  osc2 = null
+  leftPlayer = null
+  rightPlayer = null
 })
 
 const fileCount = 5

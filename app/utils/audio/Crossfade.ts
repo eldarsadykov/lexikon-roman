@@ -1,3 +1,5 @@
+import type AudioNodeLike from '~/utils/audio/AudioNodeLike'
+
 export interface CrossfadeOptions {
   balance: number
 }
@@ -60,11 +62,11 @@ export class Crossfade {
     sineRampToValueAtTime(this.rightGain.gain, oldRightGainWeight, this.rightGainWeight, 0, duration, resolution)
   }
 
-  connectToLeftInput(node: AudioNode) {
+  connectToLeftInput(node: AudioNodeLike) {
     node.connect(this.leftGain)
   }
 
-  connectToRightInput(node: AudioNode) {
+  connectToRightInput(node: AudioNodeLike) {
     node.connect(this.rightGain)
   }
 
