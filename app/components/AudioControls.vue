@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { Urn } from '@puresignal/essl'
-import { AudioStreamPlayer } from '@puresignal/fetch-stream-audio'
-import opusWorkerUrl from '@puresignal/fetch-stream-audio/worker-decoder-opus?url'
 import { Crossfade } from '~/utils/audio/Crossfade'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
@@ -9,39 +7,32 @@ const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 const targetBalance = ref(0.5)
 
 let crossfade: Crossfade | null = null
-let leftPlayer: AudioStreamPlayer | null = null
-let rightPlayer: AudioStreamPlayer | null = null
+let leftPlayer: MediaElementAudioSourceNode | null = null
+let rightPlayer: MediaElementAudioSourceNode | null = null
+
+const leftAudioEl = new Audio('/audio/7x7_1.opus')
+const rightAudioEl = new Audio('/audio/Cafe.opus')
 
 onMounted(() => {
   crossfade = new Crossfade(audioContext)
 
-  leftPlayer = new AudioStreamPlayer(
-    audioContext,
-    '/audio/7x7_1.opus',
-    1024 * 2,
-    'OPUS',
-    {
-      opusWorkerUrl
-    }
-  )
+  leftPlayer = new MediaElementAudioSourceNode(audioContext, {
+    mediaElement: leftAudioEl
+  })
 
-  rightPlayer = new AudioStreamPlayer(
-    audioContext,
-    '/audio/Cafe.opus',
-    1024 * 2,
-    'OPUS',
-    {
-      opusWorkerUrl
-    }
-  )
+  rightPlayer = new MediaElementAudioSourceNode(audioContext, {
+    mediaElement: rightAudioEl
+  })
 
   crossfade.connect(masterGainNode)
 
   crossfade.connectToLeftInput(leftPlayer)
   crossfade.connectToRightInput(rightPlayer)
 
-  leftPlayer.start()
-  rightPlayer.start()
+  ;[leftAudioEl, rightAudioEl].forEach((audioEl) => {
+    audioEl.loop = true
+    audioEl.play()
+  })
 })
 
 onUnmounted(() => {
@@ -54,7 +45,7 @@ onUnmounted(() => {
   rightPlayer = null
 })
 
-const fileCount = 5
+const fileCount = 91
 let lastUrnRight = false
 
 const onCycle = () => {
