@@ -12,29 +12,12 @@ function sineInterpolation(t: number) {
   return Math.sin(t * Math.PI / 2)
 }
 
-function sineRampToValueAtTime(
-  parameter: AudioParam,
-  oldValue: number,
-  newValue: number,
-  startTime: number,
-  duration: number,
-  resolution: number) {
-  const length = duration * resolution
-  const values = new Float32Array(length)
-  for (let i = 0; i < length; i++) {
-    const rampPhase = i / length
-    const currentWeight = oldValue + (newValue - oldValue) * rampPhase
-    values[i] = sineInterpolation(currentWeight)
-  }
-  parameter.setValueCurveAtTime(values, startTime, duration)
-  console.log(values)
-}
-
 export class Crossfade {
   readonly audioContext: AudioContext
   private _balance: number
   private readonly leftGain: GainNode
   private readonly rightGain: GainNode
+  private lastEventEndTime = 0
 
   constructor(audioContext: AudioContext, { balance = 0.5 } = {} as CrossfadeOptions) {
     this.audioContext = audioContext
@@ -49,17 +32,37 @@ export class Crossfade {
     })
   }
 
-  setBalanceOverTime(value: number, startTime: number, duration: number) {
+  curveValues(start: number, end: number, duration: number) {
+    const resolution = this.audioContext.sampleRate / 100
+    const length = duration * resolution
+    const values = new Float32Array(length)
+
+    for (let i = 0; i < length; i++) {
+      const rampPhase = i / (length - 1)
+      const deltaValue = end - start
+      const currentWeight = start + deltaValue * rampPhase
+      values[i] = sineInterpolation(currentWeight)
+    }
+
+    return values
+  }
+
+  setBalanceOverTime(value: number, duration: number) {
     const oldBalance = this.balance
     this._balance = value
 
     const oldLeftGainWeight = 1 - oldBalance
     const oldRightGainWeight = oldBalance
 
-    const resolution = this.audioContext.sampleRate / 100
+    const leftValues = this.curveValues(oldLeftGainWeight, this.leftGainWeight, duration)
+    const rightValues = this.curveValues(oldRightGainWeight, this.rightGainWeight, duration)
 
-    sineRampToValueAtTime(this.leftGain.gain, oldLeftGainWeight, this.leftGainWeight, startTime, duration, resolution)
-    sineRampToValueAtTime(this.rightGain.gain, oldRightGainWeight, this.rightGainWeight, startTime, duration, resolution)
+    const startTime = Math.max(this.audioContext.currentTime, this.lastEventEndTime) + 0.01
+
+    this.leftGain.gain.setValueCurveAtTime(leftValues, startTime, duration)
+    this.rightGain.gain.setValueCurveAtTime(rightValues, startTime, duration)
+
+    this.lastEventEndTime = startTime + duration
   }
 
   connectToLeftInput(node: AudioNodeLike) {

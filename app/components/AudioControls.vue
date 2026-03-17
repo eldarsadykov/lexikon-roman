@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { Urn } from '@puresignal/essl'
+import { logSteps as transLog, steps as transLin, Urn } from '@puresignal/essl'
 import { Crossfade } from '~/utils/audio/Crossfade'
+import { useRafFn } from '@vueuse/core'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
@@ -77,6 +78,16 @@ const rightUrn = new Urn(audioUrls.length, { onCycle })
 const rightUrnCycleIndex = ref(0)
 const rightUrnValue = ref<number | null>(null)
 
+const random = (max: number) => Math.floor(Math.random() * max)
+
+const betweenLog = (start: number, end: number, steps: number) => {
+  return transLog(random(steps), steps, start, end)
+}
+
+const betweenLin = (start: number, end: number, steps: number) => {
+  return transLin(random(steps), steps, start, end)
+}
+
 const next = () => {
   if (lastUrnRight) {
     const idx = leftUrn.next()
@@ -90,8 +101,20 @@ const next = () => {
     rightAudioEl.play()
   }
   lastUrnRight = !lastUrnRight
-  crossfade?.setBalanceOverTime(targetBalance.value, 1)
+
+  const steps = 5
+
+  const duration = betweenLog(4, 12, steps)
+  targetBalance.value = betweenLin(0, 1, steps)
+  crossfade?.setBalanceOverTime(targetBalance.value, duration)
 }
+
+const currentBalance = ref(targetBalance.value)
+
+useRafFn(() => {
+  if (!crossfade) return
+  currentBalance.value = 2 * Math.asin(crossfade.currentBalance) / Math.PI
+})
 </script>
 
 <template>
@@ -111,6 +134,13 @@ const next = () => {
     :min="0"
     :max="1"
     :step="0.01"
+  />
+  <USlider
+    v-model="currentBalance"
+    :min="0"
+    :max="1"
+    :step="0.01"
+    disabled
   />
 </template>
 
