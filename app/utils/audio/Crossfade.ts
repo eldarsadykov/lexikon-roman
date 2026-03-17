@@ -70,6 +70,10 @@ export class Crossfade {
     node.connect(this.rightGain)
   }
 
+  get currentBalance(): number {
+    return this.rightGain.gain.value
+  }
+
   private get leftGainWeight() {
     return 1 - this.balance
   }
