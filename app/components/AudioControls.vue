@@ -4,14 +4,28 @@ import { Crossfade } from '~/utils/audio/Crossfade'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
+const audioUrls = Object.values(
+  import.meta.glob('~/assets/audio/*.opus', {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }) as Record<string, string>
+)
+
+const audioName = (url: string) =>
+  url.replace(/^.*\//, '').replace(/\.opus$/, '')
+
+const playerLabel = (cycle: number, idx: number | null) =>
+  `C${cycle} | ${idx ?? '-'}: ${idx != null ? audioName(audioUrls[idx]!) : '-'}`
+
 const targetBalance = ref(0.5)
 
 let crossfade: Crossfade | null = null
 let leftPlayer: MediaElementAudioSourceNode | null = null
 let rightPlayer: MediaElementAudioSourceNode | null = null
 
-const leftAudioEl = new Audio('/audio/7x7_1.opus')
-const rightAudioEl = new Audio('/audio/Cafe.opus')
+const leftAudioEl = new Audio(audioUrls[0])
+const rightAudioEl = new Audio(audioUrls[1])
 
 onMounted(() => {
   crossfade = new Crossfade(audioContext)
@@ -45,7 +59,6 @@ onUnmounted(() => {
   rightPlayer = null
 })
 
-const fileCount = 91
 let lastUrnRight = false
 
 const onCycle = () => {
@@ -56,19 +69,25 @@ const onCycle = () => {
   }
 }
 
-const leftUrn = new Urn(fileCount, { onCycle })
+const leftUrn = new Urn(audioUrls.length, { onCycle })
 const leftUrnCycleIndex = ref(0)
 const leftUrnValue = ref<number | null>(null)
 
-const rightUrn = new Urn(fileCount, { onCycle })
+const rightUrn = new Urn(audioUrls.length, { onCycle })
 const rightUrnCycleIndex = ref(0)
 const rightUrnValue = ref<number | null>(null)
 
 const next = () => {
   if (lastUrnRight) {
-    leftUrnValue.value = leftUrn.next()
+    const idx = leftUrn.next()
+    leftUrnValue.value = idx
+    leftAudioEl.src = audioUrls[idx]!
+    leftAudioEl.play()
   } else {
-    rightUrnValue.value = rightUrn.next()
+    const idx = rightUrn.next()
+    rightUrnValue.value = idx
+    rightAudioEl.src = audioUrls[idx]!
+    rightAudioEl.play()
   }
   lastUrnRight = !lastUrnRight
   crossfade?.setBalanceOverTime(targetBalance.value, 1)
@@ -76,10 +95,8 @@ const next = () => {
 </script>
 
 <template>
-  <div>Left Cycle: {{ leftUrnCycleIndex }}</div>
-  <div>Left Value: {{ leftUrnValue ?? '-' }}</div>
-  <div>Right Cycle: {{ rightUrnCycleIndex }}</div>
-  <div>Right Value: {{ rightUrnValue ?? '-' }}</div>
+  <div>{{ playerLabel(leftUrnCycleIndex, leftUrnValue) }}</div>
+  <div>{{ playerLabel(rightUrnCycleIndex, rightUrnValue) }}</div>
   <UButton @click="next">
     Next
   </UButton>

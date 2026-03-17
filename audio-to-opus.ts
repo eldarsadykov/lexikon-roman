@@ -3,7 +3,7 @@ import { join, dirname } from 'path'
 import { spawnSync } from 'child_process'
 
 const mediaDir = join(dirname(Bun.main), '../ELEX-Soundscape/media')
-const outputDir = join(dirname(Bun.main), 'public/audio')
+const outputDir = join(dirname(Bun.main), 'app/assets/audio')
 
 const files = readdirSync(mediaDir).filter(f => f.endsWith('.aiff'))
 
