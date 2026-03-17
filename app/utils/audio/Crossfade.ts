@@ -49,7 +49,7 @@ export class Crossfade {
     })
   }
 
-  setBalanceOverTime(value: number, duration: number) {
+  setBalanceOverTime(value: number, startTime: number, duration: number) {
     const oldBalance = this.balance
     this._balance = value
 
@@ -58,8 +58,8 @@ export class Crossfade {
 
     const resolution = this.audioContext.sampleRate / 100
 
-    sineRampToValueAtTime(this.leftGain.gain, oldLeftGainWeight, this.leftGainWeight, 0, duration, resolution)
-    sineRampToValueAtTime(this.rightGain.gain, oldRightGainWeight, this.rightGainWeight, 0, duration, resolution)
+    sineRampToValueAtTime(this.leftGain.gain, oldLeftGainWeight, this.leftGainWeight, startTime, duration, resolution)
+    sineRampToValueAtTime(this.rightGain.gain, oldRightGainWeight, this.rightGainWeight, startTime, duration, resolution)
   }
 
   connectToLeftInput(node: AudioNodeLike) {
