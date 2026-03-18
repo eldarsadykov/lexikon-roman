@@ -28,13 +28,31 @@ const logStep = (step, steps, start, end) => {
 }
 
 class CrossfadeProcessor extends AudioWorkletProcessor {
+  parameters = {
+    balanceSteps: 5,
+    minBalance: 0,
+    maxBalance: 1,
+    durationSteps: 5,
+    minDuration: 4,
+    maxDuration: 12
+  }
+
   constructor() {
     super()
     this.balance = linStep(random(5), 5, 0, 1)
     this.activeRamp = null
   }
 
-  process(inputs, outputs, _parameters) {
+  process(inputs, outputs) {
+    const {
+      balanceSteps,
+      minBalance,
+      maxBalance,
+      durationSteps,
+      minDuration,
+      maxDuration
+    } = this.parameters
+
     const leftInput = inputs[0]
     const rightInput = inputs[1]
     const output = outputs[0]
@@ -46,16 +64,12 @@ class CrossfadeProcessor extends AudioWorkletProcessor {
     for (let i = 0; i < numSamples; i++) {
       // Self-generate a new ramp when idle
       if (!this.activeRamp) {
-        const steps = 5
-        const targetBalance = linStep(random(steps), steps, 0, 1)
-        const durationSeconds = logStep(random(steps), steps, 4, 12)
+        const targetBalance = linStep(random(balanceSteps), balanceSteps, minBalance, maxBalance)
+        const durationSeconds = logStep(random(durationSteps), durationSteps, minDuration, maxDuration)
         const durationSamples = Math.max(1, Math.round(durationSeconds * sampleRate))
 
         this.activeRamp = {
-          targetBalance,
-          startBalance: this.balance,
-          durationSamples,
-          elapsedSamples: 0
+          targetBalance, startBalance: this.balance, durationSamples, elapsedSamples: 0
         }
 
         this.port.postMessage({
@@ -73,8 +87,7 @@ class CrossfadeProcessor extends AudioWorkletProcessor {
         this.balance = this.activeRamp.targetBalance
         this.activeRamp = null
       } else {
-        this.balance = this.activeRamp.startBalance
-          + (this.activeRamp.targetBalance - this.activeRamp.startBalance) * t
+        this.balance = this.activeRamp.startBalance + (this.activeRamp.targetBalance - this.activeRamp.startBalance) * t
       }
 
       const leftGain = Math.sin((1 - this.balance) * HALF_PI)
