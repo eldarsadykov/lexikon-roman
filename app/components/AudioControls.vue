@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { logSteps as transLog, steps as transLin, Urn } from '@puresignal/essl'
+import { Urn } from '@puresignal/essl'
 import { useRafFn } from '@vueuse/core'
 import { CrossfadeWorklet } from '~/utils/audio/CrossfadeWorklet'
 
@@ -35,8 +35,6 @@ const audioName = (url: string) =>
 const playerLabel = (cycle: number, idx: number | null) =>
   `C${cycle} | ${idx ?? '-'}: ${idx != null ? audioName(audioUrls[idx]!) : '-'}`
 
-const targetBalance = ref(0.5)
-
 let crossfade: CrossfadeWorklet | null = null
 let leftPlayer: MediaElementAudioSourceNode | null = null
 let rightPlayer: MediaElementAudioSourceNode | null = null
@@ -44,8 +42,24 @@ let rightPlayer: MediaElementAudioSourceNode | null = null
 const leftAudioEl = new Audio(audioUrls[leftUrnValue.value])
 const rightAudioEl = new Audio(audioUrls[rightUrnValue.value])
 
+// Ramp state for UI animation
+let rampStartTime = 0
+let rampDuration = 1
+let rampTargetBalance = 0.5
+let rampPreviousBalance = 0.5
+
+const currentBalance = ref(0.5)
+
+const onRamp = (balance: number, duration: number, startTime: number) => {
+  rampPreviousBalance = currentBalance.value
+  rampTargetBalance = balance
+  rampDuration = duration
+  rampStartTime = startTime
+  console.log({ balance, duration, startTime })
+}
+
 onMounted(async () => {
-  crossfade = await CrossfadeWorklet.create(audioContext)
+  crossfade = await CrossfadeWorklet.create(audioContext, { onRamp })
 
   leftPlayer = new MediaElementAudioSourceNode(audioContext, {
     mediaElement: leftAudioEl
@@ -57,8 +71,8 @@ onMounted(async () => {
 
   crossfade.connect(masterGainNode)
 
-  crossfade.offerConnectionToLeftInput(leftPlayer)
-  crossfade.offerConnectionToRightInput(rightPlayer)
+  crossfade.offerLeftInputConnection(leftPlayer)
+  crossfade.offerRightInputConnection(rightPlayer)
 
   ;[leftAudioEl, rightAudioEl].forEach((audioEl) => {
     audioEl.loop = true
@@ -78,16 +92,6 @@ onUnmounted(() => {
 
 let lastUrnRight = false
 
-const random = (max: number) => Math.floor(Math.random() * max)
-
-const betweenLog = (start: number, end: number, steps: number) => {
-  return transLog(random(steps), steps, start, end)
-}
-
-const betweenLin = (start: number, end: number, steps: number) => {
-  return transLin(random(steps), steps, start, end)
-}
-
 const next = () => {
   if (lastUrnRight) {
     const idx = leftUrn.next()
@@ -101,19 +105,13 @@ const next = () => {
     rightAudioEl.play()
   }
   lastUrnRight = !lastUrnRight
-
-  const steps = 5
-
-  const duration = betweenLog(4, 12, steps)
-  targetBalance.value = betweenLin(0, 1, steps)
-  crossfade?.setBalanceOverTime(targetBalance.value, duration)
 }
-
-const currentBalance = ref(targetBalance.value)
 
 useRafFn(() => {
   if (!crossfade) return
-  currentBalance.value = crossfade.currentBalance
+  const elapsed = audioContext.currentTime - rampStartTime
+  const t = Math.min(Math.max(elapsed / rampDuration, 0), 1)
+  currentBalance.value = rampPreviousBalance + (rampTargetBalance - rampPreviousBalance) * t
 })
 </script>
 
@@ -125,12 +123,6 @@ useRafFn(() => {
   </UButton>
   <USlider
     v-model="masterGainSliderValue"
-    :min="0"
-    :max="1"
-    :step="0.01"
-  />
-  <USlider
-    v-model="targetBalance"
     :min="0"
     :max="1"
     :step="0.01"

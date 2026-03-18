@@ -1,20 +1,22 @@
 import type AudioNodeLike from '~/utils/audio/AudioNodeLike'
 
+export interface CrossfadeOptions {
+  onRamp: (balance: number, duration: number, startTime: number) => void
+}
+
 /**
  * AudioWorklet-based equal-power crossfade between two audio sources.
  *
  * Must call `CrossfadeWorklet.register(audioContext)` once before constructing.
- * Balance automation is message-based: `setBalanceOverTime()` posts ramp commands
- * to the processor, which queues and executes them sequentially.
+ * The processor self-generates ramps and notifies the main thread via `onRamp`.
  */
 export class CrossfadeWorklet {
   readonly audioContext: AudioContext
   private readonly workletNode: AudioWorkletNode
   private readonly leftInput: GainNode
   private readonly rightInput: GainNode
-  private _currentBalance = 0.5
 
-  private constructor(audioContext: AudioContext) {
+  private constructor(audioContext: AudioContext, options: CrossfadeOptions) {
     this.audioContext = audioContext
 
     this.workletNode = new AudioWorkletNode(audioContext, 'crossfade-processor', {
@@ -31,20 +33,16 @@ export class CrossfadeWorklet {
     this.leftInput.connect(this.workletNode, 0, 0)
     this.rightInput.connect(this.workletNode, 0, 1)
 
-    this.workletNode.port.onmessage = (e: MessageEvent<{ currentBalance: number }>) => {
-      this._currentBalance = e.data.currentBalance
+    this.workletNode.port.onmessage = (e: MessageEvent<{ balance: number, duration: number, startTime: number }>) => {
+      options.onRamp(e.data.balance, e.data.duration, e.data.startTime)
     }
-  }
-
-  get currentBalance(): number {
-    return this._currentBalance
   }
 
   /**
    * Register the crossfade processor with the given AudioContext.
    * Call once before creating any CrossfadeWorklet instances.
    */
-  static async register(audioContext: AudioContext): Promise<void> {
+  private static async register(audioContext: AudioContext): Promise<void> {
     const processorUrl = new URL('./crossfade-processor.ts', import.meta.url).href
     await audioContext.audioWorklet.addModule(processorUrl)
   }
@@ -52,25 +50,16 @@ export class CrossfadeWorklet {
   /**
    * Create a CrossfadeWorklet. Registers the processor if needed.
    */
-  static async create(audioContext: AudioContext): Promise<CrossfadeWorklet> {
+  static async create(audioContext: AudioContext, options: CrossfadeOptions): Promise<CrossfadeWorklet> {
     await CrossfadeWorklet.register(audioContext)
-    return new CrossfadeWorklet(audioContext)
+    return new CrossfadeWorklet(audioContext, options)
   }
 
-  /**
-   * Queue a linear balance ramp. Ramps execute sequentially on the audio thread.
-   * @param balance Target balance (0 = full left, 1 = full right)
-   * @param duration Ramp duration in seconds
-   */
-  setBalanceOverTime(balance: number, duration: number) {
-    this.workletNode.port.postMessage({ balance, duration })
-  }
-
-  offerConnectionToLeftInput(node: AudioNodeLike) {
+  offerLeftInputConnection(node: AudioNodeLike) {
     node.connect(this.leftInput)
   }
 
-  offerConnectionToRightInput(node: AudioNodeLike) {
+  offerRightInputConnection(node: AudioNodeLike) {
     node.connect(this.rightInput)
   }
 

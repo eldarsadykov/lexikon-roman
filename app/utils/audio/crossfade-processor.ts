@@ -6,9 +6,9 @@
  *   - input 0: "left" source
  *   - input 1: "right" source
  *
- * Messages:
- *   - { balance: number, duration: number } — queue a linear ramp to `balance`
- *     over `duration` seconds. Ramps execute sequentially.
+ * The processor self-generates ramps: when the current ramp finishes, a new one
+ * is generated with random target balance and duration, and posted to the main
+ * thread as { balance, duration, startTime }.
  *
  * The processor applies sin(balance * π/2) gain to the right input
  * and sin((1 - balance) * π/2) = cos(balance * π/2) gain to the left input,
@@ -17,10 +17,13 @@
 
 const HALF_PI = Math.PI / 2
 
-interface RampEntry {
-  targetBalance: number
-  durationSamples: number
-}
+const random = (max: number) => Math.floor(Math.random() * max)
+
+const linStep = (step: number, steps: number, start: number, end: number) =>
+  start + (step / steps) * (end - start)
+
+const logStep = (step: number, steps: number, start: number, end: number) =>
+  start ** (1 - step / steps) * end ** (step / steps)
 
 interface ActiveRamp {
   targetBalance: number
@@ -31,17 +34,7 @@ interface ActiveRamp {
 
 class CrossfadeProcessor extends AudioWorkletProcessor {
   private balance = 0.5
-  private rampQueue: RampEntry[] = []
   private activeRamp: ActiveRamp | null = null
-
-  constructor() {
-    super()
-    this.port.onmessage = (event: MessageEvent<{ balance: number, duration: number }>) => {
-      const { balance, duration } = event.data
-      const durationSamples = Math.max(1, Math.round(duration * sampleRate))
-      this.rampQueue.push({ targetBalance: balance, durationSamples })
-    }
-  }
 
   process(
     inputs: Float32Array[][],
@@ -57,28 +50,36 @@ class CrossfadeProcessor extends AudioWorkletProcessor {
     const numSamples = output[0]!.length
 
     for (let i = 0; i < numSamples; i++) {
-      // Activate next ramp if idle
-      if (!this.activeRamp && this.rampQueue.length > 0) {
-        const next = this.rampQueue.shift()!
+      // Self-generate a new ramp when idle
+      if (!this.activeRamp) {
+        const steps = 5
+        const targetBalance = linStep(random(steps), steps, 0, 1)
+        const durationSeconds = logStep(random(steps), steps, 4, 12)
+        const durationSamples = Math.max(1, Math.round(durationSeconds * sampleRate))
+
         this.activeRamp = {
-          targetBalance: next.targetBalance,
+          targetBalance,
           startBalance: this.balance,
-          durationSamples: next.durationSamples,
+          durationSamples,
           elapsedSamples: 0
         }
+
+        this.port.postMessage({
+          balance: targetBalance,
+          duration: durationSeconds,
+          startTime: currentTime
+        })
       }
 
       // Advance active ramp
-      if (this.activeRamp) {
-        this.activeRamp.elapsedSamples++
-        const t = this.activeRamp.elapsedSamples / this.activeRamp.durationSamples
-        if (t >= 1) {
-          this.balance = this.activeRamp.targetBalance
-          this.activeRamp = null
-        } else {
-          this.balance = this.activeRamp.startBalance
-            + (this.activeRamp.targetBalance - this.activeRamp.startBalance) * t
-        }
+      this.activeRamp.elapsedSamples++
+      const t = this.activeRamp.elapsedSamples / this.activeRamp.durationSamples
+      if (t >= 1) {
+        this.balance = this.activeRamp.targetBalance
+        this.activeRamp = null
+      } else {
+        this.balance = this.activeRamp.startBalance
+          + (this.activeRamp.targetBalance - this.activeRamp.startBalance) * t
       }
 
       const leftGain = Math.sin((1 - this.balance) * HALF_PI)
@@ -90,8 +91,6 @@ class CrossfadeProcessor extends AudioWorkletProcessor {
         output[channel]![i] = leftSample * leftGain + rightSample * rightGain
       }
     }
-
-    this.port.postMessage({ currentBalance: this.balance })
 
     return true
   }
