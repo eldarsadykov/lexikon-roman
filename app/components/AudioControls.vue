@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Urn } from '@puresignal/essl'
 import { useRafFn } from '@vueuse/core'
-import { CrossfadeWorklet } from '~/utils/audio/CrossfadeWorklet'
+import { type RampInfo, CrossfadeWorklet } from '~/utils/audio/CrossfadeWorklet'
 
 const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
 
@@ -42,20 +42,13 @@ let rightPlayer: MediaElementAudioSourceNode | null = null
 const leftAudioEl = new Audio(audioUrls[leftUrnValue.value])
 const rightAudioEl = new Audio(audioUrls[rightUrnValue.value])
 
-// Ramp state for UI animation
-let rampStartTime = 0
-let rampDuration = 1
-let rampTargetBalance = 0.5
-let rampPreviousBalance = 0.5
+let ramp: RampInfo | null = null
 
-const currentBalance = ref(0.5)
+const currentBalance = ref<number | null>(null)
 
-const onRamp = (balance: number, duration: number, startTime: number) => {
-  rampPreviousBalance = currentBalance.value
-  rampTargetBalance = balance
-  rampDuration = duration
-  rampStartTime = startTime
-  console.log({ balance, duration, startTime })
+const onRamp = (incoming: RampInfo) => {
+  ramp = incoming
+  console.log(ramp)
 }
 
 onMounted(async () => {
@@ -108,10 +101,10 @@ const next = () => {
 }
 
 useRafFn(() => {
-  if (!crossfade) return
-  const elapsed = audioContext.currentTime - rampStartTime
-  const t = Math.min(Math.max(elapsed / rampDuration, 0), 1)
-  currentBalance.value = rampPreviousBalance + (rampTargetBalance - rampPreviousBalance) * t
+  if (!crossfade || !ramp) return
+  const elapsed = audioContext.currentTime - ramp.startTime
+  const t = Math.min(Math.max(elapsed / ramp.duration, 0), 1)
+  currentBalance.value = ramp.startBalance + (ramp.balance - ramp.startBalance) * t
 })
 </script>
 
@@ -128,6 +121,7 @@ useRafFn(() => {
     :step="0.01"
   />
   <USlider
+    v-if="currentBalance !== null"
     v-model="currentBalance"
     :min="0"
     :max="1"

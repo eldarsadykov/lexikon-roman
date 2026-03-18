@@ -33,7 +33,7 @@ interface ActiveRamp {
 }
 
 class CrossfadeProcessor extends AudioWorkletProcessor {
-  private balance = 0.5
+  private balance = linStep(random(5), 5, 0, 1)
   private activeRamp: ActiveRamp | null = null
 
   process(
@@ -65,6 +65,7 @@ class CrossfadeProcessor extends AudioWorkletProcessor {
         }
 
         this.port.postMessage({
+          startBalance: this.balance,
           balance: targetBalance,
           duration: durationSeconds,
           startTime: currentTime

@@ -1,7 +1,14 @@
 import type AudioNodeLike from '~/utils/audio/AudioNodeLike'
 
+export interface RampInfo {
+  startBalance: number
+  balance: number
+  duration: number
+  startTime: number
+}
+
 export interface CrossfadeOptions {
-  onRamp: (balance: number, duration: number, startTime: number) => void
+  onRamp: (ramp: RampInfo) => void
 }
 
 /**
@@ -33,8 +40,8 @@ export class CrossfadeWorklet {
     this.leftInput.connect(this.workletNode, 0, 0)
     this.rightInput.connect(this.workletNode, 0, 1)
 
-    this.workletNode.port.onmessage = (e: MessageEvent<{ balance: number, duration: number, startTime: number }>) => {
-      options.onRamp(e.data.balance, e.data.duration, e.data.startTime)
+    this.workletNode.port.onmessage = (e: MessageEvent<RampInfo>) => {
+      options.onRamp(e.data)
     }
   }
 
