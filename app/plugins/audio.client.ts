@@ -1,15 +1,26 @@
 export default defineNuxtPlugin(() => {
   const audioContext = new AudioContext()
 
-  const masterGainSliderValue = ref(0.0)
+  const masterGainSliderValue = ref(1.0)
   const masterGainNode = new GainNode(audioContext, {
     gain: masterGainSliderValue.value
   })
 
-  masterGainNode.connect(audioContext.destination)
+  const isAudioEnabled = ref(false)
+
+  const muteNode = new GainNode(audioContext, {
+    gain: isAudioEnabled.value ? 1 : 0
+  })
+
+  masterGainNode.connect(muteNode)
+  muteNode.connect(audioContext.destination)
 
   watch(masterGainSliderValue, (newValue: number) => {
     masterGainNode.gain.setTargetAtTime(newValue, 0, 0.02)
+  })
+
+  watch(isAudioEnabled, (value) => {
+    muteNode.gain.setTargetAtTime(value ? 1 : 0, 0, 0.3)
   })
 
   const isAudioRenderingEnabled = useState<boolean>(
@@ -22,6 +33,8 @@ export default defineNuxtPlugin(() => {
       audioContext,
       masterGainNode,
       masterGainSliderValue,
+      muteNode,
+      isAudioEnabled,
       isAudioRenderingEnabled
     }
   }

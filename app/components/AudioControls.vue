@@ -3,7 +3,7 @@ import { Urn } from '@puresignal/essl'
 import { useRafFn } from '@vueuse/core'
 import { type RampInfo, CrossfadeWorklet } from '~/utils/audio/CrossfadeWorklet'
 
-const { audioContext, masterGainNode, masterGainSliderValue } = useAudio()
+const { audioContext, masterGainNode, masterGainSliderValue, isAudioEnabled } = useAudio()
 
 const audioUrls = Object.values(
   import.meta.glob('~/assets/audio/*.opus', {
@@ -100,6 +100,13 @@ const next = () => {
   lastUrnRight = !lastUrnRight
 }
 
+const route = useRoute()
+watch(() => route.path, (path) => {
+  if (path.startsWith('/artikel/')) next()
+  console.log(playerLabel(leftUrnCycleIndex.value, leftUrnValue.value))
+  console.log(playerLabel(rightUrnCycleIndex.value, rightUrnValue.value))
+})
+
 useRafFn(() => {
   if (!crossfade || !ramp) return
   const elapsed = audioContext.currentTime - ramp.startTime
@@ -109,25 +116,27 @@ useRafFn(() => {
 </script>
 
 <template>
-  <div>{{ playerLabel(leftUrnCycleIndex, leftUrnValue) }}</div>
-  <div>{{ playerLabel(rightUrnCycleIndex, rightUrnValue) }}</div>
-  <UButton @click="next">
-    Next
-  </UButton>
-  <USlider
-    v-model="masterGainSliderValue"
-    :min="0"
-    :max="1"
-    :step="0.01"
-  />
-  <USlider
-    v-if="currentBalance !== null"
-    v-model="currentBalance"
-    :min="0"
-    :max="1"
-    :step="0.01"
-    disabled
-  />
+  <div class="flex flex-col gap-6">
+    <USwitch
+      v-model="isAudioEnabled"
+      :label="isAudioEnabled ? 'Ein' : 'Aus'"
+    />
+    <USlider
+      v-model="masterGainSliderValue"
+      :min="0"
+      :max="1"
+      :step="0.01"
+      :disabled="!isAudioEnabled"
+    />
+    <USlider
+      v-if="currentBalance !== null"
+      v-model="currentBalance"
+      :min="0"
+      :max="1"
+      :step="0.01"
+      disabled
+    />
+  </div>
 </template>
 
 <style scoped>
