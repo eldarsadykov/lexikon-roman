@@ -122,7 +122,7 @@ useRafFn(() => {
       label="Ein / Aus"
     />
     <div class="flex flex-col gap-3">
-      <div>
+      <div class="text-sm">
         Lautstärke
       </div>
       <USlider
@@ -134,8 +134,8 @@ useRafFn(() => {
       />
     </div>
     <div class="flex flex-col gap-3">
-      <div>
-        Bilanz
+      <div class="text-sm">
+        Balance
       </div>
       <USlider
         v-if="currentBalance !== null"
