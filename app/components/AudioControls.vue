@@ -119,23 +119,33 @@ useRafFn(() => {
   <div class="flex flex-col gap-6">
     <USwitch
       v-model="isAudioEnabled"
-      :label="isAudioEnabled ? 'Ein' : 'Aus'"
+      label="Ein / Aus"
     />
-    <USlider
-      v-model="masterGainSliderValue"
-      :min="0"
-      :max="1"
-      :step="0.01"
-      :disabled="!isAudioEnabled"
-    />
-    <USlider
-      v-if="currentBalance !== null"
-      v-model="currentBalance"
-      :min="0"
-      :max="1"
-      :step="0.01"
-      disabled
-    />
+    <div class="flex flex-col gap-3">
+      <div>
+        Lautstärke
+      </div>
+      <USlider
+        v-model="masterGainSliderValue"
+        :min="0"
+        :max="1"
+        :step="0.01"
+        :disabled="!isAudioEnabled"
+      />
+    </div>
+    <div class="flex flex-col gap-3">
+      <div>
+        Bilanz
+      </div>
+      <USlider
+        v-if="currentBalance !== null"
+        v-model="currentBalance"
+        :min="0"
+        :max="1"
+        :step="0.01"
+        disabled
+      />
+    </div>
   </div>
 </template>
 
