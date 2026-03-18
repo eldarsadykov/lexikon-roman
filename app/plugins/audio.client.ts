@@ -23,6 +23,7 @@ export default defineNuxtPlugin(() => {
   })
 
   watch(isAudioEnabled, (value) => {
+    if (value) audioContext.resume()
     muteNode.gain.setTargetAtTime(value ? 1 : 0, 0, 0.05)
   })
 

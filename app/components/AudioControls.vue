@@ -69,7 +69,6 @@ onMounted(async () => {
 
   ;[leftAudioEl, rightAudioEl].forEach((audioEl) => {
     audioEl.loop = true
-    audioEl.play()
   })
 })
 
@@ -90,15 +89,25 @@ const next = () => {
     const idx = leftUrn.next()
     leftUrnValue.value = idx
     leftAudioEl.src = audioUrls[idx]!
-    leftAudioEl.play()
+    if (isAudioEnabled.value) leftAudioEl.play()
   } else {
     const idx = rightUrn.next()
     rightUrnValue.value = idx
     rightAudioEl.src = audioUrls[idx]!
-    rightAudioEl.play()
+    if (isAudioEnabled.value) rightAudioEl.play()
   }
   lastUrnRight = !lastUrnRight
 }
+
+watch(isAudioEnabled, (enabled) => {
+  if (enabled) {
+    leftAudioEl.play()
+    rightAudioEl.play()
+  } else {
+    leftAudioEl.pause()
+    rightAudioEl.pause()
+  }
+})
 
 const route = useRoute()
 watch(() => route.path, (path) => {
