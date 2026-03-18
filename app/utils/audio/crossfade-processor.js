@@ -17,13 +17,15 @@
 
 const HALF_PI = Math.PI / 2
 
-const random = (max) => Math.floor(Math.random() * max)
+const random = max => Math.floor(Math.random() * max)
 
-const linStep = (step, steps, start, end) =>
-  start + (step / steps) * (end - start)
+const linStep = (step, steps, start, end) => {
+  return start + (step / (steps - 1)) * (end - start)
+}
 
-const logStep = (step, steps, start, end) =>
-  start ** (1 - step / steps) * end ** (step / steps)
+const logStep = (step, steps, start, end) => {
+  return start ** (1 - step / (steps - 1)) * end ** (step / (steps - 1))
+}
 
 class CrossfadeProcessor extends AudioWorkletProcessor {
   constructor() {
