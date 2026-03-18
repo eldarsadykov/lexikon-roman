@@ -1,4 +1,5 @@
 import type AudioNodeLike from '~/utils/audio/AudioNodeLike'
+import processorCode from '~/utils/audio/crossfade-processor.js?raw'
 
 export interface RampInfo {
   startBalance: number
@@ -22,6 +23,7 @@ export class CrossfadeWorklet {
   private readonly workletNode: AudioWorkletNode
   private readonly leftInput: GainNode
   private readonly rightInput: GainNode
+  private static processorRegistered = false
 
   private constructor(audioContext: AudioContext, options: CrossfadeOptions) {
     this.audioContext = audioContext
@@ -50,15 +52,20 @@ export class CrossfadeWorklet {
    * Call once before creating any CrossfadeWorklet instances.
    */
   private static async register(audioContext: AudioContext): Promise<void> {
-    const processorUrl = new URL('./crossfade-processor.ts', import.meta.url).href
-    await audioContext.audioWorklet.addModule(processorUrl)
+    const blob = new Blob([processorCode], { type: 'application/javascript' })
+    const url = URL.createObjectURL(blob)
+    await audioContext.audioWorklet.addModule(url)
+    URL.revokeObjectURL(url)
+    CrossfadeWorklet.processorRegistered = true
   }
 
   /**
    * Create a CrossfadeWorklet. Registers the processor if needed.
    */
   static async create(audioContext: AudioContext, options: CrossfadeOptions): Promise<CrossfadeWorklet> {
-    await CrossfadeWorklet.register(audioContext)
+    if (!CrossfadeWorklet.processorRegistered) {
+      await CrossfadeWorklet.register(audioContext)
+    }
     return new CrossfadeWorklet(audioContext, options)
   }
 
