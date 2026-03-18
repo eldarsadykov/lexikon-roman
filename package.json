@@ -31,6 +31,7 @@
     "@nuxtjs/mdc": "^0.20.1",
     "@puresignal/essl": "^0.1.1",
     "@puresignal/fetch-stream-audio": "^0.1.0",
+    "@types/audioworklet": "^0.0.96",
     "@vite-pwa/nuxt": "^1.1.1",
     "@vueuse/core": "^14.2.1",
     "better-sqlite3": "^12.8.0",
