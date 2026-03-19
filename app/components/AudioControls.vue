@@ -2,6 +2,7 @@
 import { Urn } from '@puresignal/essl'
 import { useRafFn } from '@vueuse/core'
 import { type RampInfo, CrossfadeWorklet } from '~/utils/audio/CrossfadeWorklet'
+import attenuationData from '~/assets/audio/attenuation.json'
 
 const { audioContext, masterGainNode, masterGainSliderValue, isAudioEnabled } = useAudio()
 
@@ -12,6 +13,11 @@ const audioUrls = Object.values(
     import: 'default'
   }) as Record<string, string>
 )
+
+function applyAttenuation(gainNode: GainNode, index: number) {
+  const db = attenuationData[index]?.attenuation_db ?? 0
+  gainNode.gain.value = Math.pow(10, db / 20)
+}
 
 const onCycle = () => {
   if (lastUrnRight) {
@@ -38,6 +44,8 @@ const playerLabel = (cycle: number, idx: number | null) =>
 let crossfade: CrossfadeWorklet | null = null
 let leftPlayer: MediaElementAudioSourceNode | null = null
 let rightPlayer: MediaElementAudioSourceNode | null = null
+let leftAttenuationGain: GainNode | null = null
+let rightAttenuationGain: GainNode | null = null
 
 const leftAudioEl = new Audio(audioUrls[leftUrnValue.value])
 const rightAudioEl = new Audio(audioUrls[rightUrnValue.value])
@@ -62,10 +70,19 @@ onMounted(async () => {
     mediaElement: rightAudioEl
   })
 
+  leftAttenuationGain = new GainNode(audioContext)
+  rightAttenuationGain = new GainNode(audioContext)
+
+  leftPlayer.connect(leftAttenuationGain)
+  rightPlayer.connect(rightAttenuationGain)
+
+  applyAttenuation(leftAttenuationGain, leftUrnValue.value)
+  applyAttenuation(rightAttenuationGain, rightUrnValue.value)
+
   crossfade.connect(masterGainNode)
 
-  crossfade.offerLeftInputConnection(leftPlayer)
-  crossfade.offerRightInputConnection(rightPlayer)
+  crossfade.offerLeftInputConnection(leftAttenuationGain)
+  crossfade.offerRightInputConnection(rightAttenuationGain)
 
   ;[leftAudioEl, rightAudioEl].forEach((audioEl) => {
     audioEl.loop = true
@@ -74,10 +91,14 @@ onMounted(async () => {
 
 onUnmounted(() => {
   crossfade?.disconnect()
+  leftAttenuationGain?.disconnect()
+  rightAttenuationGain?.disconnect()
   leftPlayer?.disconnect()
   rightPlayer?.disconnect()
 
   crossfade = null
+  leftAttenuationGain = null
+  rightAttenuationGain = null
   leftPlayer = null
   rightPlayer = null
 })
@@ -89,11 +110,13 @@ const next = () => {
     const idx = leftUrn.next()
     leftUrnValue.value = idx
     leftAudioEl.src = audioUrls[idx]!
+    if (leftAttenuationGain) applyAttenuation(leftAttenuationGain, idx)
     if (isAudioEnabled.value) leftAudioEl.play()
   } else {
     const idx = rightUrn.next()
     rightUrnValue.value = idx
     rightAudioEl.src = audioUrls[idx]!
+    if (rightAttenuationGain) applyAttenuation(rightAttenuationGain, idx)
     if (isAudioEnabled.value) rightAudioEl.play()
   }
   lastUrnRight = !lastUrnRight
