@@ -142,19 +142,6 @@ useRafFn(() => {
         :disabled="!isAudioEnabled"
       />
     </div>
-    <div class="flex flex-col gap-3">
-      <div class="text-sm">
-        Balance
-      </div>
-      <USlider
-        v-if="currentBalance !== null"
-        v-model="currentBalance"
-        :min="0"
-        :max="1"
-        :step="0.01"
-        disabled
-      />
-    </div>
   </div>
 </template>
 
