@@ -15,7 +15,9 @@ const audioUrls = Object.values(
 )
 
 function applyAttenuation(gainNode: GainNode, index: number) {
-  const db = attenuationData[index]?.attenuation_db ?? 0
+  if (!attenuationData[index]) throw new Error('Could not find attenuation data at index ' + index)
+  const db = attenuationData[index]?.attenuation_db
+  console.log('-----> [AudioControls] db', db)
   gainNode.gain.value = Math.pow(10, db / 20)
 }
 
