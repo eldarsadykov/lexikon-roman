@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ContentNavigationItem } from '@nuxt/content'
 import type { NavigationMenuItem } from '@nuxt/ui'
+import HeaderControlsSection from '~/components/HeaderControlsSection.vue'
 
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
@@ -82,7 +83,17 @@ const items = computed<NavigationMenuItem[]>(() => [{
         class="my-4"
         type="dashed"
       />
-      <UColorModeSelect />
+      <div class="flex gap-3">
+        <UColorModeSelect />
+        <FontSizeSelect />
+      </div>
+      <USeparator
+        class="my-4"
+        type="dashed"
+      />
+      <HeaderControlsSection title="Audio">
+        <AudioControls />
+      </HeaderControlsSection>
       <USeparator
         class="my-4"
         type="dashed"
