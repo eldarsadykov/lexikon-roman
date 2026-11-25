@@ -93,6 +93,13 @@ const articleId = computed(() => {
         :class="['lexikon-roman-artikel', fontSizeClass]"
       />
 
+      <ClientOnly>
+        <SelectionCopyForAi
+          :article-id="articleId"
+          :title="page.title"
+        />
+      </ClientOnly>
+
       <USeparator v-if="surround?.length" />
 
       <UContentSurround :surround="surround" />
